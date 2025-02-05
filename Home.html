@@ -1,24 +1,37 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8QYYHLP6W"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-W8QYYHLP6W');
-    </script>
-    <title>DRUMHUB</title>
     <meta charset="utf-8" />
-    <!-- Angepasster Viewport ohne user-scalable=no -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Kritische CSS-Regeln für den Footer direkt im Head -->
+    <style>
+      /* Diese Regeln sorgen dafür, dass der Footer sofort sichtbar ist */
+      #footer {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+      }
+      #footer .copyright {
+        font-size: 0.6rem;
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+        opacity: 0.75;
+        margin-bottom: 0;
+        text-align: center;
+      }
+    </style>
+
+    <!-- Externe CSS-Dateien -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Google Fonts mit display=swap -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600&display=swap">
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+    <title>DRUMHUB</title>
   </head>
   <body class="is-preload">
-
     <!-- Wrapper -->
     <div id="wrapper">
 
@@ -36,7 +49,6 @@
             </p>
           </div>
         </div>
-        
         <nav>
           <ul>
             <li><a href="#intro">Das Studio</a></li>
@@ -47,19 +59,25 @@
         </nav>
         <article id="video">
           <div class="responsive-video">
-            <iframe  src="https://www.youtube.com/embed/cQYa82smLco?si=cdKEgr8999Uvr3Iv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe loading="lazy"
+                    src="https://www.youtube.com/embed/cQYa82smLco?si=cdKEgr8999Uvr3Iv"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+            </iframe>
           </div>
         </article>
       </header>
 
       <!-- Main -->
       <div id="main">
-
         <!-- Intro -->
         <article id="intro">
           <h2 class="major">Über das Studio</h2>
           <div class="slideshow">
-            <!-- Beispielwerte für width/height; anpassen, falls nötig -->
+            <!-- Beispiel-Dimensionsangaben; bitte ggf. anpassen -->
             <img src="images/ganzstudio.JPG" alt="Studio Bild 3" loading="lazy" width="800" height="400">
             <img src="images/preamp III.JPG" alt="Studio Bild 1" loading="lazy" width="800" height="400">
             <img src="images/Drumset II.JPG" alt="Studio Bild 2" loading="lazy" width="800" height="400">
@@ -68,16 +86,12 @@
             <img src="images/hinten.jpg" alt="Studio Bild 3" loading="lazy" width="800" height="400">
             <img src="images/Splitset Close GB Studio.JPG" alt="Studio Bild 3" loading="lazy" width="800" height="400">
           </div>
-
           <p><strong>Entstehung und Philosophie:</strong></p>
           <p>Das Studio wurde während der Corona-Pandemie gegründet, um eine professionelle Umgebung für hochwertige Video- und Audioaufnahmen zu schaffen. Zusammen mit Santino Scavelli, dem Inhaber des Global Beat Studios, entstand ein Ort, der Musikern und angehenden Künstlern eine erschwingliche Möglichkeit bietet, sich selbst zu produzieren und zu vermarkten. Unsere Mission ist es, Künstler in einer Zeit zu unterstützen, in der Online-Präsenz unverzichtbar geworden ist.</p>
-          
           <p><strong>Ausstattung:</strong></p>
           <p>Das Studio verfügt über einen großen Aufnahmeraum mit flexiblen Kamera- und Hintergrundoptionen. Es können bis zu sechs Kameras gleichzeitig genutzt werden, um unterschiedliche Perspektiven in 6K-Qualität festzuhalten. Der Regieraum bietet durch ein schallisoliertes Fenster klare Sicht auf den Aufnahmeraum, was eine optimale Kommunikation ermöglicht. Zusätzlich können bis zu 32 Spuren gleichzeitig aufgenommen werden, unterstützt durch hochwertige Röhrenvorverstärker.</p>
-          
           <p><strong>Das Team:</strong></p>
           <p>Neben mir arbeitet ein ausgebildeter Techniker im Studio, um den reibungslosen Ablauf der Aufnahmen zu gewährleisten. Künstler können auch eigene Techniker mitbringen, um gemeinsam das Beste aus ihren Projekten herauszuholen.</p>
-          
           <p><strong>Projekte und Erfolge:</strong></p>
           <p>Das Studio war maßgeblich an der Produktion der Serie "Monkey Beats" und zahlreichen Produktvideos für Meinl beteiligt. Zudem wurden hier über zehn Alben von Künstlern wie Anika Nilles und Pulse Project produziert.</p>
         </article>
@@ -86,11 +100,9 @@
         <article id="work">
           <h2 class="major">Unsere Ausstattung</h2>
           <span class="image main">
-            <img src="images/eingangII.JPG" alt="" loading="lazy" width="800" height="400" />
+            <img src="images/eingangII.JPG" alt="" loading="lazy" width="800" height="400">
           </span>
-
           <p>Unser Studio bietet eine erstklassige technische Ausstattung, die sowohl für professionelle Musiker als auch für angehende Künstler ideal ist. Mit einer Vielzahl an hochwertigen Geräten für Audio- und Videoaufnahmen sorgen wir für beste Ergebnisse.</p>
-                    
           <h3>Video-Equipment</h3>
           <p>Für Videoaufnahmen bieten wir modernste Kameras und Linsen, die eine beeindruckende Bildqualität gewährleisten:</p>
           <ul>
@@ -98,7 +110,6 @@
             <li><strong>Linsen:</strong> Sigma 17mm f/1.4, Sigma 32mm f/1.4, Lumix 50mm f/1.8 FF, Lumix 24-105mm f/4 FF, Lumix 9mm f/1.7, Lumix 15mm f/1.7, Lumix 25mm f/1.7, Lumix 12-60mm f/2.8-5.6, Lumix 12-36mm f/2.8, Olympus 45-150mm f/2.8</li>
             <li><strong>Sliders und Gimbals:</strong> DJI SC2, GVM 120 cm Slider mit Schwenkkopf, GVM 60 cm Slider, YC Onion Slider, GoPro 10</li>
           </ul>
-          
           <h3>Audio-Equipment</h3>
           <p>Unsere Audioausstattung umfasst erstklassige Preamps, Mikrofone und Interfaces, die höchsten Ansprüchen gerecht werden:</p>
           <ul>
@@ -106,10 +117,8 @@
             <li><strong>Mikrofone:</strong> Audix Studio Elite 8 Drumcase (D6, i5, ADX51, SCX25A, D4, D2, D-Vice), Audix A231, Audix Micro D, Audix ADX 60, Audix CX212B</li>
             <li><strong>Interfaces:</strong> MOTU 828 AVB, Soundcraft UI24R, 2x Behringer X32 Rack</li>
           </ul>
-
           <h3>Räume und Aufnahmeumgebung</h3>
           <p>Unser Studio verfügt über einen großen Aufnahmeraum und einen schallgetrennten Regieraum mit direkter Sichtverbindung durch ein großes Fenster. Die Ausstattung ermöglicht 6K-Aufnahmen mit 8 verschiedenen Kamera-Perspektiven und flexiblen Hintergründen, darunter Greenscreen, farbige Studiohintergründe und ein Steinhintergrund.</p>
-
           <h3>Zusätzliche Dienstleistungen</h3>
           <p>Unser Studio bietet flexible Buchungsoptionen, bei denen ihr euer eigenes Team mitbringen könnt, oder unser erfahrenes Personal für die Steuerung von Audio- und Videoequipment in Anspruch nehmen könnt. Postproduktion für Audio- und Videobearbeitung kann optional dazugebucht werden.</p>
         </article>
@@ -118,7 +127,7 @@
         <article id="about">
           <h2 class="major">Leistungen</h2>
           <span class="image main">
-            <img src="images/Mikrofon GB Studio.JPG" alt="Mikrofon im DrumHub Studio" loading="lazy" width="800" height="400" />
+            <img src="images/Mikrofon GB Studio.JPG" alt="Mikrofon im DrumHub Studio" loading="lazy" width="800" height="400">
           </span>
           <p>Unser Studio bietet eine umfassende All-in-One-Lösung für Musiker und Produzenten, die hochwertige Audio- und Videoaufnahmen erstellen möchten. Mit modernster Technik und erfahrenen Fachleuten bieten wir alles, was Sie für professionelle Produktionen benötigen.</p>
           <ul>
@@ -227,8 +236,10 @@
 
       <!-- Footer -->
       <footer id="footer">
-        <p class="copyright">&copy;  All rights reserved | Bilder nachweis: Santino Scavelli <a href="Impressum.html">Impressum</a> | 
-        <a href="Impressum.html">DSGVO</a></p>
+        <p class="copyright">
+          &copy;  All rights reserved | Bilder nachweis: Santino Scavelli 
+          <a href="Impressum.html">Impressum</a> | <a href="Impressum.html">DSGVO</a>
+        </p>
       </footer>
     </div>
 
@@ -241,6 +252,5 @@
     <script src="assets/js/breakpoints.min.js" defer></script>
     <script src="assets/js/util.js" defer></script>
     <script src="assets/js/main.js" defer></script>
-
   </body>
 </html>
