@@ -1,265 +1,1128 @@
-<!DOCTYPE HTML>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>DRUMHUB STUDIO | High-End Ton- & Videostudio für Drums & Musiker in Mannheim</title>
+  <meta name="description" content="DrumHub Studio – Modernes Ton- und Videostudio für Schlagzeuger, Percussionisten und Musiker in Mannheim. Bis zu 8 Kameras gleichzeitig in 6K, 32 Mehrspur-Audiokanäle, Röhren-Preamps und fest aufgebautes High-End Drumset.">
+  <meta name="keywords" content="DrumHub, DrumHub Studio, Tonstudio Mannheim, Drum Recording, Schlagzeug aufnehmen, Video Studio Musiker, 8 Kameras gleichzeitig, 6K Multi-Cam, Santino Scavelli, Audix Mikrofone, Warm Audio, Drum Cover aufnehmen Mannheim">
+  <meta name="author" content="Santino Scavelli">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#08090d">
+  <link rel="canonical" href="https://www.drumhub.de/">
+  <link rel="icon" type="image/png" href="images/drumhub-logo.png">
 
-    <!-- Kritische CSS-Regeln für den Footer direkt im Head -->
-    <style>
-      /* Diese Regeln sorgen dafür, dass der Footer sofort sichtbar ist */
-      #footer {
-        opacity: 1 !important;
-        transform: none !important;
-        filter: none !important;
+  <!-- Geo-Targeting für lokales SEO (Mannheim / Rhein-Neckar) -->
+  <meta name="geo.region" content="DE-BW">
+  <meta name="geo.placename" content="Mannheim">
+  <meta name="geo.position" content="49.487459;8.466039">
+  <meta name="ICBM" content="49.487459, 8.466039">
+
+  <!-- Open Graph / WhatsApp / Facebook -->
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DrumHub Studio">
+  <meta property="og:url" content="https://www.drumhub.de/">
+  <meta property="og:title" content="DRUMHUB STUDIO | Ton- & Videostudio für Drums & Musiker in Mannheim">
+  <meta property="og:description" content="Perfekter Drumsound trifft auf bis zu 8 Kameras gleichzeitig in bis zu 6K. 32 Audiospuren, Röhren-Preamps und aufgebautes High-End Drumset im akustisch optimierten Raum in Mannheim.">
+  <meta property="og:image" content="https://www.drumhub.de/images/drumhub-logo.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="DrumHub Studio Logo">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DRUMHUB STUDIO | High-End Ton- & Videostudio Mannheim">
+  <meta name="twitter:description" content="Video- und Tonstudio für Drums & Musiker in Mannheim. Bis zu 8 Kameras gleichzeitig, 32 Spuren & aufgebautes Drumset inklusive.">
+  <meta name="twitter:image" content="https://www.drumhub.de/images/drumhub-logo.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Schema.org Rich Structured Data (LocalBusiness, MusicRecordingStudio, FAQ) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["MusicRecordingStudio", "LocalBusiness"],
+        "@id": "https://www.drumhub.de/#studio",
+        "name": "DrumHub Studio",
+        "alternateName": "DrumHub Mannheim",
+        "image": "https://www.drumhub.de/images/drumhub-logo.png",
+        "url": "https://www.drumhub.de",
+        "telephone": "+49 123 456789",
+        "email": "info@santinoscavelli.de",
+        "priceRange": "€€",
+        "currenciesAccepted": "EUR",
+        "paymentAccepted": "Bar, Überweisung, PayPal",
+        "description": "Modernes Ton- und Videostudio spezialisiert auf Drums, Percussion und anspruchsvolle Musikproduktionen in Mannheim. Bis zu 8 Kameras gleichzeitig in bis zu 6K, 32 Mehrspur-Audiokanäle und High-End Röhren-Preamps.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Mannheim",
+          "addressLocality": "Mannheim",
+          "addressRegion": "Baden-Württemberg",
+          "postalCode": "68159",
+          "addressCountry": "DE"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 49.487459,
+          "longitude": 8.466039
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Santino Scavelli",
+          "jobTitle": "Inhaber, Drummer & Studioleiter",
+          "url": "https://www.santinoscavelli.de"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "09:00",
+            "closes": "22:00"
+          }
+        ],
+        "areaServed": [
+          { "@type": "City", "name": "Mannheim" },
+          { "@type": "City", "name": "Heidelberg" },
+          { "@type": "City", "name": "Ludwigshafen" },
+          { "@type": "AdministrativeArea", "name": "Rhein-Neckar-Kreis" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Muss ich mein eigenes Schlagzeug ins DrumHub Studio mitbringen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nein! Im DrumHub Studio steht ein voll ausgestattetes, professionelles Studio-Drumset mit Percussion dauerhaft aufgebaut, gestimmt und mikrofoniert bereit – komplett ohne Aufpreis (0 € inklusive). Wer ein individuelles Set vor Ort wünscht oder das eigene Set mitbringen möchte, kann dies gegen eine faire Umbaupauschale tun."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie viele Kameras können im DrumHub Studio gleichzeitig aufnehmen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Es können bis zu 8 Kameras gleichzeitig synchron in bis zu 6K- und 4K-Kinoqualität aufzeichnen, inklusive motorisierter Slider-Fahrten und spezieller Detailperspektiven für Snare, Becken und Pedale."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Kann ich im DrumHub Studio selbstständig ohne Kameramann filmen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja! Das DrumHub Studio ist als intuitives Plug & Play Multi-Cam System vorkonfiguriert. Du kannst deine Video- und Audioaufnahmen komplett selbstständig per Knopfdruck starten. Wer eine Live-Bildregie und Kameraführung vor Ort wünscht, kann optional einen Video-Operator zubuchen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wer leitet das DrumHub Studio?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "DrumHub Studio wurde von Santino Scavelli in Mannheim gegründet und wird von ihm als Inhaber und professioneller Musiker/Produzent geleitet."
+            }
+          }
+        ]
       }
-      #footer .copyright {
-        font-size: 0.6rem;
-        letter-spacing: 0.2rem;
-        text-transform: uppercase;
-        opacity: 0.75;
-        margin-bottom: 0;
-        text-align: center;
-      }
-    </style>
+    ]
+  }
+  </script>
+</head>
+<body>
 
-    <!-- Externe CSS-Dateien -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!-- Google Fonts mit display=swap -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600&display=swap">
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <!-- ======================================================================
+       Ambient Studio Background Slider (100% sichtbar, z-index: 0)
+       ====================================================================== -->
+  <div class="bg-slider-container" id="bg-slider" aria-hidden="true">
+    <div class="bg-slide active" style="background-image: url('images/drumset.jpg');"></div>
+    <div class="bg-slide" style="background-image: url('images/splitset.jpg');"></div>
+    <div class="bg-slide" style="background-image: url('images/studio.jpg');"></div>
+    <div class="bg-slide" style="background-image: url('images/stuhl.JPG');"></div>
+    <div class="bg-slide" style="background-image: url('images/preamps.jpg');"></div>
+    <div class="bg-slide" style="background-image: url('images/mikrofon.jpg');"></div>
+    <div class="bg-slide" style="background-image: url('images/eingangII.JPG');"></div>
+    <div class="bg-slide" style="background-image: url('images/hinten.jpg');"></div>
+    <div class="bg-overlay"></div>
+  </div>
 
-    <title>DRUMHUB</title>
-  </head>
-  <body class="is-preload">
-    <!-- Wrapper -->
-    <div id="wrapper">
+  <!-- ======================================================================
+       Site Content Wrapper (z-index: 1 über dem Studio-Hintergrund)
+       ====================================================================== -->
+  <div id="site-wrapper">
 
-      <!-- Header -->
-      <header id="header">
-        <div class="logo">
-          <i class="fas fa-video"></i>
-        </div>
-        <div class="content">
-          <div class="inner">
-            <h1>Das DrumHub</h1>
-            <p>Ein hochmodernes Studio, spezialisiert auf Video- und Audioaufnahmen für Musiker. Perfekt für Drums, Percussion und mehr.</p>
-            <p style="color: red; font-weight: bold; font-size: 1.2em; background-color: yellow; padding: 5px; display: inline-block; border-radius: 5px;">
-              Jetzt mit 30% Einführungsrabatt!
-            </p>
+    <!-- Header / Navigation -->
+    <header class="site-header">
+      <div class="container nav-container">
+        <a href="#hero" class="brand-logo" aria-label="DrumHub Studio Startseite">
+          <img src="images/drumhub-logo.png" alt="DrumHub Studio Logo" class="brand-logo-img">
+          <div class="brand-text">
+            <div class="brand-title-row">
+              <span class="brand-dru">DRU</span><span class="brand-m">M</span><span class="brand-hub">HUB</span>
+            </div>
+            <div class="brand-studio">STUDIO</div>
           </div>
-        </div>
-        <nav>
-          <ul>
-            <li><a href="#intro">Das Studio</a></li>
-            <li><a href="#about">Leistungen</a></li>
-            <li><a href="#work">Equipment</a></li>
+        </a>
+
+        <nav aria-label="Hauptnavigation">
+          <ul class="nav-links">
+            <li><a href="#studio">Studio</a></li>
+            <li><a href="#services">Leistungen</a></li>
+            <li><a href="#equipment">Equipment</a></li>
+            <li><a href="#calculator">Preiskalkulator</a></li>
+            <li><a href="#gallery">Galerie</a></li>
             <li><a href="#contact">Kontakt</a></li>
           </ul>
         </nav>
-        <article id="video">
-          <div class="responsive-video">
-            <iframe loading="lazy"
-                    src="https://www.youtube.com/embed/cQYa82smLco?si=cdKEgr8999Uvr3Iv"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-            </iframe>
-          </div>
-        </article>
-      </header>
 
-      <!-- Main -->
-      <div id="main">
-        <!-- Intro -->
-        <article id="intro">
-          <h2 class="major">Über das Studio</h2>
-          <div class="slideshow">
-            <!-- Beispiel-Dimensionsangaben; bitte ggf. anpassen -->
-            <img src="images/ganzstudio.JPG" alt="Studio Bild 3" loading="lazy" width="800" height="400">
-            <img src="images/preamp III.JPG" alt="Studio Bild 1" loading="lazy" width="800" height="400">
-            <img src="images/Drumset II.JPG" alt="Studio Bild 2" loading="lazy" width="800" height="400">
-            <img src="images/stuhl.JPG" alt="Studio Bild 3" loading="lazy" width="800" height="400">
-            <img src="images/fenster.JPG" alt="Studio Bild 3" loading="lazy" width="800" height="400">
-            <img src="images/hinten.jpg" alt="Studio Bild 3" loading="lazy" width="800" height="400">
-            <img src="images/Splitset Close GB Studio.JPG" alt="Studio Bild 3" loading="lazy" width="800" height="400">
-          </div>
-          <p><strong>Entstehung und Philosophie:</strong></p>
-          <p>Das Studio wurde während der Corona-Pandemie gegründet, um eine professionelle Umgebung für hochwertige Video- und Audioaufnahmen zu schaffen. Zusammen mit Santino Scavelli, dem Inhaber des Global Beat Studios, entstand ein Ort, der Musikern und angehenden Künstlern eine erschwingliche Möglichkeit bietet, sich selbst zu produzieren und zu vermarkten. Unsere Mission ist es, Künstler in einer Zeit zu unterstützen, in der Online-Präsenz unverzichtbar geworden ist.</p>
-          <p><strong>Ausstattung:</strong></p>
-          <p>Das Studio verfügt über einen großen Aufnahmeraum mit flexiblen Kamera- und Hintergrundoptionen. Es können bis zu sechs Kameras gleichzeitig genutzt werden, um unterschiedliche Perspektiven in 6K-Qualität festzuhalten. Der Regieraum bietet durch ein schallisoliertes Fenster klare Sicht auf den Aufnahmeraum, was eine optimale Kommunikation ermöglicht. Zusätzlich können bis zu 32 Spuren gleichzeitig aufgenommen werden, unterstützt durch hochwertige Röhrenvorverstärker.</p>
-          <p><strong>Das Team:</strong></p>
-          <p>Neben mir arbeitet ein ausgebildeter Techniker im Studio, um den reibungslosen Ablauf der Aufnahmen zu gewährleisten. Künstler können auch eigene Techniker mitbringen, um gemeinsam das Beste aus ihren Projekten herauszuholen.</p>
-          <p><strong>Projekte und Erfolge:</strong></p>
-          <p>Das Studio war maßgeblich an der Produktion der Serie "Monkey Beats" und zahlreichen Produktvideos für Meinl beteiligt. Zudem wurden hier über zehn Alben von Künstlern wie Anika Nilles und Pulse Project produziert.</p>
-        </article>
-
-        <!-- Work -->
-        <article id="work">
-          <h2 class="major">Unsere Ausstattung</h2>
-          <span class="image main">
-            <img src="images/eingangII.JPG" alt="" loading="lazy" width="800" height="400">
-          </span>
-          <p>Unser Studio bietet eine erstklassige technische Ausstattung, die sowohl für professionelle Musiker als auch für angehende Künstler ideal ist. Mit einer Vielzahl an hochwertigen Geräten für Audio- und Videoaufnahmen sorgen wir für beste Ergebnisse.</p>
-          <h3>Video-Equipment</h3>
-          <p>Für Videoaufnahmen bieten wir modernste Kameras und Linsen, die eine beeindruckende Bildqualität gewährleisten:</p>
-          <ul>
-            <li><strong>Kameras:</strong> Lumix S1 (FF), GH5, G9, G110, G85, LX110, GF5</li>
-            <li><strong>Linsen:</strong> Sigma 17mm f/1.4, Sigma 32mm f/1.4, Lumix 50mm f/1.8 FF, Lumix 24-105mm f/4 FF, Lumix 9mm f/1.7, Lumix 15mm f/1.7, Lumix 25mm f/1.7, Lumix 12-60mm f/2.8-5.6, Lumix 12-36mm f/2.8, Olympus 45-150mm f/2.8</li>
-            <li><strong>Sliders und Gimbals:</strong> DJI SC2, GVM 120 cm Slider mit Schwenkkopf, GVM 60 cm Slider, YC Onion Slider, GoPro 10</li>
-          </ul>
-          <h3>Audio-Equipment</h3>
-          <p>Unsere Audioausstattung umfasst erstklassige Preamps, Mikrofone und Interfaces, die höchsten Ansprüchen gerecht werden:</p>
-          <ul>
-            <li><strong>Preamps:</strong> SPL GoldMike Mk2, Warm Audio WA273, Warm Audio WA 412</li>
-            <li><strong>Mikrofone:</strong> Audix Studio Elite 8 Drumcase (D6, i5, ADX51, SCX25A, D4, D2, D-Vice), Audix A231, Audix Micro D, Audix ADX 60, Audix CX212B</li>
-            <li><strong>Interfaces:</strong> MOTU 828 AVB, Soundcraft UI24R, 2x Behringer X32 Rack</li>
-          </ul>
-          <h3>Räume und Aufnahmeumgebung</h3>
-          <p>Unser Studio verfügt über einen großen Aufnahmeraum und einen schallgetrennten Regieraum mit direkter Sichtverbindung durch ein großes Fenster. Die Ausstattung ermöglicht 6K-Aufnahmen mit 8 verschiedenen Kamera-Perspektiven und flexiblen Hintergründen, darunter Greenscreen, farbige Studiohintergründe und ein Steinhintergrund.</p>
-          <h3>Zusätzliche Dienstleistungen</h3>
-          <p>Unser Studio bietet flexible Buchungsoptionen, bei denen ihr euer eigenes Team mitbringen könnt, oder unser erfahrenes Personal für die Steuerung von Audio- und Videoequipment in Anspruch nehmen könnt. Postproduktion für Audio- und Videobearbeitung kann optional dazugebucht werden.</p>
-        </article>
-
-        <!-- About -->
-        <article id="about">
-          <h2 class="major">Leistungen</h2>
-          <span class="image main">
-            <img src="images/Mikrofon GB Studio.JPG" alt="Mikrofon im DrumHub Studio" loading="lazy" width="800" height="400">
-          </span>
-          <p>Unser Studio bietet eine umfassende All-in-One-Lösung für Musiker und Produzenten, die hochwertige Audio- und Videoaufnahmen erstellen möchten. Mit modernster Technik und erfahrenen Fachleuten bieten wir alles, was Sie für professionelle Produktionen benötigen.</p>
-          <ul>
-            <li><strong>Individuelle Produktionen:</strong> Wir unterstützen Sie bei der Konzeption und Umsetzung Ihrer Musikvideos, Tutorials, Play-Alongs und mehr. Nutzen Sie unsere vielseitigen Kameras und Mikrofone, um Ihre Vision in die Realität umzusetzen.</li>
-            <li><strong>Live-Streaming und Social Media Content:</strong> Erstellen Sie Live-Streams oder Content für Social Media direkt in unserem Studio. Wir bieten die notwendige Ausrüstung und Expertise, um Ihre Inhalte optimal zu präsentieren.</li>
-            <li><strong>Postproduktion:</strong> Nach der Aufnahme bieten wir professionelle Bearbeitung von Audio und Video, um das Beste aus Ihrem Material herauszuholen. Dies umfasst Audiomischung, Video-Cutting und Effekte.</li>
-            <li><strong>Vermarktungshilfen:</strong> Wir helfen Ihnen nicht nur bei der Produktion, sondern auch bei der Vermarktung Ihrer Inhalte. Nutzen Sie unsere Expertise, um Ihre Projekte erfolgreich auf den Markt zu bringen.</li>
-            <li><strong>Flexible Buchungsoptionen:</strong> Mieten Sie unser Studio und die Ausrüstung stundenweise, halbtags oder ganztags. Wir bieten auch Abonnements oder Mitgliedschaften für wiederkehrende Kunden, um langfristige Bindungen zu fördern.</li>
-          </ul>
-          <h2 class="major">Preisliste</h2>
-          <ul>
-            <li><strong>Raum-Miete:</strong>
-              <ul>
-                <li>Stundenweise: 20€ pro Stunde</li>
-                <li>Halber Tag (4 Stunden): 80€</li>
-                <li>Ganzer Tag (8 Stunden): 150€</li>
-              </ul>
-            </li>
-            <li><strong>Instrumente und Equipment:</strong>
-              <ul>
-                <li>Schlagzeug/Percussion Grundausstattung: 8€ pro Stunde</li>
-                <li>Erweiterte Ausstattung: 15€ pro Stunde</li>
-                <li>Einzelnes Mikrofon: 2€ pro Stunde</li>
-                <li>Einzelner Preamp: 5€ pro Stunde</li>
-                <li>Paket (bis zu 3 Preamps): 10€ pro Stunde</li>
-              </ul>
-            </li>
-            <li><strong>Kamera-Miete:</strong>
-              <ul>
-                <li>2 Kameras Full HD: 20€ pro Stunde</li>
-                <li>2 Kameras 4K: 25€ pro Stunde</li>
-                <li>2 Kameras 6K: 30€ pro Stunde</li>
-                <li>jede weitere Kamera: 5€ pro Stunde</li>
-              </ul>
-            </li>
-            <li><strong>Kameramann:</strong>
-              <ul>
-                <li>30€ pro Stunde</li>
-              </ul>
-            </li>
-            <li><strong>Postproduktion:</strong> Preise auf Anfrage, abhängig von Projektumfang und Anforderungen.</li>
-          </ul>
-          <h3 class="major">Beispielpakete</h3>
-          <ul>
-            <li><strong>Basic Paket:</strong> Für Einsteiger
-              <ul>
-                <li>Raum-Miete (2 Stunden): 40 €</li>
-                <li>Schlagzeug/Percussion Grundausstattung (2 Stunden): 16 €</li>
-                <li>2 Kameras Full HD (2 Stunden): 40 €</li>
-                <li>Kameramann (2 Stunden): 60 €</li>
-                <li><strong>Gesamt:</strong> 156 €</li>
-              </ul>
-            </li>
-            <li><strong>Pro Paket:</strong> Für fortgeschrittene Nutzer
-              <ul>
-                <li>Raum-Miete (4 Stunden): 80 €</li>
-                <li>Schlagzeug/Percussion Grundausstattung (4 Stunden): 32 €</li>
-                <li>3 Kameras 4K (4 Stunden): 320 €</li>
-                <li>Kameramann (4 Stunden): 120 €</li>
-                <li><strong>Gesamt:</strong> 552 €</li>
-              </ul>
-            </li>
-            <li><strong>Ultimate Paket:</strong> Für Profis
-              <ul>
-                <li>Raum-Miete (8 Stunden): 150 €</li>
-                <li>Schlagzeug/Percussion Grundausstattung (8 Stunden): 64 €</li>
-                <li>5 Kameras 6K (8 Stunden): 1.320 €</li>
-                <li>Kameramann (8 Stunden): 240 €</li>
-                <li><strong>Gesamt:</strong> 1.774 €</li>
-              </ul>
-            </li>
-          </ul>
-        </article>
-
-        <!-- Contact -->
-<article id="contact">
-  <h2 class="major">Contact</h2>
-  <form method="post" action="https://formsubmit.co/info@santinoscavelli.de">
-    <!-- Versteckte Felder für FormSubmit -->
-    <input type="hidden" name="_subject" value="Neue Nachricht von drumhub.de">
-    <input type="hidden" name="_captcha" value="false">
-    <!-- Weiterleitung nach Absenden -->
-    <input type="hidden" name="_next" value="https://drumhub.de/danke.html">
-
-    <div class="fields">
-      <div class="field half">
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" required />
+        <div class="nav-cta">
+          <a href="#calculator" class="btn btn-primary btn-sm">Preis kalkulieren</a>
+          <button class="nav-toggle" aria-label="Menü öffnen">☰</button>
+        </div>
       </div>
-      <div class="field half">
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" required />
-      </div>
-      <div class="field">
-        <label for="message">Message</label>
-        <textarea name="message" id="message" rows="4" required></textarea>
-      </div>
-    </div>
+    </header>
 
-    <ul class="actions">
-      <li><input type="submit" value="Send Message" class="primary" /></li>
-      <li><input type="reset" value="Reset" /></li>
-    </ul>
-  </form>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-content">
+        <div class="discount-pill">
+          <span class="badge">Aktion</span>
+          <span>Jetzt mit 15% Einführungsrabatt anfragen!</span>
+        </div>
 
-  <ul class="icons">
-    <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-    <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-    <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-    <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-  </ul>
-</article>
+        <h1 class="hero-title">
+          High-End Sound.<br>
+          Kino-Optik in 6K.
+        </h1>
 
-      </div>
-
-      <!-- Footer -->
-      <footer id="footer">
-        <p class="copyright">
-          &copy;  All rights reserved | Bilder nachweis: Santino Scavelli 
-          <a href="Impressum.html">Impressum</a> | <a href="Impressum.html">DSGVO</a>
+        <p class="hero-desc">
+          Dein Studio für Drums, Percussion und Musikproduktionen in Mannheim.<br>
+          Gegründet von <strong>Santino Scavelli</strong>.
         </p>
-      </footer>
+
+        <div class="hero-actions">
+          <a href="#calculator" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="18"/><path d="M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M8 18h.01M12 18h.01"/></svg>
+            Preiskalkulator starten
+          </a>
+          <a href="#showcase" class="btn btn-secondary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+            Studio-Video ansehen
+          </a>
+        </div>
+
+        <!-- Quick Highlights (Symmetrisch & Klickbar) -->
+        <div class="hero-stats">
+          <a href="#equipment" class="stat-card" data-filter-target="video" title="Kamera-Equipment ansehen">
+            <div class="stat-icon">🎥</div>
+            <div class="stat-value">Bis zu 8 Kameras</div>
+            <div class="stat-label">Gleichzeitig in 6K ↗</div>
+          </a>
+          <a href="#studio" class="stat-card" title="Studio Raum & Spuren ansehen">
+            <div class="stat-icon">🎙️</div>
+            <div class="stat-value">32 Audio-Spuren</div>
+            <div class="stat-label">Simultane Mehrspur ↗</div>
+          </a>
+          <a href="#equipment" class="stat-card" data-filter-target="audio" title="Röhren-Preamps ansehen">
+            <div class="stat-icon">🎛️</div>
+            <div class="stat-value">Röhren-Preamps</div>
+            <div class="stat-label">SPL & Warm Audio ↗</div>
+          </a>
+          <a href="#studio" class="stat-card" title="Aufnahmeraum & Akustik ansehen">
+            <div class="stat-icon">🥁</div>
+            <div class="stat-value">Akustik-Studio</div>
+            <div class="stat-label">Optimierter Raum ↗</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dezente Sektions-Trennlinie -->
+    <div class="section-divider"></div>
+
+    <!-- Showcase Section (DSGVO 2-Click YouTube Player) -->
+    <section id="showcase" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Video & Audio</span>
+          <h2 class="section-title">Erlebe das Studio in Aktion</h2>
+          <p class="section-desc">Echte Session-Aufnahmen mit Multi-Kamera-Perspektiven und druckvoller Mikrofonierung.</p>
+        </div>
+
+        <div class="video-showcase-box">
+          <div class="video-container" id="video-embed-container">
+            <div class="video-consent-placeholder" id="video-placeholder">
+              <div class="video-consent-content">
+                <button class="play-btn-circle" id="activate-video-btn" data-video-id="cQYa82smLco" aria-label="Video abspielen">
+                  ▶
+                </button>
+                <h3 style="color:#fff; margin-bottom: 0.4rem; font-size: 1.25rem;">DrumHub Studio Demo abspielen</h3>
+                <p class="video-consent-text">
+                  Mit Klick auf Play wird das Video datenschutzkonform über YouTube eingebunden.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dezente Sektions-Trennlinie -->
+    <div class="section-divider"></div>
+
+    <!-- Über das Studio -->
+    <section id="studio" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Das Studio</span>
+          <h2 class="section-title">Fokus auf Sound & Performance</h2>
+          <p class="section-desc">Akustisch optimierter Aufnahmeraum und High-End Regie für Drums, Percussion und Musikproduktionen.</p>
+        </div>
+
+        <div class="studio-grid">
+          <div class="studio-text">
+            <p>
+              Das Studio wurde ins Leben gerufen, um Musikern und Bands eine erstklassige, bezahlbare Umgebung für professionelle Video- und Audioaufnahmen zu bieten.
+            </p>
+            <p>
+              Gegründet von <strong>Santino Scavelli</strong> entstand ein Ort, an dem Künstler mit modernster Technik hochwertigen Content für Social Media, Releases und Tutorials produzieren können.
+            </p>
+
+            <ul class="studio-features-list">
+              <li class="studio-feature-item">
+                <div class="feature-icon-box">📐</div>
+                <div>
+                  <strong>Akustisch optimierter Aufnahmeraum</strong>
+                  <span>Viel Platz für Schlagzeuge und Percussion mit variablen Hintergründen (Greenscreen, Studiofarben, Steinwand).</span>
+                </div>
+              </li>
+              <li class="studio-feature-item">
+                <div class="feature-icon-box">🎥</div>
+                <div>
+                  <strong>Bis zu 8 Kameras gleichzeitig in 6K Qualität</strong>
+                  <span>Totale, Overhead, Hand- & Fuß-Perspektiven, Snare-Cam und motorisierte Slider-Fahrten.</span>
+                </div>
+              </li>
+              <li class="studio-feature-item">
+                <div class="feature-icon-box">👥</div>
+                <div>
+                  <strong>Plug & Play DIY-Recording & flexibler Support</strong>
+                  <span>Filme deine Session komplett selbstständig per Knopfdruck oder buche unseren erfahrenen Video-Operator flexibel hinzu.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="studio-visuals">
+            <img src="images/studio.jpg" alt="DrumHub Studio Raum" class="main-studio-img" loading="lazy">
+            <img src="images/splitset.jpg" alt="Schlagzeug Detail" class="secondary-img-badge" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dezente Sektions-Trennlinie -->
+    <div class="section-divider"></div>
+
+    <!-- Leistungen & Studio-Pakete -->
+    <section id="services" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Leistungen</span>
+          <h2 class="section-title">Alles für deine Produktion</h2>
+          <p class="section-desc">Vom schnellen Play-Along bis zur aufwendigen Multi-Cam Albumaufnahme.</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card" data-service="video" role="button" tabindex="0" title="Klicken für Projektdetails & Ablauf">
+            <div class="service-icon">🎬</div>
+            <h3 class="service-title">Musikvideos & Social Content</h3>
+            <p class="service-desc">Multi-Kamera-Setups mit Slider-Fahrten und individuellem Studio-Lighting für YouTube und Instagram.</p>
+            <span class="service-action-hint">Details & Ablauf ansehen ➔</span>
+          </div>
+
+          <div class="service-card" data-service="livestream" role="button" tabindex="0" title="Klicken für Projektdetails & Ablauf">
+            <div class="service-icon">📡</div>
+            <h3 class="service-title">Live-Streams & Tutorials</h3>
+            <p class="service-desc">Broadcast-Qualität für Masterclasses, Online-Unterricht und Drum-Cover mit direktem Audio-Mixing.</p>
+            <span class="service-action-hint">Details & Ablauf ansehen ➔</span>
+          </div>
+
+          <div class="service-card" data-service="postprod" role="button" tabindex="0" title="Klicken für Projektdetails & Ablauf">
+            <div class="service-icon">🎚️</div>
+            <h3 class="service-title">Postproduktion & Mix</h3>
+            <p class="service-desc">Mehrspurschnitt, Sound-Design, Mixing, Mastering und Color Grading für deinen finalen Release.</p>
+            <span class="service-action-hint">Details & Ablauf ansehen ➔</span>
+          </div>
+
+          <div class="service-card" data-service="promo" role="button" tabindex="0" title="Klicken für Projektdetails & Ablauf">
+            <div class="service-icon">🚀</div>
+            <h3 class="service-title">Vermarktungshilfen</h3>
+            <p class="service-desc">Unterstützung bei Teasern, Thumbnails und Social Media Strategie für maximale Reichweite.</p>
+            <span class="service-action-hint">Details & Ablauf ansehen ➔</span>
+          </div>
+        </div>
+
+        <!-- Beispielpakete -->
+        <div class="packages-heading">
+          <span class="section-tag">Transparente Angebote</span>
+          <h3>Beliebte Beispiel-Pakete</h3>
+        </div>
+
+        <div class="packages-grid">
+          <!-- Basic -->
+          <div class="package-card">
+            <div class="package-name">Basic Paket</div>
+            <div class="package-target">Für Einsteiger & schnelle Video-Takes</div>
+            <div class="package-price">110 € <span>/ 2 Std.</span></div>
+            <ul class="package-features">
+              <li><span class="check">✓</span> 2 Stunden Studio Raum-Miete (30 € / Std.)</li>
+              <li><span class="check">✓</span> Studio-Drumset aufgebaut (inklusive)</li>
+              <li><span class="check">✓</span> 2 Kameras in Full HD synchron</li>
+              <li><span class="check">✓</span> Selbstständiges Filmen (Plug & Play)</li>
+              <li><span class="check">✓</span> Sofortige Rohdaten-Übergabe</li>
+            </ul>
+            <p style="font-size:0.75rem; color:var(--text-dim); margin-top:-0.5rem; margin-bottom:1rem;">💡 Kameramann optional zubuchbar (+50 € Pauschale + 50 €/h)</p>
+            <button class="btn btn-secondary btn-sm" data-load-preset="basic">In Kalkulator laden</button>
+          </div>
+
+          <!-- Pro -->
+          <div class="package-card highlighted">
+            <div class="package-badge">Beliebt</div>
+            <div class="package-name">Pro Paket</div>
+            <div class="package-target">Für anspruchsvolle Cover & Singles</div>
+            <div class="package-price">260 € <span>/ 4 Std.</span></div>
+            <ul class="package-features">
+              <li><span class="check">✓</span> 4 Stunden Studio (Halber Tag Flat: 110 €)</li>
+              <li><span class="check">✓</span> Studio-Drumset aufgebaut (inklusive)</li>
+              <li><span class="check">✓</span> 3 Kameras in 4K Ultra-HD synchron</li>
+              <li><span class="check">✓</span> Dynamische Slider-Fahrten voreingestellt</li>
+              <li><span class="check">✓</span> Selbstständiges Multi-Cam Filmen</li>
+            </ul>
+            <p style="font-size:0.75rem; color:var(--text-dim); margin-top:-0.5rem; margin-bottom:1rem;">💡 Kameramann optional zubuchbar (+50 € Pauschale + 50 €/h)</p>
+            <button class="btn btn-primary btn-sm" data-load-preset="pro">In Kalkulator laden</button>
+          </div>
+
+          <!-- Ultimate -->
+          <div class="package-card">
+            <div class="package-name">Ultimate Paket</div>
+            <div class="package-target">High-End Lösung für Profis & Alben</div>
+            <div class="package-price">830 € <span>/ 8 Std.</span></div>
+            <ul class="package-features">
+              <li><span class="check">✓</span> 8 Stunden Studio (Ganzer Tag Flat: 200 €)</li>
+              <li><span class="check">✓</span> Studio-Drumset & Percussion aufgebaut (inklusive)</li>
+              <li><span class="check">✓</span> 5 Kameras gleichzeitig in 6K Kino-Qualität</li>
+              <li><span class="check">✓</span> High-End Röhren Preamp-Paket</li>
+              <li><span class="check">✓</span> 32-Spur Mehrspur-Audio & Rohdaten</li>
+            </ul>
+            <p style="font-size:0.75rem; color:var(--text-dim); margin-top:-0.5rem; margin-bottom:1rem;">💡 Kameramann optional zubuchbar (+50 € Pauschale + 50 €/h)</p>
+            <button class="btn btn-secondary btn-sm" data-load-preset="ultimate">In Kalkulator laden</button>
+          </div>
+        </div>
+
+        <!-- Übergang zum individuellen Kalkulator -->
+        <div class="calc-bridge-box">
+          <div class="calc-bridge-text">
+            <strong>Individuelle Session planen?</strong>
+            <span>Passe Dauer, Kameras, Preamps und Postproduktion im Studio-Rechner exakt an deine Wünsche an.</span>
+          </div>
+          <a href="#calculator" class="btn btn-secondary btn-sm">
+            Setup selbst konfigurieren ↓
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dezente Sektions-Trennlinie -->
+    <div class="section-divider"></div>
+
+    <!-- Interaktiver Preiskalkulator -->
+    <section id="calculator" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Studio-Konfigurator</span>
+          <h2 class="section-title">Individuelles Setup zusammenstellen</h2>
+          <p class="section-desc">Passe Raumzeit, Kameras, Preamps und Schnitt flexibel an – mit transparenter Live-Berechnung.</p>
+        </div>
+
+        <div class="calculator-wrapper">
+          <!-- Konfiguration -->
+          <div class="calc-config-col">
+            
+            <!-- 1. Raummiete -->
+            <div class="calc-group">
+              <div class="calc-section-title">1. Studio Raum-Miete</div>
+              <div class="calc-options-grid" style="margin-bottom: 0.9rem;">
+                <button class="calc-btn-option selected" data-calc-room="hours">
+                  <span class="calc-option-title">Stundenweise</span>
+                  <span class="calc-option-price">30 € / Std.</span>
+                </button>
+                <button class="calc-btn-option" data-calc-room="halfday">
+                  <span class="calc-option-title">Halber Tag (4h)</span>
+                  <span class="calc-option-price">110 € Flat</span>
+                </button>
+                <button class="calc-btn-option" data-calc-room="fullday">
+                  <span class="calc-option-title">Ganzer Tag (8h)</span>
+                  <span class="calc-option-price">200 € Flat</span>
+                </button>
+              </div>
+
+              <div class="slider-control-box" id="calc-hours-group">
+                <div class="slider-label-row">
+                  <span>Dauer in Stunden</span>
+                  <span class="slider-val-badge" id="calc-hours-val">2 Std.</span>
+                </div>
+                <input type="range" id="calc-hours" min="1" max="12" value="2" step="1">
+              </div>
+            </div>
+
+            <!-- 2. Drums -->
+            <div class="calc-group">
+              <div class="calc-section-title">2. Schlagzeug & Percussion</div>
+              <div class="calc-options-grid">
+                <button class="calc-btn-option selected" data-calc-drums="standard">
+                  <span class="calc-option-title">Studio-Set (Aufgebaut)</span>
+                  <span class="calc-option-price">0 € (Inklusive)</span>
+                </button>
+                <button class="calc-btn-option" data-calc-drums="studio_change">
+                  <span class="calc-option-title">Umbau anderes Studio-Set</span>
+                  <span class="calc-option-price">+35 € Umbau</span>
+                </button>
+                <button class="calc-btn-option" data-calc-drums="own_set">
+                  <span class="calc-option-title">Eigenes Set (Komplett-Umbau)</span>
+                  <span class="calc-option-price">+50 € Umbau</span>
+                </button>
+              </div>
+              <p style="font-size:0.8rem; color:var(--text-muted); margin-top:0.5rem; line-height:1.4;">
+                💡 <em>Das Studio-Drumset steht immer gestimmt, mikrofoniert und sofort spielbereit für dich aufgebaut. Umbaupauschalen decken den Arbeitsaufwand (ca. 1 bis 1,5 Std.) für Ab-/Aufbau und Neumikrofonierung ab.</em>
+              </p>
+            </div>
+
+            <!-- 3. Kameras -->
+            <div class="calc-group">
+              <div class="calc-section-title">3. Kameras & Video (bis zu 8 Kameras gleichzeitig)</div>
+              <div class="calc-options-grid" style="margin-bottom: 0.9rem;">
+                <button class="calc-btn-option selected" data-calc-cam="none">
+                  <span class="calc-option-title">Keine Kameras</span>
+                  <span class="calc-option-price">0 €</span>
+                </button>
+                <button class="calc-btn-option" data-calc-cam="fhd">
+                  <span class="calc-option-title">2x Full HD</span>
+                  <span class="calc-option-price">+25 € / Std.</span>
+                </button>
+                <button class="calc-btn-option" data-calc-cam="4k">
+                  <span class="calc-option-title">2x 4K Ultra-HD</span>
+                  <span class="calc-option-price">+30 € / Std.</span>
+                </button>
+                <button class="calc-btn-option" data-calc-cam="6k">
+                  <span class="calc-option-title">2x 6K Kino</span>
+                  <span class="calc-option-price">+40 € / Std.</span>
+                </button>
+              </div>
+
+              <div class="slider-control-box">
+                <div class="slider-label-row">
+                  <span>Zusätzliche Kameras (+8 € / Std. pro Cam – bis zu 8 Cams gesamt)</span>
+                  <span class="slider-val-badge" id="calc-extra-cams-val">+0</span>
+                </div>
+                <input type="range" id="calc-extra-cams" min="0" max="6" value="0" step="1">
+              </div>
+            </div>
+
+            <!-- 4. Preamps & Mics -->
+            <div class="calc-group">
+              <div class="calc-section-title">4. High-End Preamps & Mikrofone</div>
+              <div class="calc-options-grid" style="margin-bottom: 0.9rem;">
+                <button class="calc-btn-option selected" data-calc-preamp="none">
+                  <span class="calc-option-title">Standard Audio</span>
+                  <span class="calc-option-price">0 €</span>
+                </button>
+                <button class="calc-btn-option" data-calc-preamp="single">
+                  <span class="calc-option-title">1x Preamp Röhre</span>
+                  <span class="calc-option-price">+8 € / Std.</span>
+                </button>
+                <button class="calc-btn-option" data-calc-preamp="triple">
+                  <span class="calc-option-title">3x Preamp Paket</span>
+                  <span class="calc-option-price">+15 € / Std.</span>
+                </button>
+              </div>
+
+              <div class="slider-control-box">
+                <div class="slider-label-row">
+                  <span>Einzel-Mikrofone dazu (+3 € / Std. je Mic)</span>
+                  <span class="slider-val-badge" id="calc-mics-val">0</span>
+                </div>
+                <input type="range" id="calc-mics" min="0" max="8" value="0" step="1">
+              </div>
+            </div>
+
+            <!-- 5. Personal & Rabatt -->
+            <div class="calc-group">
+              <div class="calc-section-title">5. Upgrades & Rabatt</div>
+
+              <div class="calc-addons-grid">
+                <label class="checkbox-option">
+                  <input type="checkbox" id="calc-operator">
+                  <div class="checkbox-option-info">
+                    <div>
+                      <strong>Video-Operator / Kameramann</strong>
+                      <div style="font-size:0.75rem; color:var(--text-dim); margin-top:1px;">Kameraführung & Bildregie</div>
+                    </div>
+                    <span style="color:var(--accent-light); white-space:nowrap; font-size:0.84rem;">+50 € + 50 €/h</span>
+                  </div>
+                </label>
+
+                <label class="checkbox-option">
+                  <input type="checkbox" id="calc-discount">
+                  <div class="checkbox-option-info">
+                    <div>
+                      <strong style="color:var(--accent-light);">15% Einführungsrabatt</strong>
+                      <div style="font-size:0.75rem; color:var(--text-dim); margin-top:1px;">Sofort auf Gesamtsumme</div>
+                    </div>
+                    <span style="color:var(--accent-light); font-weight:700;">-15%</span>
+                  </div>
+                </label>
+              </div>
+              <p style="font-size:0.78rem; color:var(--text-muted); margin-top:0.45rem; line-height:1.35;">
+                🎬 <em>Tipp: Das DrumHub ist als Plug & Play Studio konzipiert – du kannst deine Session komplett selbstständig ohne Kameramann aufnehmen!</em>
+              </p>
+            </div>
+
+            <!-- 6. Postproduktion & Schnitt -->
+            <div class="calc-group">
+              <div class="calc-section-title">6. Postproduktion, Mix & Schnitt (Optional)</div>
+              <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.75rem; line-height:1.4;">
+                Fertiger Song-Mix oder Videoschnitt gewünscht? (Feste Pauschalen pro Song / Take):
+              </p>
+              <div class="calc-options-grid">
+                <button class="calc-btn-option selected" data-calc-post="none">
+                  <span class="calc-option-title">Keine (Rohdaten)</span>
+                  <span class="calc-option-price">0 €</span>
+                </button>
+                <button class="calc-btn-option" data-calc-post="sync">
+                  <span class="calc-option-title">1. Timecode-Sync</span>
+                  <span class="calc-option-price">+35 € / Song</span>
+                </button>
+                <button class="calc-btn-option" data-calc-post="audio">
+                  <span class="calc-option-title">2. Drum-Mix & Master</span>
+                  <span class="calc-option-price">+65 € / Song</span>
+                </button>
+                <button class="calc-btn-option" data-calc-post="full">
+                  <span class="calc-option-title">3. Video- & Audio-Mix</span>
+                  <span class="calc-option-price">+160 € / Song</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Preis-Zusammenfassung -->
+          <div class="calc-summary-col">
+            <div class="calc-summary-card">
+              <div class="summary-header">
+                <h4>Kalkulations-Übersicht</h4>
+                <p style="font-size:0.82rem; color:var(--text-muted);">Echtzeit-Berechnung deiner Session</p>
+              </div>
+
+              <ul class="summary-items-list" id="calc-summary-list">
+                <!-- Dynamisch via JavaScript -->
+              </ul>
+
+              <div class="summary-total-box">
+                <div class="total-row">
+                  <span class="label">Gesamtpreis:</span>
+                  <span class="amount" id="calc-total-price">60 €</span>
+                </div>
+                <div class="total-subtext">inklusive gebuchter Studiozeit</div>
+              </div>
+
+              <div class="summary-deposit-pill">
+                <span>🛡️ <strong>100 € Sicherheitskaution</strong> (bei Self-Recording, voll erstattungsfähig)</span>
+              </div>
+
+              <button class="btn btn-primary" id="calc-transfer-btn" style="width:100%;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                In Anfrage übernehmen 👇
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Dezente Sektions-Trennlinie -->
+    <div class="section-divider"></div>
+
+    <!-- Equipment Explorer -->
+    <section id="equipment" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Equipment</span>
+          <h2 class="section-title">Unser Studio-Equipment</h2>
+          <p class="section-desc">Ausgewählte Mikrofone, Röhren-Preamps und Kino-Kameras für beste Aufnahmen.</p>
+        </div>
+
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-filter="all">Alle Geräte</button>
+          <button class="filter-tab" data-filter="video">Kameras & Optiken</button>
+          <button class="filter-tab" data-filter="audio">Preamps & Audio</button>
+          <button class="filter-tab" data-filter="mics">Mikrofonie</button>
+          <button class="filter-tab" data-filter="studio">Studio & Akustik</button>
+        </div>
+
+        <div class="equipment-grid">
+          <!-- 1. Kameras & Optiken -->
+          <div class="gear-card" data-category="video" id="gear-video">
+            <span class="gear-category">Kameras & Optiken</span>
+            <h4 class="gear-name">Multi-Cam Video-System (bis zu 8 Kameras)</h4>
+            <p class="gear-desc">Cinematische Aufnahmen mit Panasonic Lumix S1 Vollformat (6K), Lumix GH5/G9 Multi-Cam Park, lichtstarken Sigma f/1.4 Festbrennweiten und motorisierten GVM Slidern.</p>
+            <ul class="gear-specs">
+              <li><span>Kameras:</span><span>Bis zu 8 Kameras gleichzeitig synchron</span></li>
+              <li><span>Qualität:</span><span>6K Vollformat & 4K 60fps Broadcast</span></li>
+            </ul>
+            <button class="gear-toggle-btn" aria-expanded="false">Tech Specs ▾</button>
+            <div class="gear-details">
+              <ul class="gear-bullet-list">
+                <li><strong>Lumix S1:</strong> 24.2 MP Vollformat, V-Log mit 14+ Blendenstufen für cinematische Tiefenschärfe</li>
+                <li><strong>Multi-Cam Park:</strong> Synchronisierte GH5, G9, G110 & G85 Kameras für Snare-, Pedal- und Overhead-Winkel</li>
+                <li><strong>Optiken:</strong> Sigma 17mm & 32mm f/1.4, Lumix 50mm f/1.8 für weiches Bokeh und Low-Light Stärke</li>
+                <li><strong>Slider & Gimbal:</strong> 120cm & 60cm motorisierte GVM Slider und DJI SC2 3-Achsen Gimbal für flüssige Fahrten</li>
+                <li><strong>Timecode:</strong> Feste Synchronisation aller 8 Kameras für nahtlosen Videoschnitt</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 2. Preamps & Wandler -->
+          <div class="gear-card" data-category="audio" id="gear-audio">
+            <span class="gear-category">Preamps & Audio</span>
+            <h4 class="gear-name">High-End Preamps & Wandler</h4>
+            <p class="gear-desc">Diskrete analoge Röhren- und Transistor-Vorverstärker von SPL und Warm Audio kombiniert mit MOTU 828 AVB und Behringer X32 für 32 glasklare Spuren.</p>
+            <ul class="gear-specs">
+              <li><span>Preamps:</span><span>SPL GoldMike Mk2 (Röhre) & Warm Audio</span></li>
+              <li><span>Wandlung:</span><span>32 Kanäle @ 24-Bit / 96 kHz latenzfrei</span></li>
+            </ul>
+            <button class="gear-toggle-btn" aria-expanded="false">Tech Specs ▾</button>
+            <div class="gear-details">
+              <ul class="gear-bullet-list">
+                <li><strong>SPL GoldMike Mk2:</strong> Diskreter Class-A Röhrenvorverstärker mit schaltbarer Flair-Obertonglättung</li>
+                <li><strong>Warm Audio WA273 & WA412:</strong> Neve 1073- und API 312-Schaltungen mit original Carnhill-Übertragern für Druck auf Kick & Snare</li>
+                <li><strong>MOTU 828 AVB:</strong> High-End Wandler für latenzfreie, unverfälschte DAW-Aufnahme</li>
+                <li><strong>Behringer X32:</strong> 32 Einzelkanäle mit individuellen In-Ear Stereo-Monitormixen für jeden Musiker</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 3. Mikrofonie -->
+          <div class="gear-card" data-category="mics" id="gear-mics">
+            <span class="gear-category">Mikrofonie</span>
+            <h4 class="gear-name">Audix Studio Elite Drumcase & Großmembran</h4>
+            <p class="gear-desc">Perfekt abgestimmtes Mikrofon-Setup für Schlagzeug und Percussion: Audix D6 Kick, i5 Snare, SCX25A Overheads sowie Audix A231 Großmembran-Kondensator.</p>
+            <ul class="gear-specs">
+              <li><span>Drum-Mics:</span><span>Audix D6, i5, D2, D4, SCX25A (8 Kapseln)</span></li>
+              <li><span>Raum & Kick:</span><span>Audix A231 Großmembran & ADX 60 Grenzfläche</span></li>
+            </ul>
+            <button class="gear-toggle-btn" aria-expanded="false">Tech Specs ▾</button>
+            <div class="gear-details">
+              <ul class="gear-bullet-list">
+                <li><strong>Audix D6 & ADX 60:</strong> Branchenstandard für Kick-Drum mit direktem Tiefbass-Punch und Klick-Definition</li>
+                <li><strong>Audix i5:</strong> Dynamisches Snare-Mikrofon mit exzellenter Transientenansprache und Durchsetzungsfähigkeit</li>
+                <li><strong>Audix SCX25A:</strong> Studio-Kondensatoren mit „Lollipop“-Kapsel für ein luftiges, seidiges Stereo-Beckenbild</li>
+                <li><strong>Audix A231:</strong> Goldbedampfte 33mm Kapsel für detailreiche Raumakustik und zusätzliche Instrumente/Vocals</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 4. Studio & Akustik -->
+          <div class="gear-card" data-category="studio" id="gear-studio">
+            <span class="gear-category">Studio & Akustik</span>
+            <h4 class="gear-name">Akustikraum & Regie</h4>
+            <p class="gear-desc">Akustisch optimierter Aufnahmeraum für Drums und Percussion mit variablen Kulissen (Akustik-Steinwand, Greenscreen, Bühnen-Lighting) und moderner Regie.</p>
+            <ul class="gear-specs">
+              <li><span>Akustik:</span><span>Breitband-Absorber, Diffusoren & Bassfallen</span></li>
+              <li><span>Hintergründe:</span><span>Steinwand, Greenscreen, Studio-Ambiente</span></li>
+            </ul>
+            <button class="gear-toggle-btn" aria-expanded="false">Tech Specs ▾</button>
+            <div class="gear-details">
+              <ul class="gear-bullet-list">
+                <li><strong>Akustik-Design:</strong> Kontrolliertes Ansprechverhalten für transparenten Drumsound ohne stehende Wellen</li>
+                <li><strong>Variable Kulissen:</strong> Hintergrund wählbar nach Musikstil – von rustikaler Steinwand bis zu modernem Clean-Look</li>
+                <li><strong>Beleuchtung:</strong> Dimmbare Video-Scheinwerfer und LED-Lichtröhren für stimmungsvolle Farbwelten</li>
+                <li><strong>Regie & Talkback:</strong> Sichtkontakt und klares Talkback-System zwischen Regie und Aufnahmeraum</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dezente Sektions-Trennlinie -->
+    <div class="section-divider"></div>
+
+    <!-- Studio Fotogalerie -->
+    <section id="gallery" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Galerie</span>
+          <h2 class="section-title">Blick ins Studio</h2>
+          <p class="section-desc">Klicke auf ein Bild für die Großansicht.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="images/drumset.jpg" alt="Schlagzeug Setup" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-caption">Schlagzeug Setup im Scheinwerferlicht</span>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="images/studio.jpg" alt="Aufnahmeraum Totale" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-caption">Aufnahmeraum Gesamteindruck</span>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="images/preamps.jpg" alt="High-End Röhren Preamps" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-caption">SPL & Warm Audio Preamps</span>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="images/splitset.jpg" alt="Drum Close-Up" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-caption">Kamera-Nahaufnahme Snare & Becken</span>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="images/mikrofon.jpg" alt="Audix Mikrofonierung" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-caption">Audix High-End Mikrofonierung</span>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="images/eingangII.JPG" alt="Studio Lounge" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-caption">Studio Lounge & Atmosphäre</span>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="images/hinten.jpg" alt="Rückansicht Drumset" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-caption">Akustikwand & Beleuchtung</span>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="images/stuhl.JPG" alt="Regieplatz" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-caption">Regie & Abhörplatz</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="gallery-lightbox" role="dialog" aria-modal="true">
+      <div class="lightbox-content">
+        <button class="lightbox-close" aria-label="Schließen">&times;</button>
+        <img src="" alt="Großansicht">
+        <div class="lightbox-caption"></div>
+      </div>
     </div>
 
-    <!-- BG -->
-    <div id="bg"></div>
+    <!-- Dezente Sektions-Trennlinie -->
+    <div class="section-divider"></div>
 
-    <!-- Scripts (mit defer) -->
-    <script src="assets/js/jquery.min.js" defer></script>
-    <script src="assets/js/browser.min.js" defer></script>
-    <script src="assets/js/breakpoints.min.js" defer></script>
-    <script src="assets/js/util.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
-  </body>
+    <!-- Kontakt & Buchung -->
+    <section id="contact" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Kontakt</span>
+          <h2 class="section-title">Plane deine Session</h2>
+          <p class="section-desc">Fragen zum Studio, Terminwünsche oder individuelle Vorhaben? Schreib uns direkt.</p>
+        </div>
+
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <h3 style="color:#fff; margin-bottom: 0.8rem; font-size:1.3rem;">Direkter Draht zum Studio</h3>
+            <p>
+              Fragen zum Studio, Terminwünsche oder individuelle Vorhaben? Schreib uns direkt oder übernimm deine Konfiguration aus dem Kalkulator oben.
+            </p>
+
+            <div class="contact-card-box">
+              <div class="contact-card-item">
+                <span class="icon">📍</span>
+                <div>
+                  <strong>Standort:</strong>
+                  <p style="margin:0; font-size:0.88rem;">DrumHub Studio • Mannheim</p>
+                </div>
+              </div>
+              <div class="contact-card-item">
+                <span class="icon">✉️</span>
+                <div>
+                  <strong>E-Mail:</strong>
+                  <p style="margin:0; font-size:0.88rem;"><a href="mailto:info@santinoscavelli.de">info@santinoscavelli.de</a></p>
+                </div>
+              </div>
+              <div class="contact-card-item">
+                <span class="icon">🥁</span>
+                <div>
+                  <strong>Inhaber & Kontakt:</strong>
+                  <p style="margin:0; font-size:0.88rem;">Santino Scavelli</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Schlanke Tab-Box: Google Maps & Google Kalender (2-Click DSGVO-konform) -->
+            <div class="contact-tabs-card" id="contact-multimedia-card">
+              <div class="contact-tabs-nav" role="tablist">
+                <button type="button" class="contact-tab-btn active" data-contact-tab="map" role="tab" aria-selected="true" id="tab-btn-map">
+                  📍 Anfahrt & Route
+                </button>
+                <button type="button" class="contact-tab-btn" data-contact-tab="calendar" role="tab" aria-selected="false" id="tab-btn-cal">
+                  📅 Freie Studio-Termine
+                </button>
+              </div>
+
+              <!-- Tab Pane 1: Google Maps Anfahrt -->
+              <div class="contact-tab-pane active" id="pane-map" role="tabpanel" aria-labelledby="tab-btn-map">
+                <div class="studio-map-header">
+                  <div class="map-header-title">
+                    <span class="map-icon">📍</span>
+                    <span><strong>DrumHub Studio</strong> • Mannheim</span>
+                  </div>
+                  <a href="https://www.google.com/maps/dir/?api=1&destination=DrumHub+Studio+Mannheim" target="_blank" rel="noopener noreferrer" class="map-route-btn" title="Route in Google Maps App öffnen">
+                    🧭 Route planen ↗
+                  </a>
+                </div>
+
+                <div class="studio-map-wrapper">
+                  <!-- 2-Click Consent Placeholder -->
+                  <div class="map-consent-placeholder" id="map-consent-placeholder">
+                    <div class="map-placeholder-bg"></div>
+                    <div class="map-consent-content">
+                      <div class="map-pulse-marker" aria-hidden="true">
+                        <span class="pulse-ring"></span>
+                        <span class="pulse-dot">🥁</span>
+                      </div>
+                      <h4>Interaktive Anfahrtskarte laden</h4>
+                      <p class="map-dsgvo-hint">
+                        Mit Klick auf „Karte aktivieren“ werden Daten von Google Maps geladen (DSGVO 2-Klick-Lösung).
+                      </p>
+                      <div class="map-btn-group">
+                        <button type="button" class="btn btn-sm btn-primary" id="load-map-btn">
+                          🗺️ Karte aktivieren
+                        </button>
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=DrumHub+Studio+Mannheim" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary">
+                          In Maps öffnen
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Iframe Container -->
+                  <div class="studio-map-frame" id="studio-map-frame" style="display:none;"></div>
+                </div>
+              </div>
+
+              <!-- Tab Pane 2: Google Kalender Termine -->
+              <div class="contact-tab-pane" id="pane-calendar" role="tabpanel" aria-labelledby="tab-btn-cal" style="display:none;">
+                <div class="studio-map-header">
+                  <div class="map-header-title">
+                    <span class="map-icon">📅</span>
+                    <span><strong>Google Kalender</strong> • Studio-Verfügbarkeit</span>
+                  </div>
+                  <a href="https://calendar.google.com" target="_blank" rel="noopener noreferrer" class="map-route-btn" title="In Google Kalender öffnen">
+                    In Kalender öffnen ↗
+                  </a>
+                </div>
+
+                <div class="studio-map-wrapper">
+                  <!-- 2-Click Consent Placeholder -->
+                  <div class="map-consent-placeholder" id="calendar-consent-placeholder">
+                    <div class="map-placeholder-bg"></div>
+                    <div class="map-consent-content">
+                      <div class="map-pulse-marker" aria-hidden="true">
+                        <span class="pulse-ring"></span>
+                        <span class="pulse-dot">📅</span>
+                      </div>
+                      <h4>Live-Verfügbarkeit prüfen</h4>
+                      <p class="map-dsgvo-hint">
+                        Lade den Google Kalender, um freie Tage und belegte Zeiten einzusehen (DSGVO 2-Klick-Lösung).
+                      </p>
+                      <div class="map-btn-group">
+                        <button type="button" class="btn btn-sm btn-primary" id="load-cal-btn">
+                          📅 Kalender aktivieren
+                        </button>
+                        <a href="https://calendar.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary">
+                          Google Kalender App
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Iframe Container -->
+                  <div class="studio-map-frame" id="studio-calendar-frame" style="display:none; width:100%; height:100%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <form class="contact-form" method="POST" action="https://formsubmit.co/info@santinoscavelli.de">
+              <input type="hidden" name="_subject" value="Neue Buchungsanfrage via drumhub.de">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://drumhub.de/danke.html">
+
+              <div class="form-group-row">
+                <div class="form-field">
+                  <label for="form-name">Dein Name *</label>
+                  <input type="text" id="form-name" name="name" placeholder="z. B. Max Mustermann" required>
+                </div>
+                <div class="form-field">
+                  <label for="form-email">E-Mail Adresse *</label>
+                  <input type="email" id="form-email" name="email" placeholder="deine@mail.de" required>
+                </div>
+              </div>
+
+              <div class="form-group-row">
+                <div class="form-field">
+                  <label for="form-date">Wunschdatum</label>
+                  <input type="date" id="form-date" name="wunschdatum">
+                </div>
+                <div class="form-field">
+                  <label for="form-slot">Bevorzugtes Zeitfenster</label>
+                  <select id="form-slot" name="zeitfenster">
+                    <option value="Nachmittag (ab 14:00 Uhr)" selected>Nachmittag (ab 14:00 Uhr)</option>
+                    <option value="Vormittag (ab 10:00 Uhr)">Vormittag (ab 10:00 Uhr)</option>
+                    <option value="Abend (ab 18:00 Uhr)">Abend (ab 18:00 Uhr)</option>
+                    <option value="Ganzer Tag (ab 10:00 Uhr)">Ganzer Tag (ab 10:00 Uhr)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group-row">
+                <div class="form-field">
+                  <label for="form-phone">Telefonnummer (optional)</label>
+                  <input type="tel" id="form-phone" name="phone" placeholder="+49 123 456789">
+                </div>
+                <div class="form-field">
+                  <label for="form-type">Art der Anfrage</label>
+                  <select id="form-type" name="anfrage_typ">
+                    <option value="Studiobuchung">Studiobuchung (Aufnahme)</option>
+                    <option value="Musikvideo-Produktion">Musikvideo-Produktion</option>
+                    <option value="Live-Stream">Live-Streaming / Content</option>
+                    <option value="Postproduktion">Postproduktion / Audio Mix</option>
+                    <option value="Allgemeine Frage">Allgemeine Frage</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="form-message">Nachricht / Konfiguration *</label>
+                <textarea id="form-message" name="message" rows="6" placeholder="Beschreibe dein Projekt oder klicke im Kalkulator auf 'In Anfrage übernehmen'..." required></textarea>
+              </div>
+
+              <label class="consent-check">
+                <input type="checkbox" required>
+                <span>Ich stimme der Datenverarbeitung gemäß der <a href="impressum.html#datenschutz">Datenschutzerklärung</a> zu.</span>
+              </label>
+
+              <button type="submit" class="btn btn-primary" style="align-self: flex-start;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                Anfrage absenden
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="#hero" class="brand-logo" style="margin-bottom: 0.8rem; display: inline-flex;">
+              <img src="images/drumhub-logo.png" alt="DrumHub Studio Logo" class="brand-logo-img">
+              <div class="brand-text">
+                <div class="brand-title-row">
+                  <span class="brand-dru">DRU</span><span class="brand-m">M</span><span class="brand-hub">HUB</span>
+                </div>
+                <div class="brand-studio">STUDIO</div>
+              </div>
+            </a>
+            <p>
+              High-End Ton- und Videostudio für professionelle Drums-, Percussion- und Musikeraufnahmen in Mannheim. Gegründet von Santino Scavelli.
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h5>Navigation</h5>
+            <ul class="footer-links">
+              <li><a href="#studio">Über das Studio</a></li>
+              <li><a href="#services">Leistungen & Preise</a></li>
+              <li><a href="#calculator">Preiskalkulator</a></li>
+              <li><a href="#equipment">Equipment-Liste</a></li>
+              <li><a href="#gallery">Fotogalerie</a></li>
+              <li><a href="#contact">Kontakt</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h5>Rechtliches & Datenschutz</h5>
+            <ul class="footer-links">
+              <li><a href="impressum.html">Impressum</a></li>
+              <li><a href="impressum.html#datenschutz">Datenschutzerklärung (DSGVO)</a></li>
+              <li><span style="color:var(--text-dim);">Bildnachweis: Santino Scavelli</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>&copy; 2026 DRUMHUB STUDIO. Alle Rechte vorbehalten.</div>
+          <div>Ton- & Videostudio Mannheim • santinoscavelli.de</div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Interaktives Service Detail Modal -->
+    <div class="service-modal" id="service-detail-modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="service-modal-card">
+        <button class="service-modal-close" id="service-modal-close" aria-label="Schließen">&times;</button>
+        <img src="images/drumset.jpg" alt="Service Detail" class="service-modal-img" id="service-modal-img">
+        <div class="service-modal-body">
+          <h3 class="service-modal-title" id="service-modal-title">Service Titel</h3>
+          <p class="service-modal-desc" id="service-modal-desc">Beschreibung des Serviceangebots...</p>
+          <ul class="service-modal-bullets" id="service-modal-bullets">
+            <!-- Dynamisch befüllt -->
+          </ul>
+          <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:1.5rem;">
+            <button class="btn btn-primary" id="service-modal-cta">
+              Jetzt im Kalkulator anfragen ➔
+            </button>
+            <button class="btn btn-secondary" id="service-modal-dismiss">
+              Schließen
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /#site-wrapper -->
+
+  <script src="js/app.js"></script>
+</body>
 </html>

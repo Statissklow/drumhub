@@ -1,0 +1,6 @@
+# robots.txt for DrumHub Studio (https://www.drumhub.de)
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.drumhub.de/sitemap.xml
