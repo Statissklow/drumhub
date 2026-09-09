@@ -195,10 +195,16 @@ a:hover {
 }
 
 .brand-logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 1.1rem;
   text-decoration: none;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.brand-logo:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
 }
 
 .brand-logo-img {
