@@ -1,0 +1,9 @@
+# Exclude unused/legacy media and scripts
+images/Drumset II.JPG
+images/Mikrofon GB Studio.JPG
+images/Splitset Close GB Studio.JPG
+images/fenster.JPG
+images/ganzstudio.JPG
+images/preamp III.JPG
+start-preview.bat
+push-to-github.bat
