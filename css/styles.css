@@ -2262,16 +2262,39 @@ input[type="range"] {
 
 .visualizer-svg-container {
   width: 100%;
-  height: 300px;
+  min-height: 480px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: radial-gradient(circle at 50% 50%, rgba(20, 26, 38, 0.98) 0%, rgba(10, 13, 20, 1) 100%);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid rgba(245, 158, 11, 0.3);
+  padding: 1.2rem;
+  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.85), 0 12px 35px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  position: relative;
 }
 
 .stage-svg {
   width: 100%;
-  height: 100%;
-  max-height: 300px;
+  height: auto;
+  min-height: 460px;
+  max-height: 580px;
+  display: block;
+}
+
+.svg-clickable-zone {
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.svg-clickable-zone:hover {
+  filter: drop-shadow(0 0 14px rgba(245, 158, 11, 0.85));
+}
+
+.svg-clickable-zone.active-zone {
+  filter: drop-shadow(0 0 18px rgba(245, 158, 11, 1));
 }
 
 /* Sound Character Meters */
@@ -2861,5 +2884,199 @@ input[type="range"] {
     width: 36px;
     height: 36px;
     font-size: 0.85rem;
+  }
+}
+
+
+/* ==========================================================================
+   Interactive Stage Inspector & Multi-Layering Console
+   ========================================================================== */
+.stage-inspector-card {
+  background: rgba(14, 18, 28, 0.95);
+  border: 1.5px solid rgba(245, 158, 11, 0.35);
+  border-radius: var(--radius-lg);
+  padding: 1.6rem;
+  margin-top: 1.8rem;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6), inset 0 0 30px rgba(245, 158, 11, 0.04);
+}
+
+.stage-inspector-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.stage-inspector-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+
+.inspector-pulse-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent-glow);
+  animation: pulse-ring 2s infinite ease-in-out;
+}
+
+.stage-inspector-hint {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+}
+
+/* Inspector Tabs Bar */
+.inspector-tabs-nav {
+  display: flex;
+  gap: 0.6rem;
+  overflow-x: auto;
+  padding-bottom: 0.6rem;
+  margin-bottom: 1.4rem;
+  scrollbar-width: thin;
+}
+
+.inspector-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  padding: 0.65rem 1.2rem;
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.inspector-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.inspector-tab-btn.active {
+  background: var(--accent);
+  color: #000;
+  border-color: var(--accent-light);
+  box-shadow: 0 0 16px var(--accent-glow);
+}
+
+/* Inspector Panes */
+.inspector-pane {
+  display: none;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.inspector-pane.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Layering Option Box & Pills */
+.layering-options-box {
+  background: rgba(10, 13, 20, 0.8);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: var(--radius-md);
+  padding: 1.2rem;
+  margin-top: 1.2rem;
+}
+
+.layering-options-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--accent-light);
+  margin-bottom: 0.4rem;
+}
+
+.layering-options-sub {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  margin-bottom: 0.8rem;
+}
+
+.layering-pills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.layering-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  user-select: none;
+}
+
+.layering-pill:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.layering-pill.active {
+  background: rgba(245, 158, 11, 0.22);
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.35);
+}
+
+.layering-pill.active .pill-check {
+  background: var(--accent);
+  color: #000;
+  border-color: var(--accent-light);
+}
+
+.pill-check {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+  background: rgba(0, 0, 0, 0.4);
+  transition: all var(--transition-fast);
+}
+
+@media (max-width: 768px) {
+  .visualizer-svg-container {
+    min-height: 380px;
+    padding: 0.5rem;
+  }
+  .stage-svg {
+    min-height: 360px;
+  }
+  .stage-inspector-card {
+    padding: 1.1rem;
   }
 }

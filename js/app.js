@@ -895,55 +895,67 @@ function initContactTabs() {
    ========================================================================== */
 const SOUND_PRESETS = {
   cinematic: {
-    name: 'Cinematic & Tribal Filmscore',
-    set: 'large',
-    snare: 'signature',
+    name: 'Cinematic Tribal & Movie Impact',
+    set: 'large',          // Tama Starclassic Maple 24"
+    snare: 'signature',    // Santino Scavelli Signature Konzept 16×3
+    snareLayers: ['smack'],
+    kickLayers: ['subkick', 'sub_drop'],
     percussion: ['frame', 'surdos', 'effects'],
     hybrid: ['reverb'],
-    preamp: 'spl_tube',
-    desc: 'Wuchtiges 24" Kessel-Fundament, breite 16" Signature Snare, tiefe Rahmentrommeln und atmosphärischer Reverb für filmische Grooves.'
+    preamp: 'subkick',
+    desc: 'Monumentale 24" Tama Starclassic Maple Kick mit DIY Focal Subkick & 808-Drop, 16" Signature Snare w/ Meinl Smack Stack, Meinl Mizhars & Bahia Surdo.'
   },
   funk: {
-    name: '70s Vintage Soul & Funk',
-    set: 'medium',
-    snare: 'vintage',
-    percussion: ['congas', 'pandeiro'],
-    hybrid: [],
-    preamp: 'warm_audio',
-    desc: 'Knackige 20" Kick, 14×7 Tama Superstar Vintage Snare mit Neve-Style Preamps und warmen Holz-Congas.'
-  },
-  pop: {
-    name: 'Modern High-End Pop & Rock',
-    set: 'studio',
-    snare: 'bronze',
-    percussion: ['shakers'],
+    name: '70s Vintage Funk & Pocket',
+    set: 'medium',         // Tama Rockstar 20"
+    snare: 'alu',          // Tama S.L.P. Classic Dry Aluminum 14×5.5
+    snareLayers: ['chingring'],
+    kickLayers: ['subkick'],
+    percussion: ['shakers', 'congas'],
     hybrid: ['prophet'],
     preamp: 'spl_tube',
-    desc: 'Universelles 22" Studioset, durchsetzungsstarke Bronze-Snare, SPL Röhrenwärme und dezente analoge Synth-Bässe.'
+    desc: 'Trockener Tama Rockstar 20" Funkpunch, Tama S.L.P. Aluminium Snare mit Meinl Ching Ring, Meinl Shaker und SPL GoldMike Röhrenwärme.'
+  },
+  pop: {
+    name: 'Modern Radio Pop & Rock',
+    set: 'studio',         // Tama Starclassic Performer 22"
+    snare: 'bronze',       // Tama Brann Dailor Signature Bronze 14×6.5
+    snareLayers: ['chingring', 'sensory'],
+    kickLayers: ['subkick', 'roland_kick'],
+    percussion: ['congas', 'shakers'],
+    hybrid: ['prophet', 'sensory'],
+    preamp: 'spl_tube',
+    desc: 'Tama Starclassic Performer 22" Allrounder, Tama Bronze Snare w/ Evans Sensory Trigger, Roland Kick Trigger und Sequential Prophet-6 Synth.'
   },
   world: {
     name: 'Sphärische Weltmusik & Handpan',
-    set: 'compact',
-    snare: 'timbale_jingle',
+    set: 'compact',        // Tama STAR Maple 18"
+    snare: 'timbale_jingle', // Tama Holz Jingle Snare 10×3.5
+    snareLayers: ['chingring'],
+    kickLayers: ['bassbox'],
     percussion: ['handpan', 'steeltongue', 'kalimba', 'cajon'],
     hybrid: ['reverb'],
     preamp: 'clean',
-    desc: 'Meditation & Rhythmus: 10-Ton D-Kurd Handpan, Steel Tongue Drum, afrikanische Kalimbas und perkussive Timbale-Snare.'
+    desc: 'Tama STAR Maple 18", Meinl Sonic Energy Handpan D-Kurd (10 Töne), Steel Tongue Drum, Kalimbas und Meinl Bass Box PBASSBOX.'
   },
   hybrid: {
     name: 'Hybrid Electro-Acoustic Lab',
-    set: 'compact',
-    snare: 'piccolo',
+    set: 'compact',        // Tama STAR Maple 18"
+    snare: 'piccolo',      // Tama Maple Piccolo 13×3.5
+    snareLayers: ['sensory', 'roland_snap'],
+    kickLayers: ['subkick', 'sub_drop', 'roland_kick'],
     percussion: ['shakers'],
     hybrid: ['sensory', 'nord_drum', 'prophet', 'loupe'],
     preamp: 'warm_audio',
-    desc: 'Die Verschmelzung zweier Welten: Sensory Percussion Trigger, Nord Drum 3P, analoger Prophet-6 Bass und Live-Loops.'
+    desc: 'Evans Sensory Percussion 10-Zonen Trigger, Nord Drum 3P, Sequential Prophet-6, Behringer 808 Sub-Drop und Glou-Glou Loupé.'
   }
 };
 
 let architectState = {
   set: 'studio',
   snare: 'bronze',
+  snareLayers: ['chingring'],
+  kickLayers: ['subkick'],
   percussion: ['congas', 'shakers'],
   hybrid: ['prophet'],
   preamp: 'spl_tube'
@@ -954,7 +966,7 @@ function initSoundArchitect() {
   if (!container) return;
 
   // Preset Buttons
-  const presetBtns = container.querySelectorAll('.architect-preset-btn');
+  const presetBtns = document.querySelectorAll('.architect-preset-btn');
   presetBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const pKey = btn.dataset.preset;
@@ -967,7 +979,7 @@ function initSoundArchitect() {
   });
 
   // Drumset Chips (Single Select)
-  const setChips = container.querySelectorAll('[data-architect-set]');
+  const setChips = document.querySelectorAll('[data-architect-set]');
   setChips.forEach(chip => {
     chip.addEventListener('click', () => {
       setChips.forEach(c => c.classList.remove('selected'));
@@ -978,7 +990,7 @@ function initSoundArchitect() {
   });
 
   // Snare Chips (Single Select)
-  const snareChips = container.querySelectorAll('[data-architect-snare]');
+  const snareChips = document.querySelectorAll('[data-architect-snare]');
   snareChips.forEach(chip => {
     chip.addEventListener('click', () => {
       snareChips.forEach(c => c.classList.remove('selected'));
@@ -988,8 +1000,42 @@ function initSoundArchitect() {
     });
   });
 
+  // Snare Layering Multi-Select Pills
+  const snareLayerPills = document.querySelectorAll('[data-snare-layer]');
+  snareLayerPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      const layerId = pill.dataset.snareLayer;
+      const idx = architectState.snareLayers.indexOf(layerId);
+      if (idx > -1) {
+        architectState.snareLayers.splice(idx, 1);
+        pill.classList.remove('active');
+      } else {
+        architectState.snareLayers.push(layerId);
+        pill.classList.add('active');
+      }
+      updateArchitectVisualizer();
+    });
+  });
+
+  // Kick Layering Multi-Select Pills
+  const kickLayerPills = document.querySelectorAll('[data-kick-layer]');
+  kickLayerPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      const layerId = pill.dataset.kickLayer;
+      const idx = architectState.kickLayers.indexOf(layerId);
+      if (idx > -1) {
+        architectState.kickLayers.splice(idx, 1);
+        pill.classList.remove('active');
+      } else {
+        architectState.kickLayers.push(layerId);
+        pill.classList.add('active');
+      }
+      updateArchitectVisualizer();
+    });
+  });
+
   // Percussion Multi-select Pills
-  const percPills = container.querySelectorAll('[data-architect-perc]');
+  const percPills = document.querySelectorAll('[data-architect-perc]');
   percPills.forEach(pill => {
     pill.addEventListener('click', () => {
       const val = pill.dataset.architectPerc;
@@ -997,16 +1043,18 @@ function initSoundArchitect() {
       if (idx > -1) {
         architectState.percussion.splice(idx, 1);
         pill.classList.remove('selected');
+        pill.classList.remove('active');
       } else {
         architectState.percussion.push(val);
         pill.classList.add('selected');
+        pill.classList.add('active');
       }
       updateArchitectVisualizer();
     });
   });
 
   // Hybrid Multi-select Pills
-  const hybridPills = container.querySelectorAll('[data-architect-hybrid]');
+  const hybridPills = document.querySelectorAll('[data-architect-hybrid]');
   hybridPills.forEach(pill => {
     pill.addEventListener('click', () => {
       const val = pill.dataset.architectHybrid;
@@ -1014,16 +1062,18 @@ function initSoundArchitect() {
       if (idx > -1) {
         architectState.hybrid.splice(idx, 1);
         pill.classList.remove('selected');
+        pill.classList.remove('active');
       } else {
         architectState.hybrid.push(val);
         pill.classList.add('selected');
+        pill.classList.add('active');
       }
       updateArchitectVisualizer();
     });
   });
 
   // Preamp Chips (Single Select)
-  const preampChips = container.querySelectorAll('[data-architect-preamp]');
+  const preampChips = document.querySelectorAll('[data-architect-preamp]');
   preampChips.forEach(chip => {
     chip.addEventListener('click', () => {
       preampChips.forEach(c => c.classList.remove('selected'));
@@ -1040,6 +1090,12 @@ function initSoundArchitect() {
       transferSoundRecipeToForm();
     });
   }
+
+  // Interactive SVG Graphic Zones Direct Click System
+  initInteractiveSvgZones();
+
+  // Interactive Layering Console Tabs
+  initStageInspectorTabs();
 
   // Wizard Multi-Step Navigation
   const stepItems = document.querySelectorAll('.wizard-step-item');
@@ -1098,79 +1154,138 @@ function initSoundArchitect() {
   updateArchitectVisualizer();
 }
 
+function initInteractiveSvgZones() {
+  const zones = document.querySelectorAll('.svg-clickable-zone');
+  zones.forEach(zone => {
+    zone.addEventListener('click', () => {
+      const zoneType = zone.dataset.zone;
+      zones.forEach(z => z.classList.remove('active-zone'));
+      zone.classList.add('active-zone');
+      
+      // Open the corresponding tab in the Stage Inspector
+      openInspectorTab(zoneType);
+    });
+  });
+}
+
+function initStageInspectorTabs() {
+  const tabBtns = document.querySelectorAll('.inspector-tab-btn');
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetTab = btn.dataset.inspectorTab;
+      openInspectorTab(targetTab);
+    });
+  });
+}
+
+function openInspectorTab(tabId) {
+  const tabBtns = document.querySelectorAll('.inspector-tab-btn');
+  const panes = document.querySelectorAll('.inspector-pane');
+
+  tabBtns.forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.inspectorTab === tabId);
+  });
+
+  panes.forEach(pane => {
+    pane.classList.toggle('active', pane.id === 'inspector-pane-' + tabId);
+  });
+
+  // Smooth scroll inspector into view if needed
+  const inspector = document.getElementById('stage-inspector');
+  if (inspector && window.innerWidth < 900) {
+    inspector.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+}
+
 function applyArchitectPreset(key) {
   const p = SOUND_PRESETS[key];
   if (!p) return;
 
   architectState.set = p.set;
   architectState.snare = p.snare;
+  architectState.snareLayers = p.snareLayers ? [...p.snareLayers] : [];
+  architectState.kickLayers = p.kickLayers ? [...p.kickLayers] : [];
   architectState.percussion = [...p.percussion];
   architectState.hybrid = [...p.hybrid];
   architectState.preamp = p.preamp;
 
-  // Sync UI elements
-  const container = document.getElementById('sound-architect');
-  if (!container) return;
-
-  container.querySelectorAll('[data-architect-set]').forEach(c => {
-    c.classList.toggle('selected', c.dataset.architectSet === p.set);
-  });
-  container.querySelectorAll('[data-architect-snare]').forEach(c => {
-    c.classList.toggle('selected', c.dataset.architectSnare === p.snare);
-  });
-  container.querySelectorAll('[data-architect-perc]').forEach(pill => {
-    pill.classList.toggle('selected', p.percussion.includes(pill.dataset.architectPerc));
-  });
-  container.querySelectorAll('[data-architect-hybrid]').forEach(pill => {
-    pill.classList.toggle('selected', p.hybrid.includes(pill.dataset.architectHybrid));
-  });
-  container.querySelectorAll('[data-architect-preamp]').forEach(c => {
-    c.classList.toggle('selected', c.dataset.architectPreamp === p.preamp);
-  });
-
+  // Sync UI elements across page
+  syncAllArchitectControls();
   updateArchitectVisualizer();
 }
 
-function updateArchitectVisualizer() {
-  const container = document.getElementById('sound-architect');
-  if (!container) return;
+function syncAllArchitectControls() {
+  // Sync Drumset
+  document.querySelectorAll('[data-architect-set]').forEach(c => {
+    c.classList.toggle('selected', c.dataset.architectSet === architectState.set);
+  });
+  // Sync Snare
+  document.querySelectorAll('[data-architect-snare]').forEach(c => {
+    c.classList.toggle('selected', c.dataset.architectSnare === architectState.snare);
+  });
+  // Sync Snare Layers
+  document.querySelectorAll('[data-snare-layer]').forEach(pill => {
+    pill.classList.toggle('active', architectState.snareLayers.includes(pill.dataset.snareLayer));
+  });
+  // Sync Kick Layers
+  document.querySelectorAll('[data-kick-layer]').forEach(pill => {
+    pill.classList.toggle('active', architectState.kickLayers.includes(pill.dataset.kickLayer));
+  });
+  // Sync Percussion
+  document.querySelectorAll('[data-architect-perc]').forEach(pill => {
+    const isAct = architectState.percussion.includes(pill.dataset.architectPerc);
+    pill.classList.toggle('selected', isAct);
+    pill.classList.toggle('active', isAct);
+  });
+  // Sync Hybrid
+  document.querySelectorAll('[data-architect-hybrid]').forEach(pill => {
+    const isAct = architectState.hybrid.includes(pill.dataset.architectHybrid);
+    pill.classList.toggle('selected', isAct);
+    pill.classList.toggle('active', isAct);
+  });
+  // Sync Preamp
+  document.querySelectorAll('[data-architect-preamp]').forEach(c => {
+    c.classList.toggle('selected', c.dataset.architectPreamp === architectState.preamp);
+  });
+}
 
-  // 1. Kick Diameter & Label based on Set
+function updateArchitectVisualizer() {
+  // 1. Kick Diameter & Tama Model Label
   const kickRadiusMap = {
-    compact: { r: 38, label: '18" Jazz Kick', sub: 'Trocken & Resonant' },
-    medium: { r: 44, label: '20" Funk Kick', sub: 'Knackig & Fokussiert' },
-    studio: { r: 50, label: '22" Studio Kick', sub: 'Punchy Allrounder' },
-    large: { r: 56, label: '24" Deep Kick', sub: 'Massives Fundament' }
+    compact: { r: 52, label: 'Tama STAR Maple 18"', sub: '18×14 Jazz & Besen' },
+    medium: { r: 60, label: 'Tama Rockstar 20"', sub: '20×16 Funk & Pop' },
+    studio: { r: 68, label: 'Tama Starclassic 22"', sub: '22×18 Studio Allrounder' },
+    large: { r: 76, label: 'Tama Starclassic 24"', sub: '24×20 Cinematic Rock' }
   };
   const kickData = kickRadiusMap[architectState.set] || kickRadiusMap.studio;
 
-  // 2. Snare color & label
+  // 2. Snare color & Tama Model label
   const snareMap = {
-    alu: { color: '#cbd5e1', label: '14" Aluminium (Trocken)' },
-    bronze: { color: '#f59e0b', label: '14" Bronze (Voller Rimshot)' },
-    vintage: { color: '#d97706', label: '14" Tama Superstar (Vintage)' },
-    piccolo: { color: '#fbbf24', label: '13" Piccolo (Scharfer Funk)' },
-    timbale_jingle: { color: '#a855f7', label: '10" Holz Timbale w/ Jingles' },
-    signature: { color: '#ec4899', label: '16" Signature Snare (Deep)' }
+    alu: { color: '#cbd5e1', label: 'Tama S.L.P. Dry Aluminum 14×5.5' },
+    bronze: { color: '#f59e0b', label: 'Tama Brann Dailor Bronze 14×6.5' },
+    vintage: { color: '#d97706', label: 'Tama Vintage Superstar 14×7' },
+    piccolo: { color: '#fbbf24', label: 'Tama Maple Piccolo 13×3.5' },
+    timbale_jingle: { color: '#a855f7', label: 'Tama Holz Jingle Snare 10×3.5' },
+    signature: { color: '#ec4899', label: 'Santino Signature Snare 16×3' }
   };
   const snareData = snareMap[architectState.snare] || snareMap.bronze;
 
   // 3. Preamp color & label
   const preampMap = {
-    clean: { label: 'MOTU 828es (Präzise & Transparent)', meter: 60 },
-    spl_tube: { label: 'SPL GoldMike Mk2 (Röhren-Wärme)', meter: 88 },
-    warm_audio: { label: 'Warm Audio Neve/API (Übertrager-Druck)', meter: 95 },
-    subkick: { label: 'Subkick & Röhren (Subbass-Fundament)', meter: 92 }
+    clean: { label: 'MOTU 828es (Präzise 32-Spur Wandlung)', meter: 60 },
+    spl_tube: { label: 'SPL GoldMike Mk2 (Diskrete Röhren-Wärme)', meter: 88 },
+    warm_audio: { label: 'Warm Audio WA-273 / WA-412 (Neve/API)', meter: 95 },
+    subkick: { label: 'DIY Focal Subkick & SPL Röhren-Kette', meter: 92 }
   };
   const preampData = preampMap[architectState.preamp] || preampMap.spl_tube;
 
   // 4. Update SVG Graphic elements
   const svg = document.getElementById('stage-svg');
   if (svg) {
+    // Center Kick elements
     const kickCircle = svg.querySelector('#svg-kick-circle');
     const kickText = svg.querySelector('#svg-kick-text');
-    const snareCircle = svg.querySelector('#svg-snare-circle');
-    const snareText = svg.querySelector('#svg-snare-text');
+    const kickSubText = svg.querySelector('#svg-kick-subtext');
 
     if (kickCircle) {
       kickCircle.setAttribute('r', kickData.r);
@@ -1178,12 +1293,61 @@ function updateArchitectVisualizer() {
     if (kickText) {
       kickText.textContent = kickData.label;
     }
+    if (kickSubText) {
+      kickSubText.textContent = kickData.sub;
+    }
+
+    // Snare elements
+    const snareCircle = svg.querySelector('#svg-snare-circle');
+    const snareText = svg.querySelector('#svg-snare-text');
+
     if (snareCircle) {
       snareCircle.setAttribute('stroke', snareData.color);
-      snareCircle.setAttribute('fill', snareData.color + '22');
+      snareCircle.setAttribute('fill', snareData.color + '33');
     }
     if (snareText) {
-      snareText.textContent = snareData.label;
+      snareText.textContent = snareData.label.replace('Tama ', '');
+    }
+
+    // Snare Layer Overlays in SVG
+    const layerChing = svg.querySelector('#svg-snare-layer-chingring');
+    const layerSensory = svg.querySelector('#svg-snare-layer-sensory');
+    const layerSmack = svg.querySelector('#svg-snare-layer-smack');
+
+    if (layerChing) {
+      const isAct = architectState.snareLayers.includes('chingring');
+      layerChing.style.opacity = isAct ? '1' : '0';
+      layerChing.style.pointerEvents = isAct ? 'auto' : 'none';
+    }
+    if (layerSensory) {
+      const isAct = architectState.snareLayers.includes('sensory');
+      layerSensory.style.opacity = isAct ? '1' : '0';
+      layerSensory.style.pointerEvents = isAct ? 'auto' : 'none';
+    }
+    if (layerSmack) {
+      const isAct = architectState.snareLayers.includes('smack');
+      layerSmack.style.opacity = isAct ? '1' : '0';
+      layerSmack.style.pointerEvents = isAct ? 'auto' : 'none';
+    }
+
+    // Kick Layer Overlays in SVG
+    const kickSubkick = svg.querySelector('#svg-kick-layer-subkick');
+    const kickTrigger = svg.querySelector('#svg-kick-layer-trigger');
+    const kickSubwave = svg.querySelector('#svg-kick-layer-subwave');
+
+    if (kickSubkick) {
+      const isAct = architectState.kickLayers.includes('subkick');
+      kickSubkick.style.opacity = isAct ? '1' : '0';
+      kickSubkick.style.pointerEvents = isAct ? 'auto' : 'none';
+    }
+    if (kickTrigger) {
+      const isAct = architectState.kickLayers.includes('roland_kick');
+      kickTrigger.style.opacity = isAct ? '1' : '0';
+      kickTrigger.style.pointerEvents = isAct ? 'auto' : 'none';
+    }
+    if (kickSubwave) {
+      const isAct = architectState.kickLayers.includes('sub_drop');
+      kickSubwave.style.opacity = isAct ? '1' : '0';
     }
 
     // Toggle Percussion Satellite visual nodes
@@ -1191,7 +1355,7 @@ function updateArchitectVisualizer() {
     percNodes.forEach(node => {
       const pId = node.dataset.svgPerc;
       const isActive = architectState.percussion.includes(pId);
-      node.style.opacity = isActive ? '1' : '0.2';
+      node.style.opacity = isActive ? '1' : '0.22';
       node.classList.toggle('svg-active-glow', isActive);
     });
 
@@ -1200,14 +1364,14 @@ function updateArchitectVisualizer() {
     hybridNodes.forEach(node => {
       const hId = node.dataset.svgHybrid;
       const isActive = architectState.hybrid.includes(hId);
-      node.style.opacity = isActive ? '1' : '0.2';
+      node.style.opacity = isActive ? '1' : '0.22';
       node.classList.toggle('svg-active-glow', isActive);
     });
 
     // Preamp Node
-    const preampNode = svg.querySelector('#svg-preamp-node');
-    if (preampNode) {
-      preampNode.classList.add('svg-active-glow');
+    const preampText = svg.querySelector('#svg-preamp-text');
+    if (preampText) {
+      preampText.textContent = preampData.label;
     }
   }
 
@@ -1230,6 +1394,23 @@ function updateArchitectVisualizer() {
     room += 15;
   }
 
+  // Layering bonuses
+  if (architectState.kickLayers.includes('subkick')) {
+    punch += 15;
+    warmth += 10;
+  }
+  if (architectState.kickLayers.includes('sub_drop')) {
+    hybridScore += 20;
+    punch += 15;
+  }
+  if (architectState.snareLayers.includes('chingring')) {
+    warmth += 10;
+    room += 10;
+  }
+  if (architectState.snareLayers.includes('sensory')) {
+    hybridScore += 25;
+  }
+
   if (architectState.percussion.includes('handpan') || architectState.percussion.includes('steeltongue')) {
     warmth += 20;
     room += 25;
@@ -1247,7 +1428,7 @@ function updateArchitectVisualizer() {
     hybridScore += 25;
   }
   if (architectState.hybrid.includes('prophet') || architectState.hybrid.includes('sensory') || architectState.hybrid.includes('nord_drum')) {
-    hybridScore += 45;
+    hybridScore += 35;
     punch += 10;
   }
 
@@ -1262,14 +1443,14 @@ function updateArchitectVisualizer() {
   hybridScore = Math.min(100, Math.max(10, hybridScore));
 
   // Update Radar Bars
-  const pBar = container.querySelector('#radar-punch-fill');
-  const pVal = container.querySelector('#radar-punch-val');
-  const wBar = container.querySelector('#radar-warmth-fill');
-  const wVal = container.querySelector('#radar-warmth-val');
-  const rBar = container.querySelector('#radar-room-fill');
-  const rVal = container.querySelector('#radar-room-val');
-  const hBar = container.querySelector('#radar-hybrid-fill');
-  const hVal = container.querySelector('#radar-hybrid-val');
+  const pBar = document.getElementById('radar-punch-fill');
+  const pVal = document.getElementById('radar-punch-val');
+  const wBar = document.getElementById('radar-warmth-fill');
+  const wVal = document.getElementById('radar-warmth-val');
+  const rBar = document.getElementById('radar-room-fill');
+  const rVal = document.getElementById('radar-room-val');
+  const hBar = document.getElementById('radar-hybrid-fill');
+  const hVal = document.getElementById('radar-hybrid-val');
 
   if (pBar) pBar.style.width = punch + '%';
   if (pVal) pVal.textContent = punch + '%';
@@ -1280,35 +1461,67 @@ function updateArchitectVisualizer() {
   if (hBar) hBar.style.width = hybridScore + '%';
   if (hVal) hVal.textContent = hybridScore + '%';
 
-  // 6. Generate Recipe Text
-  const percLabels = {
-    congas: 'Congas & Bongos',
-    frame: 'Rahmentrommeln & Tars',
-    handpan: 'Handpan D-Kurd',
-    steeltongue: 'Octave Tongue Drum',
-    shakers: 'Shaker & Caxixis',
-    cajon: 'Artisan Cajon & Bass Box',
-    surdos: 'Surdos & Djembes',
-    effects: 'Naturklänge (Rainmaker, Sea Drum)'
+  // 6. Generate Recipe Text with Full Exact Brands & Layerings
+  const snareLayerLabels = {
+    chingring: 'Meinl Ching Ring (CRING)',
+    smack: 'Meinl Vintage Smack Stack',
+    sensory: 'Evans Sensory Percussion AI Trigger',
+    roland_snap: 'Roland Dual-Trigger Snap'
   };
+
+  const kickLayerLabels = {
+    subkick: 'DIY Focal Polyflex 8 Subkick',
+    sub_drop: 'Behringer Model D / 808 Sub-Drop',
+    roland_kick: 'Roland RT-30K Hybrid Trigger',
+    bassbox: 'Meinl Bass Box PBASSBOX'
+  };
+
+  const percLabels = {
+    congas: 'Meinl Artist Congas & Bongos',
+    frame: 'Meinl Tars & Mizhars',
+    handpan: 'Meinl Sonic Energy Handpan D-Kurd',
+    steeltongue: 'Meinl Octave Tongue Drum',
+    kalimba: 'Meinl Sonic Energy Kalimbas',
+    shakers: 'Meinl Shaker, Caxixis & Guiros',
+    cajon: 'Meinl Artisan Cajon & Bass Box',
+    surdos: 'Meinl Bahia Surdo 18"',
+    effects: 'Meinl Regenmacher & Sea Drum'
+  };
+
   const hybridLabels = {
-    prophet: 'Prophet-6 Analog Bass/Chords',
-    nord_drum: 'Nord Drum 3P Synths',
-    sensory: 'Sensory Percussion Portal',
-    reverb: 'Empress Reverb & Delay',
-    loupe: 'Glou-Glou Loupé Granular-Looper'
+    prophet: 'Sequential Prophet-6',
+    nord_drum: 'Nord Drum 3P',
+    sensory: 'Evans Sensory Percussion Portal',
+    reverb: 'Empress Reverb & Echosystem',
+    loupe: 'Glou-Glou Loupé Looper'
   };
 
   const activePercList = architectState.percussion.map(k => percLabels[k] || k);
   const activeHybridList = architectState.hybrid.map(k => hybridLabels[k] || k);
 
   let recipeParts = [];
-  recipeParts.push(`Set: ${kickData.label} + ${snareData.label}`);
-  if (activePercList.length) recipeParts.push(`Percussion: ${activePercList.join(', ')}`);
-  if (activeHybridList.length) recipeParts.push(`Hybride Elektronik: ${activeHybridList.join(', ')}`);
-  recipeParts.push(`Preamp-Färbung: ${preampData.label}`);
 
-  const recipeBox = container.querySelector('#sound-recipe-text');
+  // Drumset & Kick Layering
+  let kickLayerText = '';
+  if (architectState.kickLayers && architectState.kickLayers.length) {
+    const kNames = architectState.kickLayers.map(k => kickLayerLabels[k] || k);
+    kickLayerText = ` [+ ${kNames.join(' & ')}]`;
+  }
+  recipeParts.push(`🥁 Drumset: ${kickData.label}${kickLayerText}`);
+
+  // Snare & Snare Layering
+  let snareLayerText = '';
+  if (architectState.snareLayers && architectState.snareLayers.length) {
+    const sNames = architectState.snareLayers.map(s => snareLayerLabels[s] || s);
+    snareLayerText = ` [+ ${sNames.join(' & ')}]`;
+  }
+  recipeParts.push(`🎯 Snare: ${snareData.label}${snareLayerText}`);
+
+  if (activePercList.length) recipeParts.push(`🪘 World Percussion: ${activePercList.join(', ')}`);
+  if (activeHybridList.length) recipeParts.push(`🎹 Synthesizer & Hybrid: ${activeHybridList.join(', ')}`);
+  recipeParts.push(`🎛️ Preamps: ${preampData.label}`);
+
+  const recipeBox = document.getElementById('sound-recipe-text');
   if (recipeBox) {
     recipeBox.innerHTML = `<strong>Klang-Rezept:</strong> ${recipeParts.join(' • ')}`;
   }
@@ -1341,475 +1554,816 @@ function transferSoundRecipeToForm() {
    14. Klangkatalog - Das umfassende DrumHub Instrumentarium & Sound Vault
    ========================================================================== */
 const SOUND_CATALOG_DATA = [
-  // 1. Akustische Drumsets
   {
-    cat: 'drumsets',
-    catLabel: 'Drumsets',
-    name: 'Kompaktes Akustik-Set (18 × 14, 12, 14)',
-    model: '18" Kick, 12" Tom, 14" Floor Tom',
-    sounds: 'Offene Jazzsounds, kleine trockene Kick, resonante Toms, Besengrooves, leise feindynamische Begleitung.',
-    tags: ['Jazz', 'Trocken', 'Besen', 'Akustisch', 'Dynamisch'],
-    setTarget: 'compact'
+    "cat": "drumsets",
+    "catLabel": "Drumsets",
+    "name": "Tama STAR Maple (18 × 14, 12, 14)",
+    "model": "Tama STAR Maple – 18×14 Bassdrum, 12×8 Tom, 14×14 Floor Tom",
+    "sounds": "Offene Jazzsounds, kleine trockene Kick, resonante Ahorntoms, Besengrooves, leise feindynamische Begleitung.",
+    "tags": [
+      "Tama",
+      "STAR Maple",
+      "Jazz",
+      "Trocken",
+      "Besen",
+      "Akustisch"
+    ],
+    "setTarget": "compact"
   },
   {
-    cat: 'drumsets',
-    catLabel: 'Drumsets',
-    name: 'Mittleres Funk- & Pop-Set (20 × 16, 10, 12, 14)',
-    model: '20" Kick, 10", 12" & 14" Toms',
-    sounds: 'Kurze Funkkick, direkte Popsounds, knackige Toms, gedämpfte Retro-Grooves mit schnellem Punch.',
-    tags: ['Funk', 'Pop', 'Knackig', 'Retro', 'Fokussiert'],
-    setTarget: 'medium'
+    "cat": "drumsets",
+    "catLabel": "Drumsets",
+    "name": "Tama Rockstar (20 × 16, 10, 12, 14)",
+    "model": "Tama Rockstar – 20×16 Bassdrum, 10, 12 & 14 Toms",
+    "sounds": "Kurze Funkkick, direkte Popsounds, knackige Toms, gedämpfte Retro-Grooves mit schnellem Punch.",
+    "tags": [
+      "Tama",
+      "Rockstar",
+      "Funk",
+      "Pop",
+      "Knackig",
+      "Retro"
+    ],
+    "setTarget": "medium"
   },
   {
-    cat: 'drumsets',
-    catLabel: 'Drumsets',
-    name: 'Studioset Allrounder (22 × 18, 10, 12, 14, 16)',
-    model: '22" Kick, 10", 12", 14" & 16" Toms',
-    sounds: 'Vielseitige Pop- und Rockdrums, trockene tiefe Grooves, offene Fills, breite Raumaufnahmen für Alben.',
-    tags: ['Rock', 'Pop', 'Universell', 'Mehrspur', 'Punch'],
-    setTarget: 'studio'
+    "cat": "drumsets",
+    "catLabel": "Drumsets",
+    "name": "Tama Starclassic Performer Maple/Birch (22 × 18, 10, 12, 14, 16)",
+    "model": "Tama Starclassic Performer Maple/Birch – 22×18 Bassdrum, 10, 12, 14 & 16 Toms",
+    "sounds": "Vielseitige Pop- und Rockdrums, trockene tiefe Grooves, offene Fills, breite Raumaufnahmen für Studio-Alben.",
+    "tags": [
+      "Tama",
+      "Starclassic Performer",
+      "Ahorn/Birke",
+      "Studio",
+      "Allrounder"
+    ],
+    "setTarget": "studio"
   },
   {
-    cat: 'drumsets',
-    catLabel: 'Drumsets',
-    name: 'Großes Kessel-Set (24 × 20, 13, 14, 16)',
-    model: '24" Kick, 13", 14" & 16" Floor Toms',
-    sounds: 'Tiefe Bassdrum, schwere Akzente, große Tomfiguren, langsame druckvolle Grooves, filmische Trommelschläge.',
-    tags: ['Cinematic', 'Heavy', 'Tiefe', 'Rock', 'Filmscore'],
-    setTarget: 'large'
+    "cat": "drumsets",
+    "catLabel": "Drumsets",
+    "name": "Tama Starclassic Maple (24 × 20, 13, 14, 16)",
+    "model": "Tama Starclassic Maple – 24×20 Bassdrum, 13, 14 & 16 Floor Toms",
+    "sounds": "Tiefe Bassdrum, schwere Akzente, große Tomfiguren, langsame druckvolle Grooves, filmische Trommelschläge.",
+    "tags": [
+      "Tama",
+      "Starclassic Maple",
+      "Cinematic",
+      "24 Zoll",
+      "Wuchtig",
+      "Heavy Rock"
+    ],
+    "setTarget": "large"
   },
   {
-    cat: 'drumsets',
-    catLabel: 'Drumsets',
-    name: 'Resonierende Kessel & Spannreifen',
-    model: 'Akustische Holz- & Metallkessel',
-    sounds: 'Mitschwingende Texturen, Nachklänge anderer Instrumente, holzige Klicks, metallische Rim-Akzente, trockene Nebengeräusche.',
-    tags: ['Textur', 'Obertöne', 'Resonanz', 'Rimclick']
-  },
-
-  // 2. 16 Master Snares
-  {
-    cat: 'snares',
-    catLabel: '16 Snares',
-    name: 'Aluminium Snare 14 × 5,5',
-    model: '14 × 5.5 Seamless Alu Shell',
-    sounds: 'Trockener Backbeat, feine Ghostnotes, kurze Akzente, Besen, kontrollierte offene Schläge ohne störendes Nachhallen.',
-    tags: ['Trocken', 'Ghostnotes', 'Funk', 'Besen'],
-    snareTarget: 'alu'
+    "cat": "drumsets",
+    "catLabel": "Drumsets",
+    "name": "Tama Kessel & Spannreifen Resonanzen",
+    "model": "Tama Die-Cast Hoops & Resonanzkessel",
+    "sounds": "Holzige Klicks, metallische Randakzente, Rimclicks, mitschwingende Texturen und gezielte Obertöne.",
+    "tags": [
+      "Tama",
+      "Rimclicks",
+      "Resonanz",
+      "Akzent",
+      "Textur"
+    ]
   },
   {
-    cat: 'snares',
-    catLabel: '16 Snares',
-    name: 'Bronze Snare 14 × 6,5',
-    model: '14 × 6.5 Heavy Bronze',
-    sounds: 'Voller Backbeat, kräftige Rimshots, singende Obertöne, tiefe breite Schläge mit enormer Durchsetzungskraft.',
-    tags: ['Voller Körper', 'Rimshot', 'Rock', 'Obertöne'],
-    snareTarget: 'bronze'
+    "cat": "snares",
+    "catLabel": "16 Snares",
+    "name": "Tama S.L.P. Classic Dry Aluminum 14 × 5,5 (LAL1455)",
+    "model": "Tama S.L.P. LAL1455 – 14 × 5,5 Nahtloser Aluminiumkessel",
+    "sounds": "Trockener Backbeat, feine Ghostnotes, kurze Akzente, kontrollierte offene Schläge, ideal mit Besen.",
+    "tags": [
+      "Tama",
+      "S.L.P.",
+      "Aluminium",
+      "Trocken",
+      "Ghostnotes",
+      "Besen"
+    ],
+    "snareTarget": "alu"
   },
   {
-    cat: 'snares',
-    catLabel: '16 Snares',
-    name: 'Tama Vintage Superstar 14 × 7',
-    model: '14 × 7 Parallelabhebung Classic',
-    sounds: 'Warmer Vintage-Backbeat, sensible dynamische Teppichansprache, charakterstarke offene oder gedämpfte 70s-Sounds.',
-    tags: ['Vintage', '70s', 'Warm', 'Parallelabhebung'],
-    snareTarget: 'vintage'
+    "cat": "snares",
+    "catLabel": "16 Snares",
+    "name": "Tama Brann Dailor Signature Bronze 14 × 6,5 (BD1465)",
+    "model": "Tama Signature BD1465 – 14 × 6,5 Glockenbronze auf Starphonic-Basis",
+    "sounds": "Voller massiver Backbeat, schmetternde Rimshots, singende Obertöne, tiefe breite Schläge mit extremem Durchsetzungsvermögen.",
+    "tags": [
+      "Tama",
+      "Signature",
+      "Starphonic",
+      "Bronze",
+      "Rimshot",
+      "Power"
+    ],
+    "snareTarget": "bronze"
   },
   {
-    cat: 'snares',
-    catLabel: '16 Snares',
-    name: 'Kirsche Snare 14 × 5,5',
-    model: '14 × 5.5 Cherry Wood',
-    sounds: 'Holziger Backbeat, angenehm mittige Akzente, sensible Ghostnotes, wunderbarer organischer Cross Stick.',
-    tags: ['Holzig', 'Mitten', 'Cross Stick', 'Organisch']
+    "cat": "snares",
+    "catLabel": "16 Snares",
+    "name": "Tama Vintage Superstar 14 × 7 (Parallelabhebung, 1980er)",
+    "model": "Tama Vintage Superstar 14 × 7 – Klassische Parallelabhebung",
+    "sounds": "Samtiger Vintage-Backbeat, sensible und dynamische Teppichansprache über den gesamten Dynamikbereich.",
+    "tags": [
+      "Tama",
+      "Vintage",
+      "Superstar",
+      "Parallelabhebung",
+      "1980s",
+      "Warm"
+    ],
+    "snareTarget": "vintage"
   },
   {
-    cat: 'snares',
-    catLabel: '16 Snares',
-    name: 'Tama Stahl Snare 14 × 5,5',
-    model: '14 × 5.5 Steel Shell',
-    sounds: 'Präsenter Anschlag, metallisches Klingeln, messerscharfe Rimshots, kurzer gedämpfter Funkklang.',
-    tags: ['Stahl', 'Scharf', 'Funk', 'Crack']
+    "cat": "snares",
+    "catLabel": "16 Snares",
+    "name": "Tama Kirsche Snare 14 × 5,5 (Custom Reference)",
+    "model": "Tama Referenz – 14 × 5,5 Cherry Wood Kessel",
+    "sounds": "Holziger organischer Backbeat, mittige Akzente, feinfühlige Ghostnotes und warmer Cross-Stick.",
+    "tags": [
+      "Tama",
+      "Kirsche",
+      "Wood",
+      "Organisch",
+      "Cross Stick"
+    ],
+    "snareTarget": "piccolo"
   },
   {
-    cat: 'snares',
-    catLabel: '16 Snares',
-    name: 'Tama Stahl Snare 14 × 8',
-    model: '14 × 8 Deep Steel',
-    sounds: 'Tiefer Körper, gewaltige Balladen-Backbeats, offene Ringeffekte, schwere dramatische Akzente.',
-    tags: ['Tiefer Kessel', 'Heavy', 'Ballade', 'Power']
+    "cat": "snares",
+    "catLabel": "16 Snares",
+    "name": "Tama S.L.P. Vintage Hammered Steel 14 × 5,5 (LST1455H)",
+    "model": "Tama S.L.P. LST1455H – 14 × 5,5 Gehammerter Stahlkessel",
+    "sounds": "Prägnanter Anschlag, kontrolliertes metallisches Klingeln, scharfe Rimshots, kurzer gedämpfter Funkklang.",
+    "tags": [
+      "Tama",
+      "S.L.P.",
+      "Stahl",
+      "Gehämmert",
+      "Funk",
+      "Attack"
+    ]
   },
   {
-    cat: 'snares',
-    catLabel: '16 Snares',
-    name: 'Maple Snare 14 × 6,5',
-    model: '14 × 6.5 Classic Maple',
-    sounds: 'Vielseitiger Hauptsnaresound, voller Backbeat, Besen, Cross Stick, tiefe gedämpfte Varianten.',
-    tags: ['Allround', 'Maple', 'Ahorn', 'Dynamisch']
+    "cat": "snares",
+    "catLabel": "16 Snares",
+    "name": "Tama S.L.P. Big Black Steel 14 × 8 (LST148)",
+    "model": "Tama S.L.P. LST148 – 14 × 8 Tiefer Stahlkessel",
+    "sounds": "Tiefer voluminöser Körper, gewaltige Balladen-Backbeats, offene Ringeffekte, schwere dramatische Akzente.",
+    "tags": [
+      "Tama",
+      "S.L.P.",
+      "Tiefer Kessel",
+      "8 Zoll",
+      "Heavy",
+      "Power"
+    ]
   },
   {
-    cat: 'snares',
-    catLabel: '16 Snares',
-    name: '„Nickel“ Snare 13 × 7',
-    model: '13 × 7 Deep Small-Diameter',
-    sounds: 'Kompakter Anschlag mit tieferem Kesselvolumen; prägnanter Mittenkörper bei schneller Ansprache.',
-    tags: ['Kompakt', '13 Zoll', 'Mitten']
+    "cat": "snares",
+    "catLabel": "16 Snares",
+    "name": "Tama S.L.P. Studio Maple 14 × 6,5 (LMP1465F)",
+    "model": "Tama S.L.P. LMP1465F – 14 × 6,5 Ahorn mit Holzspannreifen",
+    "sounds": "Universeller Hauptsnaresound, warmer voller Backbeat, offene Resonanz durch Wood Hoops, satter Rimclick.",
+    "tags": [
+      "Tama",
+      "S.L.P.",
+      "Maple",
+      "Holzspannreifen",
+      "Allrounder",
+      "Warm"
+    ]
   },
   {
-    cat: 'snares',
-    catLabel: '16 Snares',
-    name: 'Maple Piccolo Snare 13 × 3,5',
-    model: '13 × 3.5 Piccolo Maple',
-    sounds: 'Kurzer Piccoloklang, hohe Akzente, blitzschnelle Ghostnotes, scharfe Sidesnare für Hip-Hop & Drum’n’Bass.',
-    tags: ['Piccolo', 'Hip-Hop', 'Sidesnare', 'High Pitch'],
-    snareTarget: 'piccolo'
+    "cat": "snares",
+    "catLabel": "16 Snares",
+    "name": "Tama Nickel Snare 13 × 7 (Custom Reference)",
+    "model": "Tama Referenz – 13 × 7 Kompakter Tiefkessel",
+    "sounds": "Kompakter direkter Anschlag mit tiefem Kesselkörper, fokusiertes Klangbild mit schneller Ansprache.",
+    "tags": [
+      "Tama",
+      "Nickel",
+      "13 Zoll",
+      "Fokussiert",
+      "Punch"
+    ]
   },
   {
-    cat: 'snares',
-    catLabel: '16 Snares',
-    name: 'Birke Mini-Snare 10 × 2',
-    model: '10 × 2 Pancake Birch',
-    sounds: 'Sehr kurze hohe Effekte, kleine Snareimpulse, ideale organische Layer für elektronische Beat-Produktionen.',
-    tags: ['Effekt', 'Elektronik-Layer', 'Ultra-Kurz']
+    "cat": "snares",
+    "catLabel": "16 Snares",
+    "name": "Tama Maple Piccolo Snare 13 × 3,5",
+    "model": "Tama Referenz – 13 × 3,5 Ahorn Piccolokessel",
+    "sounds": "Messerscharfer Piccoloklang, extrem hohe Akzente, blitzschnelle Ghostnotes, Hip-Hop und D&B Sidesnare.",
+    "tags": [
+      "Tama",
+      "Piccolo",
+      "Maple",
+      "Sidesnare",
+      "HipHop",
+      "Funk"
+    ],
+    "snareTarget": "piccolo"
   },
   {
-    cat: 'snares',
-    catLabel: '16 Snares',
-    name: 'Birke Sidesnare 10 × 3,5',
-    model: '10 × 3.5 Birch Shell',
-    sounds: 'Knackige Sidesnare, hohe Funkakzente, perkussive Wirbel und moderne Pop-Fills.',
-    tags: ['Funk', 'Sidesnare', 'Knackig']
+    "cat": "snares",
+    "catLabel": "16 Snares",
+    "name": "Tama Birke Effektsnare 10 × 2",
+    "model": "Tama Referenz – 10 × 2 Pancake Flachkessel",
+    "sounds": "Sehr kurze hohe Rim-Effekte, trockene Snare-Impulse, Ausgangspunkt für elektronisch geschichtete Claps.",
+    "tags": [
+      "Tama",
+      "Birke",
+      "Effekt",
+      "Pancake",
+      "Kurz",
+      "Elektronisch"
+    ]
   },
   {
-    cat: 'snares',
-    catLabel: '16 Snares',
-    name: 'Stahl Timbale Snare 10 × 3,5',
-    model: '10 × 3.5 Steel Timbale Hybrid',
-    sounds: 'Metallischer Randklang, helle Fellschläge, direkter Wechsel zwischen Snare- und Latin-Timbale-Charakter.',
-    tags: ['Latin', 'Timbale', 'Metallisch']
+    "cat": "snares",
+    "catLabel": "16 Snares",
+    "name": "Tama Birke Sidesnare 10 × 3,5",
+    "model": "Tama Referenz – 10 × 3,5 Kompakte Birke",
+    "sounds": "Knackige Sidesnare, hohe Funkakzente, schnelle perkussive Wirbel und Ghostnote-Fills.",
+    "tags": [
+      "Tama",
+      "Sidesnare",
+      "Birke",
+      "Funk",
+      "Crack"
+    ]
   },
   {
-    cat: 'snares',
-    catLabel: '16 Snares',
-    name: 'Holz Timbale Snare mit Jingles 10 × 3,5',
-    model: '10 × 3.5 Wood w/ Jingles',
-    sounds: 'Kurzer Holzanschlag kombiniert mit Schellennachklang, rasselnde Akzente, kompakte Percussion-Grooves.',
-    tags: ['Schellen', 'Jingles', 'Percussiv', 'Hybrid'],
-    snareTarget: 'timbale_jingle'
+    "cat": "snares",
+    "catLabel": "16 Snares",
+    "name": "Tama Metalworks Effect Mini Tymp Stahl 10 × 3,5",
+    "model": "Tama Metalworks Effect – 10 × 3,5 Stahl Timbale Snare",
+    "sounds": "Heller metallischer Randklang, schneller Fellschlag, nahtloser Wechsel zwischen Snare-Crack und Timbale-Charakter.",
+    "tags": [
+      "Tama",
+      "Metalworks",
+      "Timbale",
+      "Stahl",
+      "Hybrid"
+    ]
   },
   {
-    cat: 'snares',
-    catLabel: '16 Snares',
-    name: 'Pappel Snare 14 × 4,5',
-    model: '14 × 4.5 Poplar Wood',
-    sounds: 'Flacher Backbeat, gedämpfte kurze Schläge, perfekt für sanfte Besenbegleitung und Singer-Songwriter.',
-    tags: ['Sanft', 'Akustisch', 'Besen', 'Unaufdringlich']
+    "cat": "snares",
+    "catLabel": "16 Snares",
+    "name": "Tama Holz Jingle Snare 10 × 3,5",
+    "model": "Tama Referenz – 10 × 3,5 Holzkessel mit Jingles",
+    "sounds": "Kurzer trockener Holzanschlag kombiniert mit rasselndem Schellennachklang für lateinamerikanische und urbane Grooves.",
+    "tags": [
+      "Tama",
+      "Jingle Snare",
+      "Holz",
+      "Schellen",
+      "Percussion"
+    ],
+    "snareTarget": "timbale_jingle"
   },
   {
-    cat: 'snares',
-    catLabel: '16 Snares',
-    name: 'Birke Snare 14 × 4,5',
-    model: '14 × 4.5 Birch Shell',
-    sounds: 'Kompakter Backbeat, direkte Akzente, crispe Ghostnotes, kurze punchige Fills.',
-    tags: ['Direkt', 'Präzise', 'Birke']
+    "cat": "snares",
+    "catLabel": "16 Snares",
+    "name": "Tama Pappel Snare 14 × 4,5",
+    "model": "Tama Referenz – 14 × 4,5 Flacher Pappelkessel",
+    "sounds": "Flacher trockener Vintage-Backbeat, weiche gedämpfte Schläge, perfekt für feine akustische Begleitung.",
+    "tags": [
+      "Tama",
+      "Pappel",
+      "Vintage",
+      "Flach",
+      "Warm",
+      "Akustisch"
+    ]
   },
   {
-    cat: 'snares',
-    catLabel: '16 Snares',
-    name: 'Santino Signature Snare 16 × 3',
-    model: '16 × 3 Custom Flat Large-Diameter',
-    sounds: 'Breite flache Trommeltextur, tieffrequente Obertöne, riesige Besenflächen, außergewöhnliche Cinematic-Backbeats.',
-    tags: ['Custom', 'Signature', '16 Zoll', 'Cinematic', 'Besen'],
-    snareTarget: 'signature'
-  },
-
-  // 3. World Percussion, Handdrums & Kisten
-  {
-    cat: 'world',
-    catLabel: 'World Percussion',
-    name: 'Meinl Bass Box & Snare Box',
-    model: 'PBASSBOX & PSNAREBOX',
-    sounds: 'Fußgespielter akustischer Kickimpuls, trockenes tiefes Pochen, weicher Basspuls und rasselnder Backbeat.',
-    tags: ['Fußperkussion', 'Acoustic Kick', 'Busker'],
-    percTarget: 'cajon'
+    "cat": "snares",
+    "catLabel": "16 Snares",
+    "name": "Tama Birke Snare 14 × 4,5",
+    "model": "Tama Referenz – 14 × 4,5 Reine Birke",
+    "sounds": "Kompakter fokussierter Backbeat, direkte Attack-Akzente, saubere dynamische Fills.",
+    "tags": [
+      "Tama",
+      "Birke",
+      "Präzise",
+      "Attack",
+      "Studio"
+    ]
   },
   {
-    cat: 'world',
-    catLabel: 'World Percussion',
-    name: 'Artisan & Pickup Cajons',
-    model: 'AEFLIH, AESELIH, PWCP100MB, Slaptop PTOPCAJ2WN',
-    sounds: 'Trockene Slaps, tiefe Bassschläge, Fingerrollen, direkte Pickup-Abnahme für Reverb & Delay.',
-    tags: ['Cajon', 'Slap', 'Handspiel', 'Flamenco'],
-    percTarget: 'cajon'
+    "cat": "snares",
+    "catLabel": "16 Snares",
+    "name": "Santino Scavelli Signature Konzept Snare 16 × 3",
+    "model": "Tama Zuordnung offen – 16 × 3 Custom Large-Diameter Flachkessel",
+    "sounds": "Breite gewaltige Trommeltextur, tieffrequente Resonanzen, riesige Besenflächen, ungewöhnliche filmische Backbeats.",
+    "tags": [
+      "Signature",
+      "Santino Scavelli",
+      "16 Zoll",
+      "Custom",
+      "Cinematic",
+      "Besen"
+    ],
+    "snareTarget": "signature"
   },
   {
-    cat: 'world',
-    catLabel: 'World Percussion',
-    name: 'Meinl Artist & Woodcraft Congas',
-    model: 'MSA11, MSA1134, MSA1212 & WCO Serie',
-    sounds: 'Tiefe bis hohe offene Töne, Slaps, Touches, mehrstimmige Congafiguren, tonale Bass-Ostinati.',
-    tags: ['Latin', 'Afro-Cuban', 'Melodisch', 'Slap'],
-    percTarget: 'congas'
+    "cat": "world",
+    "catLabel": "World Percussion",
+    "name": "Meinl Artist Series Congas (MSA11AWA, MSA1134AWA, MSA1212AWA)",
+    "model": "Meinl Artist Series – Quinto 11\", Conga 11 3/4\", Tumba 12 1/2\"",
+    "sounds": "Voluminöse offene Töne, tiefe Bässe, schneidende Slaps, gedämpfte Touches und mehrstimmige melodische Conga-Grooves.",
+    "tags": [
+      "Meinl",
+      "Artist Series",
+      "Congas",
+      "Afro-Cuban",
+      "Melodie"
+    ],
+    "percTarget": "congas"
   },
   {
-    cat: 'world',
-    catLabel: 'World Percussion',
-    name: 'Bongos Meinl Marathon & Woodcraft',
-    model: 'MB400EBP, WB400VBK-M',
-    sounds: 'Knackig-hohe offene Töne, trockene Fingerschläge, perlende Martillo-Muster, melodische Akzente.',
-    tags: ['Bongos', 'High Pitch', 'Fingerspiel'],
-    percTarget: 'congas'
+    "cat": "world",
+    "catLabel": "World Percussion",
+    "name": "Meinl Marathon Exclusive & Woodcraft Bongos (MB400EBP, WB400VBK-M)",
+    "model": "Meinl Marathon Exclusive & Woodcraft – Macho & Hembra",
+    "sounds": "Messerscharfe Martillo-Muster, helle offene Töne, trockene Fingerschläge und dynamische Slaps.",
+    "tags": [
+      "Meinl",
+      "Bongos",
+      "Woodcraft",
+      "Salsa",
+      "Attack"
+    ],
+    "percTarget": "congas"
   },
   {
-    cat: 'world',
-    catLabel: 'World Percussion',
-    name: 'Meinl Djembe Ensemble',
-    model: 'HDJ4-XL, ADJ7-XL, PROADJ1-L, PROADJ3-XXL',
-    sounds: 'Tiefer erdiger Bass, offener Ton, scharfer Slap, schnelle dynamische Steigerungen und Solo-Patterns.',
-    tags: ['Djembe', 'Afro', 'Bass', 'Slap'],
-    percTarget: 'surdos'
+    "cat": "world",
+    "catLabel": "World Percussion",
+    "name": "Meinl Artisan Edition Cajons (AEFLIH, AESELIH, AECLWN, AEBLMY)",
+    "model": "Meinl Artisan Linea / Solea / Cantina Kessel",
+    "sounds": "Fein artikulierte Bässe, warme Holzresonanz, sensible Saitenschnarrung, virtuose Fingerrollen und Slaps.",
+    "tags": [
+      "Meinl",
+      "Artisan Edition",
+      "Cajon",
+      "Flamenco",
+      "Akustik"
+    ],
+    "percTarget": "cajon"
   },
   {
-    cat: 'world',
-    catLabel: 'World Percussion',
-    name: 'Darbuka / Doumbek & Ibo Drums',
-    model: 'HE-3218, HE-3012, Ibo ID3GO, ID7RB & Davul',
-    sounds: 'Doum, Tek, Ka, schnelle Fingerornamente; hohle ploppende Töne der Ibo; mächtiger Davul-Puls.',
-    tags: ['Orient', 'Split-Hand', 'Udu', 'Davul']
+    "cat": "world",
+    "catLabel": "World Percussion",
+    "name": "Meinl Percussion Bass Box (PBASSBOX) & Snare Box (PSNAREBOX)",
+    "model": "Meinl PBASSBOX & PSNAREBOX mit L-Beater",
+    "sounds": "Fußgespielter akustischer Kickimpuls, trockenes tiefes Pochen und knackiger rasselnder Backbeat.",
+    "tags": [
+      "Meinl",
+      "Bass Box",
+      "Snare Box",
+      "Foot Percussion",
+      "Kick"
+    ],
+    "percTarget": "cajon"
   },
   {
-    cat: 'world',
-    catLabel: 'World Percussion',
-    name: 'Rahmentrommeln, Tars & Mizhars',
-    model: 'HD16AB, HD22AB, Tars FD22T/FD18T, Artisan Mizhars',
-    sounds: 'Resonante tiefe Basstöne, filigrane Split-Hand-Texturen, modulierbare Fellspannung für orientalische & filmische Musik.',
-    tags: ['Tar', 'Mizhar', 'Rahmentrommel', 'Cinematic', 'Meditation'],
-    percTarget: 'frame'
+    "cat": "world",
+    "catLabel": "World Percussion",
+    "name": "Meinl Traditional & Artisan Mizhars (FD18T-D, AE-FD22T-D)",
+    "model": "Meinl Mizhar 14\", 18\" & 22\" Woven Synthetic & True Felt",
+    "sounds": "Monumentale tiefe Fellimpulse, warme Raumresonanzen, tranceartige Begleitmuster und dynamische Handpatterns.",
+    "tags": [
+      "Meinl",
+      "Mizhar",
+      "Artisan",
+      "Rahmentrommel",
+      "Trance"
+    ],
+    "percTarget": "frame"
   },
   {
-    cat: 'world',
-    catLabel: 'World Percussion',
-    name: 'Bendirs, Daf, Kanjira & Artisan Riq',
-    model: 'FD16BE Schnarr-Bendir, FD20D Daf, FD7KA, AERIQ1',
-    sounds: 'Fellton mit charakteristischem Schnarren, rollende Ringgeräusche des Daf, präzise Schellenwirbel des Riq.',
-    tags: ['Bendir', 'Schnarren', 'Riq', 'Kanjira'],
-    percTarget: 'frame'
+    "cat": "world",
+    "catLabel": "World Percussion",
+    "name": "Meinl Traditional Tars & Bendirs (FD22T, FD16BE, FD14BE)",
+    "model": "Meinl Tar 18\"/22\" & Bendir mit internem Schnarrsaitensystem",
+    "sounds": "Resonante tiefe Doums, filigrane Split-Hand Teks, charakteristisches Bendir-Schnarren und obertonreiche Texturen.",
+    "tags": [
+      "Meinl",
+      "Tar",
+      "Bendir",
+      "Orient",
+      "Split-Hand"
+    ],
+    "percTarget": "frame"
   },
   {
-    cat: 'world',
-    catLabel: 'World Percussion',
-    name: 'Brasilien: Pandeiros, Bahia Surdo & Timbas',
-    model: 'PA12/PA10, Surdo SUB18AB-M, SU22, TIM1435, Rebolo',
-    sounds: 'Samba-Grooves mit Daumen, Fingerspitzen und Schellen; tiefer 18"/22" Surdo-Herzschlag, crispe Timba-Slaps.',
-    tags: ['Brasilien', 'Samba', 'Pandeiro', 'Surdo', 'Batucada'],
-    percTarget: 'surdos'
+    "cat": "world",
+    "catLabel": "World Percussion",
+    "name": "Meinl Samba Bahia Surdo 18\" & Wood Surdos (SUB18AB-M, SU20-L-AB-M)",
+    "model": "Meinl Samba Surdos 18\", 20\" & 22\"",
+    "sounds": "Erdbebenartiger tiefer Basspuls, offene und abgedämpfte Schläge, mächtiges rhythmisches Fundament.",
+    "tags": [
+      "Meinl",
+      "Samba",
+      "Surdo",
+      "18 Zoll",
+      "Tiefbass",
+      "Fundament"
+    ],
+    "percTarget": "surdos"
   },
   {
-    cat: 'world',
-    catLabel: 'World Percussion',
-    name: 'Timbales & Attack Timbales',
-    model: 'MTT1415BK, HYT1314, LC1BRASS, MDST8BK',
-    sounds: 'Helle Kaskaden, schneidende Kessel-Cascara, Rimshots und lateinamerikanische Fills.',
-    tags: ['Timbales', 'Cascara', 'Salsa']
-  },
-
-  // 4. Melodische Perkussion & Tuned
-  {
-    cat: 'tuned',
-    catLabel: 'Melodie & Handpan',
-    name: 'Meinl Handpan HPSTL100 (D-Kurd, 10 Töne)',
-    model: 'HPSTL100 Edelstahl D-Kurd (D3/ A Bb C D E F G A C)',
-    sounds: 'Schwebende metallische Melodien, tiefer Zentral-Ding, perkussive Zwischenanschläge, beruhigende Ambient-Klangflächen.',
-    tags: ['Handpan', 'D-Kurd', 'Melodisch', 'Meditation', 'Atmosphäre'],
-    percTarget: 'handpan'
+    "cat": "world",
+    "catLabel": "World Percussion",
+    "name": "Meinl Doumbek / Darbuka (HE-3218, HE-3012)",
+    "model": "Meinl Aluminium & Copper Hand-Engraved Doumbeks",
+    "sounds": "Tief resonierender Doum, metallischer Tek und Ka, rasante Fingerrollen und Split-Finger Ornamentik.",
+    "tags": [
+      "Meinl",
+      "Doumbek",
+      "Darbuka",
+      "Bellydance",
+      "Virtuos"
+    ]
   },
   {
-    cat: 'tuned',
-    catLabel: 'Melodie & Handpan',
-    name: 'Octave Steel Tongue Drum (D-Kurd)',
-    model: 'OSTD1BKE Octave Steel Tongue Drum',
-    sounds: 'Glockenähnliche Melodielinien, langes Sustain, ruhige Pulsfiguren, mehrstimmige Obertöne.',
-    tags: ['Tongue Drum', 'Glockig', 'Obertöne', 'Melodie'],
-    percTarget: 'steeltongue'
+    "cat": "world",
+    "catLabel": "World Percussion",
+    "name": "Meinl Artisan Edition Riq (AERIQ1) & Kanjira (FD7KA)",
+    "model": "Meinl Artisan Riq & Kanjira mit Ziegenfell",
+    "sounds": "Präzise Schellenartikulation, Rolls, virtuose Finger-Tonbeugungen und dichte orientalische Rhythmen.",
+    "tags": [
+      "Meinl",
+      "Riq",
+      "Kanjira",
+      "Artisan",
+      "Schellen",
+      "Jingles"
+    ]
   },
   {
-    cat: 'tuned',
-    catLabel: 'Melodie & Handpan',
-    name: 'Kalimba-Kollektion (inkl. Wah & Pickup)',
-    model: 'KA9-M, KA9WW-BK, KA5-S, KA7-M-BK, KA9P-AB',
-    sounds: 'Intime gezupfte Holz- und Metallmelodien, akustische Resonanz-Wah-Effekte, direktes Tonabnehmersignal für Reverb & Delay.',
-    tags: ['Kalimba', 'Zupfklang', 'Wah-Effekt', 'Pickup'],
-    percTarget: 'kalimba'
-  },
-
-  // 5. Effekte, Natur & Cymbals
-  {
-    cat: 'fx',
-    catLabel: 'Effekte & Natur',
-    name: 'Naturgeräusche: Birds, The Night & The Roar',
-    model: 'BI7RY/BI1NT Vögel, NI1AM Grillen, RO3BK Roar',
-    sounds: 'Verblüffend echte Vogelrufe, mediterranes Grillenzirpen, raue rasselnde Geräuscheffekte für Soundtracks.',
-    tags: ['Naturklänge', 'Foley', 'Filmmusik', 'Vögel', 'Grillen'],
-    percTarget: 'effects'
+    "cat": "tuned",
+    "catLabel": "Melodie & Becken",
+    "name": "Meinl Sonic Energy Sensory Handpan HPSTL100 D-Kurd (10 Töne)",
+    "model": "Meinl Sonic Energy HPSTL100 – Gestimmter Edelstahl in D-Kurd",
+    "sounds": "Schwebende harmonische Obertöne, meditative Melodien, glockenreine Zentralnote D3, perkussive Slap-Töne.",
+    "tags": [
+      "Meinl",
+      "Sonic Energy",
+      "Handpan",
+      "D-Kurd",
+      "Meditation",
+      "Melodie"
+    ],
+    "percTarget": "handpan"
   },
   {
-    cat: 'fx',
-    catLabel: 'Effekte & Natur',
-    name: 'Rainmaker & Sea Drums',
-    model: 'RA7BK Regenmacher, FD16SD & FD18SD-TF Meereswellen',
-    sounds: 'Dichtes Regenrieseln, langes weißes Rauschen, an- und abschwellende Meeresbrandung für meditative Texturen.',
-    tags: ['Regen', 'Meer', 'Rauschen', 'Atmosphäre'],
-    percTarget: 'effects'
+    "cat": "tuned",
+    "catLabel": "Melodie & Becken",
+    "name": "Meinl Sonic Energy Octave Steel Tongue Drum (OSTD1BKE, D-Kurd)",
+    "model": "Meinl OSTD1BKE – 8 Zungen mit Oktav-Obertönen",
+    "sounds": "Glockenartige Nachklänge, sphärische Akkorde, ruhige meditative Pulsfiguren und mehrstimmiges Spiel.",
+    "tags": [
+      "Meinl",
+      "Steel Tongue Drum",
+      "Sonic Energy",
+      "Oktaven",
+      "Sphäre"
+    ],
+    "percTarget": "steeltongue"
   },
   {
-    cat: 'fx',
-    catLabel: 'Effekte & Natur',
-    name: 'Bill Saragosa Cone Stack & Metall-Effekte',
-    model: 'CONE Bill Saragosa Series, Bowl, Galaxy, Crasher',
-    sounds: 'Experimentelle metallische Resonanzen, industrielles Scheppern, futuristische Akzente und Trash-Percussion.',
-    tags: ['Experimental', 'Industrie', 'Metall', 'Trash']
+    "cat": "tuned",
+    "catLabel": "Melodie & Becken",
+    "name": "Meinl Sonic Energy Kalimbas (KA9-M, KA9WW-BK, KA9P-AB Pickup)",
+    "model": "Meinl Sonic Energy – 5 Kalimbas inkl. Wah-Effekt und Tonabnehmer",
+    "sounds": "Intime gezupfte Holz- und Metallmelodien, akustischer Wah-Effekt, direktes Signal für Hall- und Delay-Flächen.",
+    "tags": [
+      "Meinl",
+      "Kalimba",
+      "Pickup",
+      "Wah",
+      "Ostinato",
+      "Afro"
+    ],
+    "percTarget": "kalimba"
   },
   {
-    cat: 'fx',
-    catLabel: 'Effekte & Natur',
-    name: 'Shaker & Caxixi Arsenal',
-    model: 'Studio Shaker SH16, SH22, SH88BK, CAX1/2/3',
-    sounds: 'Feinst artikulierte Rhythmusteppiche, kurze Ghost-Shakes, schwere rollende Caxixi-Akzente.',
-    tags: ['Shaker', 'Caxixi', 'Rhythmus', 'Puls'],
-    percTarget: 'shakers'
+    "cat": "tuned",
+    "catLabel": "Melodie & Becken",
+    "name": "Meinl Byzance Cymbals (Dark HiHat B14DAH, Jazz Thin B15JTH, Dual Rides)",
+    "model": "Meinl Byzance Handgehämmert – B14DAH, B15JTH, B22VPLR, B19EDTC",
+    "sounds": "Erdige dunkle Stockdefinition, seidig rauschende Hi-Hat Figuren, trashige Crashes und dynamische Ride-Kuppen.",
+    "tags": [
+      "Meinl",
+      "Byzance",
+      "HiHat",
+      "Ride",
+      "Crash",
+      "B20 Bronze"
+    ]
   },
   {
-    cat: 'fx',
-    catLabel: 'Effekte & Natur',
-    name: 'Meinl Byzance Cymbals & Stacks',
-    model: '14" Dark HiHat, 15" Jazz Thin, 22" Rides (Vintage Pure/Monophonic/Extra Dry), Smack Stack, Gen X',
-    sounds: 'Dunkle erdige Beckentexturen, feine Stockdefinition, explosive Trash-Stacks und Handclap-artige Backbeats.',
-    tags: ['Byzance', 'HiHat', 'Ride', 'Smack Stack', 'Trash']
-  },
-
-  // 6. Synthesizer, Sampler & Hybrid
-  {
-    cat: 'synths',
-    catLabel: 'Synths & Hybrid',
-    name: 'Sequential Prophet-6',
-    model: '6-stimmiger analoger Flaggschiff-Synthesizer',
-    sounds: 'Opulente warme Pads, analoge Bässe, polyphone Synth-Brass-Akkorde, rhythmische Zupfsequenzen.',
-    tags: ['Prophet-6', 'Analog', 'Polyphon', 'Warm', 'Bass'],
-    hybridTarget: 'prophet'
+    "cat": "fx",
+    "catLabel": "Effekte & Layering",
+    "name": "Meinl Percussion Ching Ring (CRING & SCRING)",
+    "model": "Meinl CRING / SCRING – 5 Paar Stahlschellen",
+    "sounds": "Schellennachklang direkt auf Fell oder Becken. Perfektes Snare-Layering für treibende 70s- und Hip-Hop-Beats.",
+    "tags": [
+      "Meinl",
+      "Ching Ring",
+      "Snare Layer",
+      "Jingles",
+      "Backbeat"
+    ]
   },
   {
-    cat: 'synths',
-    catLabel: 'Synths & Hybrid',
-    name: 'Behringer DeepMind 12 & Model D',
-    model: 'DeepMind 12 Analog & Model D Minimoog-Klon',
-    sounds: 'Gigantische 12-stimmige Modulationsflächen; monophone drückende Subbässe und aggressive Leads.',
-    tags: ['DeepMind', 'Model D', 'Minimoog', 'Subbass'],
-    hybridTarget: 'prophet'
+    "cat": "fx",
+    "catLabel": "Effekte & Layering",
+    "name": "Meinl Percussion Vintage Smack Stack",
+    "model": "Meinl Vintage Smack Stack 3-teilig",
+    "sounds": "Trockener schneidender Handclap-Sound, akustischer 808-Clap Ersatz, extrem durchsetzungsstark.",
+    "tags": [
+      "Meinl",
+      "Smack Stack",
+      "Clap",
+      "Trash",
+      "Snare Layer"
+    ]
   },
   {
-    cat: 'synths',
-    catLabel: 'Synths & Hybrid',
-    name: 'Behringer TD-3 & Edge Synthesizer',
-    model: 'TD-3 Acid Bassline & Edge Percussion Synth',
-    sounds: 'Zwitschernde resonante 303-Acid-Linien, perkussive Synthesizer-Sequenzen, metallische DSI-Klicks.',
-    tags: ['Acid', 'TD-3', 'Edge', 'Sequencer']
+    "cat": "fx",
+    "catLabel": "Effekte & Layering",
+    "name": "Meinl Sonic Energy Regenmacher & Sea Drums (RA7BK, FD16SD)",
+    "model": "Meinl Rainmaker 60cm & Sea Drum 16\" mit feinen Stahlkugeln",
+    "sounds": "Natürliches Meeresrauschen, an- und abschwellende Wassergeräusche, langes Regenrieseln für Filmvertonung.",
+    "tags": [
+      "Meinl",
+      "Regenmacher",
+      "Sea Drum",
+      "Natur",
+      "Atmosphäre",
+      "Cinematic"
+    ],
+    "percTarget": "effects"
   },
   {
-    cat: 'synths',
-    catLabel: 'Synths & Hybrid',
-    name: 'Nord Drum 3P Synthesizer',
-    model: 'Modellierter Drum- & Percussion-Synthesizer',
-    sounds: 'Futuristische analoge Drums, gestimmte Glocken, synthetische Toms, weißes Rauschen und FM-Pings.',
-    tags: ['Nord Drum', 'Elektronisch', 'Tuned Synth', 'FM'],
-    hybridTarget: 'nord_drum'
+    "cat": "fx",
+    "catLabel": "Effekte & Layering",
+    "name": "Meinl Sonic Energy The Night (NI1AM) & The Roar (RO3BK)",
+    "model": "Meinl The Night & The Roar Effektinstrumente",
+    "sounds": "Grillenähnliche Zirplaute, rasselnde Naturakzente und tiefe dynamische Groll-Effekte.",
+    "tags": [
+      "Meinl",
+      "The Night",
+      "The Roar",
+      "Naturgeräusche",
+      "Foley",
+      "Effekt"
+    ]
   },
   {
-    cat: 'synths',
-    catLabel: 'Synths & Hybrid',
-    name: 'Korg Wavedrum Dynamic Synthesizer',
-    model: 'Physical Modeling Percussion Synthesizer',
-    sounds: 'Verformbare Trommeltexturen, physikalisch reagierende Schläge, dynamisches Schaben und Hybridklänge.',
-    tags: ['Wavedrum', 'Physical Modeling', 'Hybrid']
+    "cat": "fx",
+    "catLabel": "Effekte & Layering",
+    "name": "Meinl Percussion Shaker, Caxixis & Guiros (SH16, CAX2, GU7BK)",
+    "model": "Meinl Studio Shaker, Studio Maracas, Fiber-Guiro",
+    "sounds": "Präzise 16tel-Rasselmuster, weiche Shaker-Teppiche, kratzende Guiro-Akzente für organischen Groove-Flow.",
+    "tags": [
+      "Meinl",
+      "Shaker",
+      "Caxixi",
+      "Guiro",
+      "Groove",
+      "Rhythmus"
+    ],
+    "percTarget": "shakers"
   },
   {
-    cat: 'synths',
-    catLabel: 'Synths & Hybrid',
-    name: 'Evans Sensory Percussion & Portal',
-    model: 'Multizonen Drum-Sensoren mit Machine-Learning Software',
-    sounds: 'Akustisches Schlagzeugspiel steuert komplexe Software-Instrumente, Sample-Schichten und Filterbewegungen.',
-    tags: ['Sensory Percussion', 'AI', 'Trigger', 'Zukunft'],
-    hybridTarget: 'sensory'
+    "cat": "synths",
+    "catLabel": "Synths & Hybrid",
+    "name": "Sequential Prophet-6 (6-stimmig analoger Synthesizer)",
+    "model": "Sequential Prophet-6 Polyphonic Synthesizer",
+    "sounds": "Warme analoge Brass-Pads, druckvolle polyphone Bässe, lebendige Filtersweeps und epische Synth-Akkorde.",
+    "tags": [
+      "Sequential",
+      "Prophet-6",
+      "Analog",
+      "Polyphon",
+      "Warm",
+      "Kult"
+    ],
+    "hybridTarget": "prophet"
   },
   {
-    cat: 'synths',
-    catLabel: 'Synths & Hybrid',
-    name: 'Akai MPC One & Akai Force',
-    model: 'Stand-alone Sampler & Groove Workstations',
-    sounds: 'Mehrspurige Samplearrangements, zerhackte Drum-Loops, live abgefeuerte Gesangs- und Percussion-Samples.',
-    tags: ['MPC', 'Sampling', 'Beats', 'Looping']
+    "cat": "synths",
+    "catLabel": "Synths & Hybrid",
+    "name": "Behringer Model D (Analoger Minimoog Subbass-Klon)",
+    "model": "Behringer Model D – 3 VCOs, 24 dB Ladder Filter",
+    "sounds": "Legendärer tiefer Minimoog-Subbass, fette analoge Fundamente, drückende Bassdrum-Layering Sounds.",
+    "tags": [
+      "Behringer",
+      "Model D",
+      "Minimoog",
+      "Subbass",
+      "Analog",
+      "Mono"
+    ],
+    "hybridTarget": "prophet"
   },
   {
-    cat: 'synths',
-    catLabel: 'Synths & Hybrid',
-    name: 'Teenage Engineering OP-1',
-    model: 'Mobiler Synthesizer, Sampler & 4-Track Recorder',
-    sounds: 'Lo-Fi Synthesizerklänge, experimentell geschnittene Tonfragmente, Tape-Stopps und verspielte FM-Melodien.',
-    tags: ['OP-1', 'Lo-Fi', 'Tape', 'Experimental']
-  },
-
-  // 7. Preamps, Mikrofone & Effekte
-  {
-    cat: 'preamps',
-    catLabel: 'Preamps & Effekte',
-    name: 'Warm Audio WA273 & WA412 Preamps',
-    model: 'Neve 1073- & API 312-Style mit Carnhill-Übertragern',
-    sounds: 'Diskrete Class-A Vorverstärkung mit sattem, dickem Mittenpunch auf Kick, Snare und Toms.',
-    tags: ['Neve', 'API', 'Übertrager', 'Sättigung', 'Punch'],
-    preampTarget: 'warm_audio'
+    "cat": "synths",
+    "catLabel": "Synths & Hybrid",
+    "name": "Behringer DeepMind 12 (12-stimmig analoger Poly-Synth)",
+    "model": "Behringer DeepMind 12 mit Klark Teknik FX-Engine",
+    "sounds": "Riesige analoge Flächenteppiche, schimmernde Pad-Wolken, spacige Arpeggios und epische Streicher.",
+    "tags": [
+      "Behringer",
+      "DeepMind 12",
+      "12-stimmig",
+      "Flächen",
+      "Ambient"
+    ],
+    "hybridTarget": "prophet"
   },
   {
-    cat: 'preamps',
-    catLabel: 'Preamps & Effekte',
-    name: 'SPL GoldMike Mk2 Röhren-Preamp',
-    model: 'Diskreter Röhrenvorverstärker mit Flair-Schaltung',
-    sounds: 'Warme Röhrenobertöne, seidige Höhenglättung für Becken, Overheads, Vocals und Handpan.',
-    tags: ['Röhre', 'SPL', 'Seidig', 'Wärme'],
-    preampTarget: 'spl_tube'
+    "cat": "synths",
+    "catLabel": "Synths & Hybrid",
+    "name": "Behringer TD-3 (Analoge 303 Acid-Bassline) & Edge Percussion",
+    "model": "Behringer TD-3 Acid Bass & Edge Percussion Synthesizer",
+    "sounds": "Zwitschernde Resonanz-Bässe, schmutzige Acid-Grooves, treibende perkussive Synthesizer-Loops.",
+    "tags": [
+      "Behringer",
+      "TD-3",
+      "303",
+      "Acid",
+      "Edge",
+      "Perkussiv"
+    ],
+    "hybridTarget": "prophet"
   },
   {
-    cat: 'preamps',
-    catLabel: 'Preamps & Effekte',
-    name: 'Empress Echosystem & Empress Reverb',
-    model: 'High-End Dual Engine Studio Pedale',
-    sounds: 'Rhythmische Tape-Echos, gigantische Kirchen- und Ambient-Hallräume, schwebende Shimmer-Pads.',
-    tags: ['Empress', 'Reverb', 'Delay', 'Ambient'],
-    hybridTarget: 'reverb'
+    "cat": "synths",
+    "catLabel": "Synths & Hybrid",
+    "name": "Nord Drum 3P (Modeling Percussion Synthesizer)",
+    "model": "Nord Drum 3P mit 6 integrierten Schlagflächen & Delay/Reverb",
+    "sounds": "Synthetische Drum-Punches, gestimmte Glocken, FM-Percussion, futuristische Noises und Retro-Electro Beats.",
+    "tags": [
+      "Nord",
+      "Drum 3P",
+      "FM Synthese",
+      "Glocken",
+      "Electro",
+      "Dynamic"
+    ],
+    "hybridTarget": "nord_drum"
   },
   {
-    cat: 'preamps',
-    catLabel: 'Preamps & Effekte',
-    name: 'Neon Egg Planetarium 3 & Glou-Glou Loupé',
-    model: 'Moduliertes Reverb/Kompressor & Granular Looper',
-    sounds: 'Atmosphärisches rhythmisch pumpendes Reverb; verfremdete Granularschleifen und Vintage Tape-Wärme.',
-    tags: ['Planetarium', 'Looper', 'Granular', 'Modulation'],
-    hybridTarget: 'loupe'
+    "cat": "synths",
+    "catLabel": "Synths & Hybrid",
+    "name": "Behringer RD-8 (Analoger 808-Drumcomputer)",
+    "model": "Behringer RD-8 Rhythm Designer",
+    "sounds": "Klassische wummernde 808-Subkicks, zirpende Maracas, analoge Claps und knallige Snare-Doubles.",
+    "tags": [
+      "Behringer",
+      "RD-8",
+      "808",
+      "Trap",
+      "HipHop",
+      "Subkick"
+    ],
+    "hybridTarget": "nord_drum"
   },
   {
-    cat: 'preamps',
-    catLabel: 'Preamps & Effekte',
-    name: 'Audix Studio Elite Drumcase & Microtech Gefell M930',
-    model: 'Audix D6, i5, SCX25A Lollipops, A231, Gefell M930',
-    sounds: 'Glasklare Transienten, tiefer Kickbass, seidige Becken und detailreiche Raumabbildung.',
-    tags: ['Audix', 'Gefell', 'Mikrofone', 'Overheads']
+    "cat": "synths",
+    "catLabel": "Synths & Hybrid",
+    "name": "Evans Sensory Percussion & Portal Interface",
+    "model": "Evans Sensory Percussion – Bis zu 10 Zonen pro Trommel",
+    "sounds": "Die weltbeste AI-Schnittstelle: Akustisches Spiel steuert stufenlos Software-Sampler, Synth-Filter und Granular-Sounds.",
+    "tags": [
+      "Evans",
+      "Sensory Percussion",
+      "AI Trigger",
+      "Multi-Zonen",
+      "Hybrid"
+    ],
+    "hybridTarget": "sensory"
   },
   {
-    cat: 'preamps',
-    catLabel: 'Preamps & Effekte',
-    name: 'DIY Focal Polyflex Subkick & Telefonmikrofon',
-    model: 'Tieffrequenz-Wandler & Lo-Fi Spezialkapsel',
-    sounds: 'Ergänzender 30–60 Hz Subbass unter der Kickdrum; schmalbandige Retro-Telefon-Sounds für Breaks.',
-    tags: ['Subkick', 'Subbass', 'Telefon', 'Lo-Fi'],
-    preampTarget: 'subkick'
+    "cat": "synths",
+    "catLabel": "Synths & Hybrid",
+    "name": "Roland RT-30K & RT-30HR Dual-Triggers & SPD-SX",
+    "model": "Roland RT-30 Acoustic Triggers & SPD-SX Sampling Pad",
+    "sounds": "Verlässliche Kopplung von akustischen Trommeln mit Studio-Samples, sofortige 808-Subkick-Verdopplung.",
+    "tags": [
+      "Roland",
+      "RT-30",
+      "SPD-SX",
+      "Hybrid",
+      "Sample Layer"
+    ],
+    "hybridTarget": "sensory"
+  },
+  {
+    "cat": "synths",
+    "catLabel": "Synths & Hybrid",
+    "name": "Empress Effects Reverb & Empress Echosystem",
+    "model": "Empress Effects – 32-Bit Dual-Engine Studio-Pedale",
+    "sounds": "Gigantische kosmische Hallräume, Shimmer, rhythmische Tape-Delays und endlose Ambient-Texturen.",
+    "tags": [
+      "Empress",
+      "Reverb",
+      "Echosystem",
+      "Pedale",
+      "High-End Hall",
+      "Shimmer"
+    ],
+    "hybridTarget": "reverb"
+  },
+  {
+    "cat": "synths",
+    "catLabel": "Synths & Hybrid",
+    "name": "Glou-Glou Loupé (Granular-Looper & Pitch-Shifter)",
+    "model": "Glou-Glou Loupé Handcrafted in France",
+    "sounds": "Granulare Glitch-Loops, vor- und rückwärtslaufende Texturen, experimentelle rhythmische Schichtungen in Echtzeit.",
+    "tags": [
+      "Glou-Glou",
+      "Loupé",
+      "Looper",
+      "Granular",
+      "Glitch",
+      "Experimentell"
+    ],
+    "hybridTarget": "loupe"
+  },
+  {
+    "cat": "preamps",
+    "catLabel": "Preamps & Signalkette",
+    "name": "SPL GoldMike Mk2 (Diskreter Class-A Röhren-Preamp)",
+    "model": "SPL GoldMike Mk2 – Diskrete Class-A Röhrenstufe mit Flair-Schaltung",
+    "sounds": "Seidige seidige Röhrenwärme, edle Obertonanreicherung, sanfte Transientenkompression für Becken und Snares.",
+    "tags": [
+      "SPL",
+      "GoldMike Mk2",
+      "Röhre",
+      "Class-A",
+      "Warm",
+      "High-End"
+    ],
+    "preampTarget": "spl_tube"
+  },
+  {
+    "cat": "preamps",
+    "catLabel": "Preamps & Signalkette",
+    "name": "Warm Audio WA-273 & WA-412 (Neve 1073 & API 312 Preamps)",
+    "model": "Warm Audio – Diskrete Carnhill-Übertrager Preamps",
+    "sounds": "Massiver analoger Punch, dichter Mitten-Körper, druckvolle Transienten für Kick, Snare und Toms.",
+    "tags": [
+      "Warm Audio",
+      "WA-273",
+      "WA-412",
+      "Neve",
+      "API",
+      "Übertrager",
+      "Punch"
+    ],
+    "preampTarget": "warm_audio"
+  },
+  {
+    "cat": "preamps",
+    "catLabel": "Preamps & Signalkette",
+    "name": "MOTU 828es & Ultralite mk5 (Glasklare AVB Wandler, 32 Spuren)",
+    "model": "MOTU 828es – ESS Sabre32 Ultra Wandlertechnologie",
+    "sounds": "Glasklare unverfälschte Wandlung, 123 dB Dynamikumfang, 32 diskrete latenzfreie Spuren für Mehrspur-Sessions.",
+    "tags": [
+      "MOTU",
+      "828es",
+      "Transparent",
+      "32 Spuren",
+      "AVB",
+      "Mastering Clean"
+    ],
+    "preampTarget": "clean"
+  },
+  {
+    "cat": "preamps",
+    "catLabel": "Preamps & Signalkette",
+    "name": "DIY Focal Polyflex 8 Subkick (30–60 Hz Tiefbass-Kapsel)",
+    "model": "DIY Focal Polyflex Lautsprecher-Kapsel vor der Bassdrum",
+    "sounds": "Extreme spürbare Subbässe (30–60 Hz), die keine herkömmliche Bassdrum-Mikrofonierung allein erfassen kann.",
+    "tags": [
+      "DIY Focal",
+      "Subkick",
+      "30Hz",
+      "Tiefbass",
+      "Kick Layering"
+    ],
+    "preampTarget": "subkick"
   }
 ];
 
