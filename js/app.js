@@ -13,6 +13,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initBackgroundSlider();
   initMobileNav();
+  initBookingFormPrefill();
   initSoundArchitect();
   initSoundCatalog();
   initCalculator();
@@ -26,6 +27,20 @@ document.addEventListener('DOMContentLoaded', () => {
   initGdprCalendar();
   initContactTabs();
 });
+
+function initBookingFormPrefill() {
+  const savedRecipe = localStorage.getItem('drumhub_sound_recipe');
+  const messageField = document.getElementById('form-message');
+  if (savedRecipe && messageField) {
+    messageField.value = savedRecipe;
+    localStorage.removeItem('drumhub_sound_recipe');
+    if (window.location.hash === '#contact') {
+      setTimeout(() => {
+        messageField.focus();
+      }, 400);
+    }
+  }
+}
 
 /* ==========================================================================
    1. Studio Background - Pure Scroll-Driven (No timer, calm and stable)
@@ -1026,6 +1041,59 @@ function initSoundArchitect() {
     });
   }
 
+  // Wizard Multi-Step Navigation
+  const stepItems = document.querySelectorAll('.wizard-step-item');
+  const stepPanes = document.querySelectorAll('.wizard-pane');
+
+  function goToStep(stepNum) {
+    stepPanes.forEach((pane, idx) => {
+      pane.classList.toggle('active', (idx + 1) === stepNum);
+    });
+    stepItems.forEach((item, idx) => {
+      const stepIdx = idx + 1;
+      item.classList.toggle('active', stepIdx === stepNum);
+      item.classList.toggle('completed', stepIdx < stepNum);
+    });
+    // Scroll smoothly to top of wizard on mobile/small screens
+    const progressEl = document.querySelector('.wizard-progress-container');
+    if (progressEl) {
+      progressEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+
+  stepItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const target = parseInt(item.dataset.stepTarget, 10);
+      if (target) goToStep(target);
+    });
+  });
+
+  document.querySelectorAll('[data-next-step]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const next = parseInt(btn.dataset.nextStep, 10);
+      if (next) goToStep(next);
+    });
+  });
+
+  document.querySelectorAll('[data-prev-step]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const prev = parseInt(btn.dataset.prevStep, 10);
+      if (prev) goToStep(prev);
+    });
+  });
+
+  // Vault Collapsible Accordion
+  const vaultToggleBtn = document.getElementById('vault-toggle-btn');
+  const vaultContent = document.getElementById('vault-content');
+  const vaultArrow = document.getElementById('vault-toggle-arrow');
+  if (vaultToggleBtn && vaultContent) {
+    vaultToggleBtn.addEventListener('click', () => {
+      const isOpen = vaultContent.classList.toggle('open');
+      vaultToggleBtn.setAttribute('aria-expanded', isOpen);
+      if (vaultArrow) vaultArrow.textContent = isOpen ? '▴' : '▾';
+    });
+  }
+
   // Initial draw
   updateArchitectVisualizer();
 }
@@ -1251,16 +1319,21 @@ function transferSoundRecipeToForm() {
   const recipeBox = container ? container.querySelector('#sound-recipe-text') : null;
   const messageField = document.getElementById('form-message');
 
-  if (recipeBox && messageField) {
+  if (recipeBox) {
     const text = recipeBox.innerText;
-    messageField.value = `[Gewünschtes Sound-Setup aus dem Klang-Architekten]:\n${text}\n\nMeine Projekt-Details: `;
-    
-    // Smooth scroll to contact form
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
+    if (messageField) {
+      // Direct transfer on the same page
+      messageField.value = `[Gewünschtes Sound-Setup aus dem Klang-Labor]:\n${text}\n\nMeine Projekt-Details: `;
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+      messageField.focus();
+    } else {
+      // Transfer from sound-lab.html to index.html#contact
+      localStorage.setItem('drumhub_sound_recipe', `[Gewünschtes Sound-Setup aus dem Klang-Labor]:\n${text}\n\nMeine Projekt-Details: `);
+      window.location.href = 'index.html#contact';
     }
-    messageField.focus();
   }
 }
 

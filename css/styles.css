@@ -2569,3 +2569,297 @@ input[type="range"] {
     order: -1;
   }
 }
+
+
+/* ==========================================================================
+   Sound Lab Subpage & Multi-Step Wizard
+   ========================================================================== */
+.sound-lab-hero {
+  padding: 4rem 0 2rem;
+  text-align: center;
+}
+
+.sound-lab-breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
+  text-decoration: none;
+}
+
+.sound-lab-breadcrumb a {
+  color: var(--accent-light);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.sound-lab-breadcrumb a:hover {
+  color: #fff;
+}
+
+/* Wizard Progress Bar */
+.wizard-progress-container {
+  max-width: 860px;
+  margin: 0 auto 2.5rem;
+  position: relative;
+}
+
+.wizard-steps-track {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.wizard-steps-track::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  right: 30px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.12);
+  z-index: 0;
+}
+
+.wizard-step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 0.5rem;
+  outline: none;
+}
+
+.wizard-step-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #111520;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  transition: all var(--transition-normal);
+}
+
+.wizard-step-item.active .wizard-step-circle {
+  background: var(--accent);
+  border-color: var(--accent-light);
+  color: #000;
+  box-shadow: 0 0 16px var(--accent-glow);
+  transform: scale(1.1);
+}
+
+.wizard-step-item.completed .wizard-step-circle {
+  background: #10b981;
+  border-color: #34d399;
+  color: #000;
+}
+
+.wizard-step-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.wizard-step-item.active .wizard-step-label {
+  color: #fff;
+  font-weight: 700;
+}
+
+.wizard-step-item.completed .wizard-step-label {
+  color: var(--text-main);
+}
+
+/* Step Panes */
+.wizard-panes-wrapper {
+  position: relative;
+  min-height: 400px;
+}
+
+.wizard-pane {
+  display: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.wizard-pane.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Wizard Navigation Buttons Footer */
+.wizard-nav-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wizard-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.6rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.wizard-nav-btn.prev {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-subtle);
+  color: #fff;
+}
+
+.wizard-nav-btn.prev:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.wizard-nav-btn.next {
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  color: #000;
+  box-shadow: 0 0 16px var(--accent-glow);
+}
+
+.wizard-nav-btn.next:hover {
+  background: var(--accent-light);
+  transform: translateY(-2px);
+  box-shadow: 0 0 22px rgba(245, 158, 11, 0.6);
+}
+
+/* Category Sections within Steps */
+.category-block {
+  margin-bottom: 2rem;
+}
+
+.category-block-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.category-block-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.category-block-hint {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+/* Trigger & Replacement Cards */
+.trigger-feature-card {
+  background: rgba(16, 20, 30, 0.85);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 1.6rem;
+  margin-bottom: 1.4rem;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.trigger-feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #3b82f6, #8b5cf6);
+}
+
+.trigger-feature-card:hover {
+  border-color: rgba(59, 130, 246, 0.6);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(59, 130, 246, 0.15);
+}
+
+.trigger-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-full);
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  margin-bottom: 0.75rem;
+}
+
+/* Collapsible Vault Accordion on Sound Lab page */
+.vault-accordion-toggle {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.4rem;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  margin-top: 3rem;
+}
+
+.vault-accordion-toggle:hover {
+  background: rgba(245, 158, 11, 0.1);
+  border-color: rgba(245, 158, 11, 0.4);
+}
+
+.vault-accordion-content {
+  display: none;
+  padding-top: 1.5rem;
+}
+
+.vault-accordion-content.open {
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .wizard-step-label {
+    display: none;
+  }
+  .wizard-steps-track::before {
+    left: 20px;
+    right: 20px;
+  }
+  .wizard-step-circle {
+    width: 36px;
+    height: 36px;
+    font-size: 0.85rem;
+  }
+}
