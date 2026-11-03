@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initBackgroundSlider();
   initMobileNav();
   initBookingFormPrefill();
+  initMagazineShowcase();
   initSoundArchitect();
   initSoundCatalog();
   initCalculator();
@@ -41,6 +42,106 @@ function initBookingFormPrefill() {
     }
   }
 }
+
+/* ==========================================================================
+   Magazine Showcase Interactions & 1-Click Booking Package Handler
+   ========================================================================== */
+function initMagazineShowcase() {
+  // 1. Quick Filter Bar
+  const filterBtns = document.querySelectorAll('.magazine-filter-btn');
+  const cards = document.querySelectorAll('.magazine-card');
+
+  if (filterBtns.length) {
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const targetId = btn.getAttribute('data-filter-card');
+        if (targetId === 'all') {
+          cards.forEach(c => {
+            c.style.display = 'block';
+          });
+          const firstCard = document.querySelector('.magazine-card');
+          if (firstCard) {
+            firstCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        } else {
+          const targetCard = document.getElementById(targetId);
+          if (targetCard) {
+            cards.forEach(c => {
+              c.style.display = 'block';
+            });
+            targetCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            targetCard.classList.add('highlight-pulse');
+            setTimeout(() => {
+              targetCard.classList.remove('highlight-pulse');
+            }, 1800);
+          }
+        }
+      });
+    });
+  }
+
+  // 2. Collapsible Drawers within Magazine Cards
+  const drawerToggles = document.querySelectorAll('[data-toggle-drawer]');
+  drawerToggles.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const drawerId = btn.getAttribute('data-toggle-drawer');
+      const drawer = document.getElementById(drawerId);
+      if (!drawer) return;
+
+      const isOpen = drawer.classList.contains('open');
+      if (isOpen) {
+        drawer.classList.remove('open');
+        btn.classList.remove('open');
+        const arrow = btn.querySelector('.arrow');
+        if (arrow) arrow.textContent = '▾';
+      } else {
+        drawer.classList.add('open');
+        btn.classList.add('open');
+        const arrow = btn.querySelector('.arrow');
+        if (arrow) arrow.textContent = '▴';
+      }
+    });
+  });
+
+  // 3. Vault Accordion Toggle at Bottom
+  const vaultToggleBtn = document.getElementById('vault-toggle-btn');
+  const vaultContent = document.getElementById('vault-content');
+  const vaultArrow = document.getElementById('vault-toggle-arrow');
+
+  if (vaultToggleBtn && vaultContent) {
+    vaultToggleBtn.addEventListener('click', () => {
+      const isOpen = vaultContent.classList.contains('open');
+      if (isOpen) {
+        vaultContent.classList.remove('open');
+        vaultToggleBtn.setAttribute('aria-expanded', 'false');
+        if (vaultArrow) vaultArrow.textContent = '▾';
+      } else {
+        vaultContent.classList.add('open');
+        vaultToggleBtn.setAttribute('aria-expanded', 'true');
+        if (vaultArrow) vaultArrow.textContent = '▴';
+
+        const searchInput = document.getElementById('catalog-search-input');
+        if (searchInput && window.innerWidth > 768) {
+          setTimeout(() => searchInput.focus(), 250);
+        }
+      }
+    });
+  }
+}
+
+// Global 1-Click Booking Package Handler
+window.bookSoundPackage = function(packageName) {
+  const note = `Hallo Santino,\n\nich interessiere mich für das Sound-Paket aus deinem Studio-Magazin:\n👉 Paket: ${packageName}\n\nBitte melde dich bei mir bezüglich Terminoptionen und Verfügbarkeit für meine Recording-Session.`;
+  try {
+    localStorage.setItem('drumhub_sound_recipe', note);
+  } catch (err) {
+    console.warn('LocalStorage error:', err);
+  }
+  window.location.href = 'index.html#contact';
+};
 
 /* ==========================================================================
    1. Studio Background - Pure Scroll-Driven (No timer, calm and stable)
