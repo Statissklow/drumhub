@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sound-Welten & Instrumente | DRUMHUB STUDIO Mannheim</title>
-  <meta name="description" content="Entdecke das DrumHub Studio Sound-Magazin: 4 gestimmte Tama Drumsets, 16 Meister-Snares, Meinl Sonic Energy Handpan & Percussion, analoge Synthesizer und 32 latenzfreie Spuren für deine Produktion.">
+  <title>Sound-Labor & Instrumentarium | DRUMHUB STUDIO</title>
+  <meta name="description" content="Das DrumHub Klanglabor: Über 100 Instrumente in 3 Welten – Akustik, Elektronik und Drum Replacements. Konfiguriere dein individuelles Studio-Sound-Setup mit interaktiver Studio-Grafik.">
   <meta name="author" content="Santino Scavelli">
   <meta name="theme-color" content="#08090d">
   <link rel="canonical" href="https://www.drumhub.de/sound-lab.html">
@@ -59,511 +59,552 @@
       </div>
     </header>
 
-    <!-- Subpage Hero (Magazin-Intro) -->
+    <!-- Subpage Hero -->
     <section class="sound-lab-hero">
       <div class="container">
         <div class="sound-lab-breadcrumb">
           <a href="index.html">Startseite</a>
           <span>/</span>
-          <span style="color:#fff;">Sound-Welten & Studio-Equipment</span>
+          <span style="color:#fff;">Sound-Labor & Instrumentarium</span>
         </div>
 
         <div class="discount-pill" style="margin-bottom: 1rem;">
-          <span class="badge">Sound-Magazin</span>
-          <span>5 inspirierende Klangwelten • Alles bereit im Studio</span>
+          <span class="badge">Klanglabor</span>
+          <span>Akustik • Elektronik • Drum Replacements</span>
         </div>
 
         <h1 class="hero-title" style="font-size: 2.8rem; margin-bottom: 1rem;">
-          Finde deinen Sound.<br>Was ist bei uns möglich?
+          Gestalte deinen Studio-Sound.
         </h1>
 
-        <p class="hero-desc" style="max-width: 820px; margin: 0 auto 1.5rem; font-size: 1.05rem; line-height: 1.6;">
-          Du musst kein Schlagzeug-Experte sein, um im DrumHub Studio aufzunehmen. 
-          Egal ob drückender Rock, trockener 70s-Vintage-Funk, moderner Radio-Pop mit 808-Subkicks oder meditative Handpan-Melodien: 
-          Hier siehst du auf einen Blick, welche Instrumente und klanglichen Möglichkeiten bei Santino spielbereit für deine Session aufgebaut sind.
+        <p class="hero-desc" style="max-width: 780px; margin: 0 auto 1.5rem;">
+          Entdecke über 100 Instrumente, 4 Kesselsätze, 16 Master-Snares, analoge Synthesizer und AI-gestützte Drum Replacements.
+          Kombiniere dein Setup Schritt für Schritt – die Live-Grafik visualisiert dein Ensemble in Echtzeit.
         </p>
       </div>
     </section>
 
-    <!-- Magazine Content Container -->
-    <main class="container section-padding" style="padding-top: 0;">
-      <div class="magazine-container">
+    <!-- Multi-Step Sound Lab Konfigurator -->
+    <main class="container section-padding" style="padding-top: 1rem;">
 
-        <!-- Sticky Quick Filter Navigation -->
-        <nav class="magazine-filter-bar" aria-label="Sound-Welten Filter">
-          <button type="button" class="magazine-filter-btn active" data-filter-card="all">✨ Alle Klangwelten</button>
-          <button type="button" class="magazine-filter-btn" data-filter-card="card-drumsets">🥁 Tama Drumsets</button>
-          <button type="button" class="magazine-filter-btn" data-filter-card="card-snares">🎯 16 Meister-Snares</button>
-          <button type="button" class="magazine-filter-btn" data-filter-card="card-percussion">🪘 World Percussion & Handpan</button>
-          <button type="button" class="magazine-filter-btn" data-filter-card="card-hybrid">🎹 Synths & Hybrid Lab</button>
-          <button type="button" class="magazine-filter-btn" data-filter-card="card-preamps">🎛️ Röhren & Signalkette</button>
-        </nav>
+      <!-- Visualizer Cockpit (Live Blueprint & Radar) -->
+      <div class="architect-visualizer-card" style="margin-bottom: 2.5rem;">
+        <div class="visualizer-stage-box">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.8rem;">
+            <span style="font-size:0.75rem; font-weight:800; color:var(--accent-light); text-transform:uppercase; letter-spacing:0.08em;">
+              Live Studio-Setup Blueprint & Signalfluss
+            </span>
+            <span style="font-size:0.72rem; color:var(--text-dim); font-family:monospace;">32 SPUREN AKTIV</span>
+          </div>
 
-        <!-- The 5 Editorial Feature Cards -->
-        <div class="magazine-stack">
+          <!-- Interaktive SVG-Grafik -->
+          <div class="visualizer-svg-container">
+            <svg id="stage-svg" class="stage-svg" viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="300" cy="140" r="135" fill="none" stroke="rgba(245, 158, 11, 0.06)" stroke-width="1" stroke-dasharray="4,4" />
+              <circle cx="300" cy="140" r="95" fill="none" stroke="rgba(245, 158, 11, 0.1)" stroke-width="1" />
+              <circle cx="300" cy="140" r="45" fill="none" stroke="rgba(245, 158, 11, 0.16)" stroke-width="1" />
+              
+              <!-- Left Wing: Percussion Station -->
+              <rect x="25" y="45" width="125" height="225" rx="10" fill="rgba(16, 20, 30, 0.7)" stroke="rgba(245, 158, 11, 0.25)" />
+              <text x="87" y="65" text-anchor="middle" fill="var(--accent-light)" font-size="9" font-weight="800" letter-spacing="0.08em">PERCUSSION WING</text>
+              
+              <g data-svg-perc="congas" style="transition: opacity 0.3s ease;">
+                <circle cx="55" cy="98" r="14" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5" />
+                <circle cx="85" cy="98" r="12" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5" />
+                <text x="70" y="123" text-anchor="middle" fill="#fff" font-size="8">Congas & Bongos</text>
+              </g>
 
-          <!-- ==============================================================
-               KARTE 1: DIE 4 TAMA DRUMSETS
-               ============================================================== -->
-          <article class="magazine-card" id="card-drumsets" data-category="drumsets">
-            <div class="magazine-card-banner">
-              <img src="images/drumset.jpg" alt="Tama Drumset im DrumHub Studio" class="magazine-card-img" loading="lazy">
-              <div class="magazine-card-overlay">
-                <span class="magazine-badge">AKUSTISCHES FUNDAMENT</span>
-                <h2 class="magazine-headline">Das Schlagzeug-Fundament: 4 Tama Kessel-Welten</h2>
-                <span style="color: var(--accent-light); font-size: 0.95rem; font-weight: 600;">Von intimen Jazz-Besen bis zum 24" Cinematic-Rock-Donner</span>
+              <g data-svg-perc="handpan" style="transition: opacity 0.3s ease;">
+                <circle cx="87" cy="155" r="18" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5" />
+                <circle cx="87" cy="155" r="4" fill="#f59e0b" />
+                <text x="87" y="184" text-anchor="middle" fill="#fff" font-size="8">Handpan D-Kurd</text>
+              </g>
+
+              <g data-svg-perc="frame" style="transition: opacity 0.3s ease;">
+                <circle cx="55" cy="225" r="15" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5" />
+                <text x="55" y="252" text-anchor="middle" fill="#fff" font-size="8">Tars/Mizhar</text>
+              </g>
+
+              <g data-svg-perc="cajon" style="transition: opacity 0.3s ease;">
+                <rect x="92" y="212" width="24" height="26" rx="4" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5" />
+                <text x="104" y="252" text-anchor="middle" fill="#fff" font-size="8">Cajon/Box</text>
+              </g>
+
+              <!-- Center: Drumset -->
+              <circle cx="185" cy="170" r="18" fill="rgba(255, 255, 255, 0.06)" stroke="rgba(255, 255, 255, 0.4)" stroke-width="1.5" />
+              <text x="185" y="174" text-anchor="middle" fill="#9ca3af" font-size="8">Hi-Hat</text>
+
+              <circle cx="210" cy="100" r="22" fill="rgba(245, 158, 11, 0.05)" stroke="rgba(245, 158, 11, 0.3)" stroke-dasharray="3,3" />
+              <circle cx="395" cy="110" r="24" fill="rgba(245, 158, 11, 0.05)" stroke="rgba(245, 158, 11, 0.3)" stroke-dasharray="3,3" />
+              <text x="395" y="114" text-anchor="middle" fill="#9ca3af" font-size="8">Ride 22"</text>
+
+              <circle cx="265" cy="85" r="18" fill="rgba(255, 255, 255, 0.06)" stroke="rgba(255, 255, 255, 0.3)" stroke-width="1.5" />
+              <circle cx="335" cy="85" r="19" fill="rgba(255, 255, 255, 0.06)" stroke="rgba(255, 255, 255, 0.3)" stroke-width="1.5" />
+              <circle cx="370" cy="175" r="25" fill="rgba(255, 255, 255, 0.06)" stroke="rgba(255, 255, 255, 0.3)" stroke-width="1.5" />
+              <text x="370" y="179" text-anchor="middle" fill="#9ca3af" font-size="8">Floor Tom</text>
+
+              <!-- Dynamic Kick Drum -->
+              <circle id="svg-kick-circle" cx="300" cy="140" r="50" fill="rgba(245, 158, 11, 0.16)" stroke="#f59e0b" stroke-width="2.5" class="svg-pulse-ring" />
+              <text id="svg-kick-text" x="300" y="135" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">22" Studio Kick</text>
+              <text x="300" y="150" text-anchor="middle" fill="var(--accent-light)" font-size="8" font-weight="600">BASS DRUM</text>
+
+              <!-- Dynamic Snare Drum -->
+              <circle id="svg-snare-circle" cx="230" cy="180" r="24" fill="rgba(245, 158, 11, 0.2)" stroke="#f59e0b" stroke-width="2" class="svg-active-glow" />
+              <text id="svg-snare-text" x="230" y="184" text-anchor="middle" fill="#fff" font-size="9" font-weight="700">Bronze Snare</text>
+
+              <!-- Right Wing: Hybrid & Synth Rack -->
+              <rect x="450" y="45" width="125" height="225" rx="10" fill="rgba(16, 20, 30, 0.7)" stroke="rgba(245, 158, 11, 0.25)" />
+              <text x="512" y="65" text-anchor="middle" fill="var(--accent-light)" font-size="9" font-weight="800" letter-spacing="0.08em">HYBRID & SYNTHS</text>
+
+              <g data-svg-hybrid="prophet" style="transition: opacity 0.3s ease;">
+                <rect x="465" y="80" width="95" height="30" rx="5" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5" />
+                <circle cx="478" cy="95" r="3" fill="#10b981" />
+                <circle cx="488" cy="95" r="3" fill="#f59e0b" />
+                <text x="520" y="99" text-anchor="middle" fill="#fff" font-size="8" font-weight="700">Prophet-6 Synth</text>
+              </g>
+
+              <g data-svg-hybrid="nord_drum" style="transition: opacity 0.3s ease;">
+                <rect x="465" y="122" width="95" height="30" rx="5" fill="#1e293b" stroke="#ef4444" stroke-width="1.5" />
+                <text x="512" y="141" text-anchor="middle" fill="#fff" font-size="8" font-weight="700">Nord Drum 3P</text>
+              </g>
+
+              <g data-svg-hybrid="sensory" style="transition: opacity 0.3s ease;">
+                <rect x="465" y="164" width="95" height="30" rx="5" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5" />
+                <text x="512" y="183" text-anchor="middle" fill="#fff" font-size="8" font-weight="700">Sensory Triggers</text>
+              </g>
+
+              <g data-svg-hybrid="reverb" style="transition: opacity 0.3s ease;">
+                <rect x="465" y="206" width="95" height="30" rx="5" fill="#1e293b" stroke="#a855f7" stroke-width="1.5" />
+                <text x="512" y="225" text-anchor="middle" fill="#fff" font-size="8" font-weight="700">Empress Reverb</text>
+              </g>
+
+              <!-- Bottom: Preamp Node -->
+              <g id="svg-preamp-node" transform="translate(180, 275)">
+                <rect x="0" y="0" width="240" height="32" rx="6" fill="#0d1117" stroke="var(--accent)" stroke-width="1.5" />
+                <text x="120" y="14" text-anchor="middle" fill="#fff" font-size="9" font-weight="700">SIGNALKETTE: 32 DISKRETE SPUREN</text>
+                <text x="120" y="25" text-anchor="middle" fill="var(--accent-light)" font-size="8">SPL Röhre &bull; Warm Audio Neve &bull; MOTU 828es</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Frequenz- & Klangprofil-Radar -->
+        <div class="sound-radar-meters">
+          <div class="radar-row">
+            <span class="radar-label">💥 Druck & Punch</span>
+            <div class="radar-bar-bg"><div class="radar-bar-fill" id="radar-punch-fill" style="width: 75%;"></div></div>
+            <span class="radar-val" id="radar-punch-val">75%</span>
+          </div>
+          <div class="radar-row">
+            <span class="radar-label">🪵 Wärme & Holz</span>
+            <div class="radar-bar-bg"><div class="radar-bar-fill" id="radar-warmth-fill" style="width: 85%;"></div></div>
+            <span class="radar-val" id="radar-warmth-val">85%</span>
+          </div>
+          <div class="radar-row">
+            <span class="radar-label">🌌 Raum & Sphäre</span>
+            <div class="radar-bar-bg"><div class="radar-bar-fill" id="radar-room-fill" style="width: 60%;"></div></div>
+            <span class="radar-val" id="radar-room-val">60%</span>
+          </div>
+          <div class="radar-row">
+            <span class="radar-label">⚡ Elektronik-Anteil</span>
+            <div class="radar-bar-bg"><div class="radar-bar-fill" id="radar-hybrid-fill" style="width: 35%;"></div></div>
+            <span class="radar-val" id="radar-hybrid-val">35%</span>
+          </div>
+        </div>
+
+        <!-- Generiertes Klang-Rezept -->
+        <div class="sound-recipe-card" style="margin-bottom:0;">
+          <div class="sound-recipe-title"><span>🥁</span> Dein Studio Sound-Rezept</div>
+          <div class="sound-recipe-text" id="sound-recipe-text">
+            <strong>Klang-Rezept:</strong> Set: 22" Studio Kick + 14" Bronze Snare • Percussion: Congas & Bongos, Shaker • Hybride Elektronik: Prophet-6 Synth • Preamp: SPL Röhren-Wärme
+          </div>
+        </div>
+      </div>
+
+      <!-- Der geführte 4-Stufen-Wizard -->
+      <div id="sound-architect">
+        
+        <!-- Wizard Fortschrittsleiste -->
+        <div class="wizard-progress-container">
+          <div class="wizard-steps-track">
+            <button type="button" class="wizard-step-item active" data-step-target="1">
+              <div class="wizard-step-circle">1</div>
+              <span class="wizard-step-label">1. Akustisch</span>
+            </button>
+            <button type="button" class="wizard-step-item" data-step-target="2">
+              <div class="wizard-step-circle">2</div>
+              <span class="wizard-step-label">2. Elektronisch</span>
+            </button>
+            <button type="button" class="wizard-step-item" data-step-target="3">
+              <div class="wizard-step-circle">3</div>
+              <span class="wizard-step-label">3. Drum Replacements</span>
+            </button>
+            <button type="button" class="wizard-step-item" data-step-target="4">
+              <div class="wizard-step-circle">4</div>
+              <span class="wizard-step-label">4. Preamps & Rezept</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Quick Presets Bar -->
+        <div class="architect-presets-bar">
+          <span class="architect-presets-label">Inspirations-Presets:</span>
+          <button type="button" class="architect-preset-btn" data-preset="cinematic">🎬 Cinematic Tribal</button>
+          <button type="button" class="architect-preset-btn" data-preset="funk">🎷 70s Vintage Funk</button>
+          <button type="button" class="architect-preset-btn active" data-preset="pop">🎸 Modern Pop/Rock</button>
+          <button type="button" class="architect-preset-btn" data-preset="world">🧘 World & Handpan</button>
+          <button type="button" class="architect-preset-btn" data-preset="hybrid">⚡ Hybrid Electro</button>
+        </div>
+
+        <!-- Wizard Panes Wrapper -->
+        <div class="wizard-panes-wrapper">
+          
+          <!-- ================================================================
+               STEP 1: AKUSTISCH (Drumsets, 16 Snares, World Percussion, Melodie)
+               ================================================================ -->
+          <div class="wizard-pane active" id="wizard-pane-1">
+            <div class="architect-controls-card">
+              
+              <!-- 1A: Kesselsatz -->
+              <div class="category-block">
+                <div class="category-block-header">
+                  <h3 class="category-block-title">🥁 Akustische Kesselsätze</h3>
+                  <span class="category-block-hint">Wähle die passende Bassdrum-Größe für deinen Stil</span>
+                </div>
+                <div class="architect-chips-grid">
+                  <button type="button" class="architect-chip" data-architect-set="compact">
+                    <div class="architect-chip-title">Kompakt 18"</div>
+                    <div class="architect-chip-desc">18×14 Kick, 12 & 14 Toms. Resonante Jazz-Sounds, kleine trockene Kick, Besengrooves.</div>
+                  </button>
+                  <button type="button" class="architect-chip" data-architect-set="medium">
+                    <div class="architect-chip-title">Mittel 20"</div>
+                    <div class="architect-chip-desc">20×16 Kick, 10, 12 & 14 Toms. Kurze Funkkick, direkte Popsounds, knackige Retro-Grooves.</div>
+                  </button>
+                  <button type="button" class="architect-chip selected" data-architect-set="studio">
+                    <div class="architect-chip-title">Studio 22" (Allrounder)</div>
+                    <div class="architect-chip-desc">22×18 Kick, 10, 12, 14 & 16 Toms. Vielseitige Pop/Rock-Drums, breite Raumaufnahmen.</div>
+                  </button>
+                  <button type="button" class="architect-chip" data-architect-set="large">
+                    <div class="architect-chip-title">Groß 24"</div>
+                    <div class="architect-chip-desc">24×20 Kick, 13, 14 & 16 Toms. Wuchtige Akzente, filmische Trommelschläge, Rock-Fundament.</div>
+                  </button>
+                </div>
               </div>
-            </div>
 
-            <div class="magazine-card-body">
-              <div class="magazine-quote">
-                „Das Fundament jeder Aufnahme ist ein akustisch perfekt eingemessenes Schlagzeug. Vier unterschiedliche Kesselkonfigurationen von Tama stehen vorab gestimmt, mikrofoniert und sofort spielbereit für dich da.“
+              <!-- 1B: Snare Charakter -->
+              <div class="category-block">
+                <div class="category-block-header">
+                  <h3 class="category-block-title">🎯 16 Master-Snares (Charakterauswahl)</h3>
+                  <span class="category-block-hint">Material & Tiefe bestimmen den Backbeat</span>
+                </div>
+                <div class="architect-chips-grid">
+                  <button type="button" class="architect-chip" data-architect-snare="alu">
+                    <div class="architect-chip-title">14×5.5 Aluminium</div>
+                    <div class="architect-chip-desc">Trockener Backbeat, feine Ghostnotes, kontrollierte offene Schläge ohne Ringeffekt.</div>
+                  </button>
+                  <button type="button" class="architect-chip selected" data-architect-snare="bronze">
+                    <div class="architect-chip-title">14×6.5 Bronze</div>
+                    <div class="architect-chip-desc">Voller Backbeat, schmetternde Rimshots, singende Obertöne, tiefe breite Schläge.</div>
+                  </button>
+                  <button type="button" class="architect-chip" data-architect-snare="vintage">
+                    <div class="architect-chip-title">14×7 Tama Vintage Superstar</div>
+                    <div class="architect-chip-desc">Parallelabhebung, samtiger 70s-Körper, feinfühlige Teppichansprache.</div>
+                  </button>
+                  <button type="button" class="architect-chip" data-architect-snare="piccolo">
+                    <div class="architect-chip-title">13×3.5 Maple Piccolo</div>
+                    <div class="architect-chip-desc">Messerscharfer Funk-Crack, hohe Akzente, schnelle Ghostnotes, Hip-Hop Sidesnare.</div>
+                  </button>
+                  <button type="button" class="architect-chip" data-architect-snare="timbale_jingle">
+                    <div class="architect-chip-title">10×3.5 Holz w/ Jingles</div>
+                    <div class="architect-chip-desc">Kurzer Holzanschlag kombiniert mit Schellennachklang für perkussive Grooves.</div>
+                  </button>
+                  <button type="button" class="architect-chip" data-architect-snare="signature">
+                    <div class="architect-chip-title">16×3 Signature Flach</div>
+                    <div class="architect-chip-desc">Breiter 16" Durchmesser, fette Besenflächen, tieffrequente experimentelle Backbeats.</div>
+                  </button>
+                </div>
               </div>
 
-              <div class="magazine-section-title">
-                <span>🎯</span> Wofür ist welches Setup perfekt?
-              </div>
-
-              <div class="magazine-items-grid">
-                <div class="magazine-item-box">
-                  <div class="magazine-item-title">🎷 Tama STAR Maple (18 × 14 Kick)</div>
-                  <div class="magazine-item-desc">
-                    <strong>Genres:</strong> Jazz, Akustik, Singer-Songwriter, Besengrooves.<br>
-                    <strong>Klang:</strong> Offener, warmer Ahornsound mit kleiner trockener Kick und resonanten 12" & 14" Toms. Klingt intim, edel und drängt sich im Mix nicht auf.
+              <!-- 1C: World Percussion & Melodie -->
+              <div class="category-block">
+                <div class="category-block-header">
+                  <h3 class="category-block-title">🌍 World Percussion, Handpan & Melodie</h3>
+                  <span class="category-block-hint">Mehrfachauswahl möglich</span>
+                </div>
+                <div class="architect-multi-grid">
+                  <div class="architect-multi-pill selected" data-architect-perc="congas">
+                    <span class="pill-dot"></span> 🪘 Artist Congas & Bongos
                   </div>
-                </div>
-
-                <div class="magazine-item-box">
-                  <div class="magazine-item-title">🕺 Tama Rockstar (20 × 16 Kick)</div>
-                  <div class="magazine-item-desc">
-                    <strong>Genres:</strong> Funk, Soul, Disco, Retro-Pop, R&B.<br>
-                    <strong>Klang:</strong> Kurze knackige Kick, direkte Tom-Ansprache (10", 12", 14"). Perfekt für schnelle, trockene Grooves mit schnellem Rebound und knackigem Punch.
+                  <div class="architect-multi-pill" data-architect-perc="frame">
+                    <span class="pill-dot"></span> 🥁 Rahmentrommeln, Tars & Mizhars
                   </div>
-                </div>
-
-                <div class="magazine-item-box" style="border-color: rgba(245, 158, 11, 0.4);">
-                  <div class="magazine-item-title" style="color: var(--accent-light);">⭐ Tama Starclassic Performer (22 × 18 Kick)</div>
-                  <div class="magazine-item-desc">
-                    <strong>Genres:</strong> Moderner Pop, Radio-Rock, Indie, Allrounder.<br>
-                    <strong>Klang:</strong> Die Ahorn/Birke-Kombination liefert saubere Tiefen und messerscharfe Transienten. 10", 12", 14" & 16" Toms für breite Studio-Albenproduktionen.
+                  <div class="architect-multi-pill" data-architect-perc="handpan">
+                    <span class="pill-dot"></span> 🎶 Handpan HPSTL100 D-Kurd (10 Töne)
                   </div>
-                </div>
-
-                <div class="magazine-item-box">
-                  <div class="magazine-item-title">🎬 Tama Starclassic Maple (24 × 20 Kick)</div>
-                  <div class="magazine-item-desc">
-                    <strong>Genres:</strong> Heavy Rock, Cinematic Soundtracks, Metal, Balladen.<br>
-                    <strong>Klang:</strong> Gewaltiger Kesselkörper mit tiefem Bassdrum-Grollen und riesigen 13", 14" & 16" Floor Toms für langsame, dramatische Schläge.
+                  <div class="architect-multi-pill" data-architect-perc="steeltongue">
+                    <span class="pill-dot"></span> 🔔 Octave Steel Tongue Drum D-Kurd
                   </div>
-                </div>
-              </div>
-
-              <div class="magazine-pro-tip">
-                <div class="magazine-pro-tip-icon">💡</div>
-                <div class="magazine-pro-tip-text">
-                  <strong>Studio-Geheimwaffe: DIY Focal Polyflex 8 Subkick:</strong><br>
-                  Vor der Bassdrum platzieren wir bei Bedarf ein spezielles Subfrequenz-Lautsprecher-Mikrofon. Es erfasst die tiefen 30–60 Hz Infrabässe, die herkömmliche Mikrofone verpassen – spürbar im Magen, ohne zu matschen!
-                </div>
-              </div>
-
-              <div class="magazine-actions">
-                <button type="button" class="btn btn-primary btn-sm" onclick="bookSoundPackage('Tama Master-Drumset Setup')">
-                  Dieses Drumset-Setup anfragen ➔
-                </button>
-                <button type="button" class="magazine-accordion-btn" data-toggle-drawer="drawer-drumsets">
-                  <span>Kesselmaße & Spielideen einblenden</span> <span class="arrow">▾</span>
-                </button>
-              </div>
-
-              <!-- Collapsible Drawer -->
-              <div class="magazine-accordion-content" id="drawer-drumsets">
-                <h4 style="color:#fff; margin-bottom: 0.5rem; font-size: 0.95rem;">Detaillierte Kessel-Spezifikationen:</h4>
-                <ul style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6; padding-left: 1.2rem;">
-                  <li><strong>Tama STAR Maple:</strong> 18×14" Bassdrum, 12×8" Tom, 14×14" Floor Tom (Ahornkessel mit gegossenen Zink-Spannreifen).</li>
-                  <li><strong>Tama Rockstar:</strong> 20×16" Bassdrum, 10×8", 12×9" & 14×14" Toms (Fokussierter Allrounder mit schnellem Attack).</li>
-                  <li><strong>Tama Starclassic Performer:</strong> 22×18" Bassdrum, 10×8", 12×9", 14×14" & 16×16" Toms (Ahorn/Birke Hybridkessel).</li>
-                  <li><strong>Tama Starclassic Maple:</strong> 24×20" Bassdrum, 13×9", 14×14" & 16×16" Floor Toms (Reiner Ahorn für monumentale Kessel-Resonanz).</li>
-                  <li><strong>Optionale Fellbestückung:</strong> Coated für warmen Vintage-Ton oder Clear für moderne Rock-Transienten.</li>
-                </ul>
-              </div>
-            </div>
-          </article>
-
-          <!-- ==============================================================
-               KARTE 2: DIE 16 TAMA MEISTER-SNARES
-               ============================================================== -->
-          <article class="magazine-card" id="card-snares" data-category="snares">
-            <div class="magazine-card-banner">
-              <img src="images/splitset.jpg" alt="Tama Snares im DrumHub Studio" class="magazine-card-img" loading="lazy">
-              <div class="magazine-card-overlay">
-                <span class="magazine-badge">DER CHARAKTER DES BACKBEATS</span>
-                <h2 class="magazine-headline">16 Meister-Snares: Finde deinen perfekten Backbeat</h2>
-                <span style="color: var(--accent-light); font-size: 0.95rem; font-weight: 600;">Bronze, Aluminium, Holzspannreifen & 80s Vintage Superstar</span>
-              </div>
-            </div>
-
-            <div class="magazine-card-body">
-              <div class="magazine-quote">
-                „Die Snare bestimmt wie kein anderes Instrument die Energie deines Tracks. Bei Santino wählst du aus 16 handverlesenen Kesseln genau den Backbeat, der deinen Song im Radio oder auf Spotify perfekt nach vorne bringt.“
-              </div>
-
-              <div class="magazine-section-title">
-                <span>🎯</span> Die 4 Klang-Familien verständlich erklärt
-              </div>
-
-              <div class="magazine-items-grid">
-                <div class="magazine-item-box">
-                  <div class="magazine-item-title">🥇 Bronze & Glocken-Metall (Laut & Voll)</div>
-                  <div class="magazine-item-desc">
-                    <strong>Star:</strong> Tama Brann Dailor Signature Bronze 14×6,5 (Starphonic-Basis).<br>
-                    <strong>Klang:</strong> Mächtiger Backbeat mit singenden Obertönen und schmetternden Rimshots. Schneidet mühelos durch dichte Gitarrenwände und Synth-Arrangements.
+                  <div class="architect-multi-pill" data-architect-perc="kalimba">
+                    <span class="pill-dot"></span> 🎵 5 Kalimbas (inkl. Wah & Pickup)
                   </div>
-                </div>
-
-                <div class="magazine-item-box">
-                  <div class="magazine-item-title">🥈 Aluminium & Stahl (Trocken & Knackig)</div>
-                  <div class="magazine-item-desc">
-                    <strong>Stars:</strong> Tama S.L.P. Classic Dry Aluminum 14×5,5 & Vintage Hammered Steel.<br>
-                    <strong>Klang:</strong> Extrem trocken, sauber, feine Ghostnotes, keine störenden Ringtöne. Der Traum für Funk, Pop, Hip-Hop und modernen Studio-Groove.
+                  <div class="architect-multi-pill selected" data-architect-perc="shakers">
+                    <span class="pill-dot"></span> 🌾 Shaker, Caxixis & Guiros
                   </div>
-                </div>
-
-                <div class="magazine-item-box">
-                  <div class="magazine-item-title">🪵 Klassisches Holz (Ahorn, Kirsche, Birke)</div>
-                  <div class="magazine-item-desc">
-                    <strong>Stars:</strong> Tama S.L.P. Studio Maple (mit Holzspannreifen) & Tama Vintage Superstar 14×7 (1980er).<br>
-                    <strong>Klang:</strong> Warmer, voller Körper, samtige Teppichansprache über Parallelabhebung und satter holziger Cross-Stick.
+                  <div class="architect-multi-pill" data-architect-perc="cajon">
+                    <span class="pill-dot"></span> 📦 Artisan Cajon, Bass Box & Snare Box
                   </div>
-                </div>
-
-                <div class="magazine-item-box">
-                  <div class="magazine-item-title">⚡ Piccolo & Spezialgrößen</div>
-                  <div class="magazine-item-desc">
-                    <strong>Stars:</strong> Tama Maple Piccolo 13×3,5 & Santino Scavelli Signature 16×3.<br>
-                    <strong>Klang:</strong> Von messerscharfem Funk-Crack als Sidesnare bis zu riesigen 16"-Besenflächen und tiefen Cinematic-Balladen.
+                  <div class="architect-multi-pill" data-architect-perc="surdos">
+                    <span class="pill-dot"></span> 🇧🇷 Bahia Surdo 18", Timbas & Djembes
                   </div>
-                </div>
-              </div>
-
-              <div class="magazine-pro-tip">
-                <div class="magazine-pro-tip-icon">✨</div>
-                <div class="magazine-pro-tip-text">
-                  <strong>Akustisches Snare-Layering im Studio:</strong><br>
-                  Wir legen bei Bedarf den <em>Meinl Ching Ring (CRING)</em> direkt auf das Fell für einen echten Schellenkranz-Backbeat oder nutzen den <em>Meinl Vintage Smack Stack</em> für knallige 808-Handclap-Sounds – ohne Plugins, rein akustisch!
-                </div>
-              </div>
-
-              <div class="magazine-actions">
-                <button type="button" class="btn btn-primary btn-sm" onclick="bookSoundPackage('Tama 16 Master-Snares Auswahl')">
-                  Snare-Setup für Session anfragen ➔
-                </button>
-                <button type="button" class="magazine-accordion-btn" data-toggle-drawer="drawer-snares">
-                  <span>Alle 16 Snares & Modellnummern anzeigen</span> <span class="arrow">▾</span>
-                </button>
-              </div>
-
-              <!-- Collapsible Drawer -->
-              <div class="magazine-accordion-content" id="drawer-snares">
-                <h4 style="color:#fff; margin-bottom: 0.5rem; font-size: 0.95rem;">Die komplette 16-teilige Snare-Kollektion im Studio:</h4>
-                <ul style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6; padding-left: 1.2rem;">
-                  <li><strong>Tama S.L.P. Classic Dry Aluminum (LAL1455, 14×5,5):</strong> Nahtloser Alukessel, kontrolliert, trocken.</li>
-                  <li><strong>Tama Brann Dailor Signature Bronze (BD1465, 14×6,5):</strong> Starphonic-Basis, Glockenbronze, maximaler Druck.</li>
-                  <li><strong>Tama Vintage Superstar 14×7 (1980er):</strong> Klassiker mit Parallelabhebung, samtige Dynamik.</li>
-                  <li><strong>Tama Kirsche Snare 14×5,5:</strong> Cherry Wood Kessel, warmer holziger Cross-Stick.</li>
-                  <li><strong>Tama S.L.P. Vintage Hammered Steel (LST1455H, 14×5,5):</strong> Gehämmert, spritziger Rimshot.</li>
-                  <li><strong>Tama S.L.P. Big Black Steel (LST148, 14×8):</strong> Tiefer voluminöser Kessel für monumentale Rock-Backbeats.</li>
-                  <li><strong>Tama S.L.P. Studio Maple (LMP1465F, 14×6,5):</strong> Ahorn mit Wood Hoops (Holzspannreifen).</li>
-                  <li><strong>Tama Nickel Snare 13×7:</strong> Tiefer kleiner Durchmesser, fokussierter Punch.</li>
-                  <li><strong>Tama Maple Piccolo 13×3,5:</strong> Schnelle Ansprache, extrem hoher Funk-Crack.</li>
-                  <li><strong>Tama Birke Effektsnare 10×2:</strong> Pancake Flachkessel für ultrakurze Snare-Impulse.</li>
-                  <li><strong>Tama Birke Sidesnare 10×3,5:</strong> Kompakte Sidesnare für funkige Fills.</li>
-                  <li><strong>Tama Metalworks Effect Mini Tymp Stahl 10×3,5:</strong> Timbale-Snare Hybrid.</li>
-                  <li><strong>Tama Holz Jingle Snare 10×3,5:</strong> Holzanschlag plus rasselnder Schellennachklang.</li>
-                  <li><strong>Tama Pappel Snare 14×4,5:</strong> Flacher trockener Vintage-Backbeat.</li>
-                  <li><strong>Tama Birke Snare 14×4,5:</strong> Reines Birkenholz für präzise Studio-Takes.</li>
-                  <li><strong>Santino Scavelli Signature Konzept 16×3:</strong> Custom Flachkessel mit riesigem Durchmesser für experimentelle Sounds.</li>
-                </ul>
-              </div>
-            </div>
-          </article>
-
-          <!-- ==============================================================
-               KARTE 3: MEINL WORLD PERCUSSION & HANDPAN
-               ============================================================== -->
-          <article class="magazine-card" id="card-percussion" data-category="percussion">
-            <div class="magazine-card-banner">
-              <img src="images/stuhl.JPG" alt="Meinl Percussion und Handpan im DrumHub Studio" class="magazine-card-img" loading="lazy">
-              <div class="magazine-card-overlay">
-                <span class="magazine-badge">ORGANISCHE RHYTHMEN & MELODIEN</span>
-                <h2 class="magazine-headline">World Percussion & Handpan: Lebendige Tiefe</h2>
-                <span style="color: var(--accent-light); font-size: 0.95rem; font-weight: 600;">Meinl Sonic Energy Handpan D-Kurd, Artist Congas, Rahmentrommeln & Naturklänge</span>
-              </div>
-            </div>
-
-            <div class="magazine-card-body">
-              <div class="magazine-quote">
-                „Schluss mit sterilen Percussion-Plugins aus der Konserve. Echtes gegerbtes Fell, Holz und resonierender Edelstahl geben deinen Songs Dreidimensionalität, organischen Puls und berührende melodische Momente.“
-              </div>
-
-              <div class="magazine-section-title">
-                <span>🎯</span> Was steht für deine Musik bereit?
-              </div>
-
-              <div class="magazine-items-grid">
-                <div class="magazine-item-box" style="border-color: rgba(245, 158, 11, 0.4);">
-                  <div class="magazine-item-title" style="color: var(--accent-light);">🎶 Meinl Sonic Energy Handpan D-Kurd (10 Töne)</div>
-                  <div class="magazine-item-desc">
-                    <strong>Highlights:</strong> HPSTL100 Edelstahl in D-Kurd (D3/A, Bb, C, D, E, F, G, A, C).<br>
-                    <strong>Wirkung:</strong> Schwebende, meditative Töne mit ewigem Nachhall. Ideal für Akustik-Sessions, Intros, Singer-Songwriter und emotionale Filmmusik.
-                  </div>
-                </div>
-
-                <div class="magazine-item-box">
-                  <div class="magazine-item-title">🪘 Meinl Artist Series Congas & Woodcraft Bongos</div>
-                  <div class="magazine-item-desc">
-                    <strong>Highlights:</strong> Quinto 11", Conga 11 3/4", Tumba 12 1/2" & Macho/Hembra Bongos.<br>
-                    <strong>Wirkung:</strong> Warme Bässe, schneidende Slaps und melodische Töne. Verleiht Pop, Funk und Latin-Tracks lebendigen Groove-Flow.
-                  </div>
-                </div>
-
-                <div class="magazine-item-box">
-                  <div class="magazine-item-title">🥁 Meinl Rahmentrommeln (Tars, Mizhars & Bendirs)</div>
-                  <div class="magazine-item-desc">
-                    <strong>Highlights:</strong> Mizhars bis 22" und traditionelle Bendirs mit Schnarrsaiten.<br>
-                    <strong>Wirkung:</strong> Tiefe, tranceartige Trommelschläge, feines Split-Hand-Fingerspiel und monumentale Film-Trommel-Schichtungen.
-                  </div>
-                </div>
-
-                <div class="magazine-item-box">
-                  <div class="magazine-item-title">📦 Meinl Artisan Cajons & Bass Box</div>
-                  <div class="magazine-item-desc">
-                    <strong>Highlights:</strong> Artisan Linea/Solea Kessel, PBASSBOX & Snare Box.<br>
-                    <strong>Wirkung:</strong> Der perfekte akustische Kick- und Snare-Ersatz für Unplugged-Konzerte, Singer-Songwriter und akustische Begleitung.
-                  </div>
-                </div>
-              </div>
-
-              <div class="magazine-pro-tip">
-                <div class="magazine-pro-tip-icon">🌊</div>
-                <div class="magazine-pro-tip-text">
-                  <strong>Klangfarben & Natur-Foley:</strong><br>
-                  Für sphärische Produktionen haben wir <em>Meinl Sea Drums</em> (Meeresrauschen), Bambus-Regenmacher, <em>The Night</em> (echtes Grillenzirpen) und gestimmte <em>Meinl Sonic Energy Kalimbas</em> mit integriertem Tonabnehmer für Delay- und Hallflächen spielbereit.
-                </div>
-              </div>
-
-              <div class="magazine-actions">
-                <button type="button" class="btn btn-primary btn-sm" onclick="bookSoundPackage('Meinl World Percussion & Handpan Setup')">
-                  World Percussion für Session anfragen ➔
-                </button>
-                <button type="button" class="magazine-accordion-btn" data-toggle-drawer="drawer-percussion">
-                  <span>Alle Percussion-Instrumente einblenden</span> <span class="arrow">▾</span>
-                </button>
-              </div>
-
-              <!-- Collapsible Drawer -->
-              <div class="magazine-accordion-content" id="drawer-percussion">
-                <h4 style="color:#fff; margin-bottom: 0.5rem; font-size: 0.95rem;">Die Meinl World Percussion Sammlung im Detail:</h4>
-                <ul style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6; padding-left: 1.2rem;">
-                  <li><strong>Handpan & Melodie:</strong> Meinl Sonic Energy Handpan HPSTL100 (10 Töne, D-Kurd), Octave Steel Tongue Drum OSTD1BKE, 5 Kalimbas (inkl. Wah-Effekt & Tonabnehmer).</li>
-                  <li><strong>Congas & Bongos:</strong> Meinl Artist Series Congas (MSA11, MSA1134, MSA1212), Woodcraft Congas (WCO11), Marathon Exclusive Bongos (MB400).</li>
-                  <li><strong>Cajons:</strong> Meinl Artisan Edition (AEFLIH, AESELIH, AECLWN), Snarecraft Cajon, Bass Box PBASSBOX, Snare Box PSNAREBOX.</li>
-                  <li><strong>Rahmentrommeln & Tars:</strong> Meinl Mizhars (FD18T-D, AE-FD22T-D), Tars (FD22T), Bendirs mit Schnarrsaiten (FD16BE, FD14BE), Daf (FD20D), Artisan Riq (AERIQ1), Kanjira (FD7KA).</li>
-                  <li><strong>Samba & Handdrums:</strong> Meinl Bahia Surdo 18" (SUB18AB-M), Wood Surdos (SU20, SU22), Timbas, Rebolo, Pandeiros (PA12, PAV12), Luis Conte Brass Timbales.</li>
-                  <li><strong>Effekte & Foley:</strong> Regenmacher RA7BK, Sea Drums FD16SD, The Night NI1AM, The Roar RO3BK, Shaker, Caxixis & Studio Guiros.</li>
-                </ul>
-              </div>
-            </div>
-          </article>
-
-          <!-- ==============================================================
-               KARTE 4: HYBRIDE ELEKTRONIK & SYNTHESIZER
-               ============================================================== -->
-          <article class="magazine-card" id="card-hybrid" data-category="hybrid">
-            <div class="magazine-card-banner">
-              <img src="images/preamps.jpg" alt="Synthesizer und Racks im DrumHub Studio" class="magazine-card-img" loading="lazy">
-              <div class="magazine-card-overlay">
-                <span class="magazine-badge cyan">MODERNER HYBRID-SOUND</span>
-                <h2 class="magazine-headline">Hybrid Drum Lab: Akustik trifft analoge Synths</h2>
-                <span style="color: #67e8f9; font-size: 0.95rem; font-weight: 600;">Sequential Prophet-6, Minimoog Subbässe, 808-Kicks & Evans Sensory AI Triggers</span>
-              </div>
-            </div>
-
-            <div class="magazine-card-body">
-              <div class="magazine-quote">
-                „Verschmelze lebendiges Schlagzeugspiel mit modernen elektronischen Soundwelten: Dein akustisches Trommeln steuert in Echtzeit gewaltige 808-Subbässe, analoge Synthesizer-Filter und granulare Glitch-Loops.“
-              </div>
-
-              <div class="magazine-section-title">
-                <span>🎯</span> Die elektronischen Highlights im Studio
-              </div>
-
-              <div class="magazine-items-grid">
-                <div class="magazine-item-box">
-                  <div class="magazine-item-title">👑 Sequential Prophet-6 (Analog Poly-Synth)</div>
-                  <div class="magazine-item-desc">
-                    <strong>Sound:</strong> Der König der polyphonen Synthesizer. Warme analoge Brass-Akkorde, schneidende Leads, lebendige Filtersweeps und epische Pad-Flächen direkt auf deine Drum-Spuren synchronisiert.
-                  </div>
-                </div>
-
-                <div class="magazine-item-box">
-                  <div class="magazine-item-title">⚡ Behringer Model D & RD-8 (808 Sub-Drop)</div>
-                  <div class="magazine-item-desc">
-                    <strong>Sound:</strong> Echter analoger Minimoog-Subbass und wummernde 808-Subkicks. Jeder Tritt auf deine akustische Bassdrum triggert bei Bedarf einen erdbebenartigen Tiefbass-Drop für modernen Trap & Pop.
-                  </div>
-                </div>
-
-                <div class="magazine-item-box" style="border-color: rgba(6, 182, 212, 0.4);">
-                  <div class="magazine-item-title" style="color: #67e8f9;">🧠 Evans Sensory Percussion & Portal</div>
-                  <div class="magazine-item-desc">
-                    <strong>Sound:</strong> Die weltweit fortschrittlichste AI-Schnittstelle. Erfasst bis zu 10 Anschlagzonen pro Kessel (Mitte, Rand, Rimshot, Dämpfung) und moduliert Software-Sampler stufenlos nach deiner Dynamik.
-                  </div>
-                </div>
-
-                <div class="magazine-item-box">
-                  <div class="magazine-item-title">🥁 Nord Drum 3P & Studio-Pedale</div>
-                  <div class="magazine-item-desc">
-                    <strong>Sound:</strong> Dynamisch spielbarer Modeling Percussion Synth für elektronische Claps, FM-Bells und Noises. Dazu <em>Empress Reverb</em> und der französische Granular-Looper <em>Glou-Glou Loupé</em>.
+                  <div class="architect-multi-pill" data-architect-perc="effects">
+                    <span class="pill-dot"></span> 🌊 Regenmacher, Sea Drums & Vogelstimmen
                   </div>
                 </div>
               </div>
 
-              <div class="magazine-pro-tip" style="background: rgba(6, 182, 212, 0.1); border-color: rgba(6, 182, 212, 0.3);">
-                <div class="magazine-pro-tip-icon">🎛️</div>
-                <div class="magazine-pro-tip-text" style="color: #cffafe;">
-                  <strong>Live-Hybrid oder nachträgliches Layering:</strong><br>
-                  Du kannst das Hybrid-Setup direkt während deiner Session spielen oder deine aufgenommenen Spuren nachträglich durch Santinos handverlesene Drum-Sample-Library unterfüttern lassen – für kompromisslosen Album-Sound!
-                </div>
-              </div>
-
-              <div class="magazine-actions">
-                <button type="button" class="btn btn-primary btn-sm" onclick="bookSoundPackage('Hybrid Drum & Synth Setup')">
-                  Hybrid-Setup für Session anfragen ➔
-                </button>
-                <button type="button" class="magazine-accordion-btn" data-toggle-drawer="drawer-hybrid">
-                  <span>Alle Synthesizer & Pedale anzeigen</span> <span class="arrow">▾</span>
+              <!-- Wizard Next Navigation -->
+              <div class="wizard-nav-footer">
+                <div></div>
+                <button type="button" class="wizard-nav-btn next" data-next-step="2">
+                  Weiter zu Schritt 2: Elektronik ➔
                 </button>
               </div>
 
-              <!-- Collapsible Drawer -->
-              <div class="magazine-accordion-content" id="drawer-hybrid">
-                <h4 style="color:#fff; margin-bottom: 0.5rem; font-size: 0.95rem;">Die Studio-Elektronik im Überblick:</h4>
-                <ul style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6; padding-left: 1.2rem;">
-                  <li><strong>Analoge Synthesizer:</strong> Sequential Prophet-6 (6-stimmig analog), Behringer DeepMind 12 (12-stimmig), Behringer Model D (Minimoog Klon), Behringer TD-3 (303 Acid-Bassline), Teenage Engineering OP-1.</li>
-                  <li><strong>Drumcomputer & Percussion-Synths:</strong> Nord Drum 3P, Behringer RD-8 (808 Rhythm Designer), Behringer Syncussion SY-1, Behringer Edge Percussion Synth, Korg Wavedrum.</li>
-                  <li><strong>Triggers & Sampling:</strong> Evans Sensory Percussion Portal (Multi-Zone Sensoren), Roland RT-30K & RT-30HR Dual Triggers, Roland SPD-SX Pro Sampling Pad, Akai MPC One & Akai Force.</li>
-                  <li><strong>Studio-Effektpedale:</strong> Empress Effects Reverb (High-End Studio Hall), Empress Echosystem (Dual Delay), Glou-Glou Loupé (Granular-Looper & Shifter), Neon Egg Planetarium 3 (Tape-Reverb), Fulltone Octafuzz.</li>
-                </ul>
-              </div>
             </div>
-          </article>
+          </div>
 
-          <!-- ==============================================================
-               KARTE 5: SIGNALKETTE & HIGH-END PREAMPS
-               ============================================================== -->
-          <article class="magazine-card" id="card-preamps" data-category="preamps">
-            <div class="magazine-card-banner">
-              <img src="images/mikrofon.jpg" alt="Audix Mikrofonie und Preamps im DrumHub Studio" class="magazine-card-img" loading="lazy">
-              <div class="magazine-card-overlay">
-                <span class="magazine-badge">HIGH-END SIGNALKETTE</span>
-                <h2 class="magazine-headline">Preamps & Wandlung: 32 Spuren analoge Wärme</h2>
-                <span style="color: var(--accent-light); font-size: 0.95rem; font-weight: 600;">Diskrete Class-A Röhren, Neve/API Übertrager & kompromisslose MOTU Wandler</span>
-              </div>
-            </div>
-
-            <div class="magazine-card-body">
-              <div class="magazine-quote">
-                „Großartiger Klang entsteht vor der digitalen Aufnahme. Diskrete Class-A Röhren, englische Carnhill-Übertrager und modernste ESS Sabre32 Wandler sorgen für seidige Höhen, druckvolle Mitten und maximale Detailtreue.“
-              </div>
-
-              <div class="magazine-section-title">
-                <span>🎯</span> Deine diskrete Aufnahmekette
-              </div>
-
-              <div class="magazine-items-grid">
-                <div class="magazine-item-box">
-                  <div class="magazine-item-title">🔥 SPL GoldMike Mk2 (Diskrete Röhre)</div>
-                  <div class="magazine-item-desc">
-                    Diskreter Class-A Röhren-Vorverstärker mit patentierter Flair-Schaltung. Glättet schneidende Becken-Transienten und verleiht Overheads, Snares und Gesang seidigen, edlen Glanz.
-                  </div>
+          <!-- ================================================================
+               STEP 2: ELEKTRONISCH (Synths, Drumcomputer, Sampler & Pedale)
+               ================================================================ -->
+          <div class="wizard-pane" id="wizard-pane-2">
+            <div class="architect-controls-card">
+              
+              <div class="category-block">
+                <div class="category-block-header">
+                  <h3 class="category-block-title">🎹 Analoge Synthesizer & Basslines</h3>
+                  <span class="category-block-hint">Wähle analoge Synth-Layer für dein Drum-Setup</span>
                 </div>
-
-                <div class="magazine-item-box">
-                  <div class="magazine-item-title">👊 Warm Audio WA-273 & WA-412 (Neve/API)</div>
-                  <div class="magazine-item-desc">
-                    Klassische britische und amerikanische Studiolegenden: Echte Carnhill-Übertrager liefern massiven Mitten-Punch und dicke Transienten für Bassdrum, Snare und Toms.
+                <div class="architect-multi-grid">
+                  <div class="architect-multi-pill selected" data-architect-hybrid="prophet">
+                    <span class="pill-dot"></span> 👑 Sequential Prophet-6 (6-stimmig analog, Bässe, Flächen)
                   </div>
-                </div>
-
-                <div class="magazine-item-box">
-                  <div class="magazine-item-title">💎 MOTU 828es (Präzise 32-Spur Wandlung)</div>
-                  <div class="magazine-item-desc">
-                    32 diskrete, latenzfreie Audiokanäle über ESS Sabre32 Ultra Wandlertechnologie mit 123 dB Dynamikumfang. Keine Komprimierung, kein Phasenmatsch – pure 1:1 Abbildung.
+                  <div class="architect-multi-pill" data-architect-hybrid="prophet">
+                    <span class="pill-dot"></span> 🌌 Behringer DeepMind 12 (12-stimmig analoge Streicherflächen)
                   </div>
-                </div>
-
-                <div class="magazine-item-box">
-                  <div class="magazine-item-title">🎙️ Audix Studio Elite Mikrofon-Park</div>
-                  <div class="magazine-item-desc">
-                    Maßgeschneiderte Kapseln für jedes Instrument: Audix D6 (Subbass-Punch), i5 (präziser Snare-Attack), SCX25A Lollipop-Kondensatoren (luftige Overheads) und Grenzflächen.
+                  <div class="architect-multi-pill" data-architect-hybrid="prophet">
+                    <span class="pill-dot"></span> ⚡ Behringer Model D (Klassischer monophoner Minimoog Subbass)
+                  </div>
+                  <div class="architect-multi-pill" data-architect-hybrid="prophet">
+                    <span class="pill-dot"></span> 🎛️ Behringer TD-3 (Resonanter 303-Acid-Bass) & Edge Percussion
+                  </div>
+                  <div class="architect-multi-pill" data-architect-hybrid="prophet">
+                    <span class="pill-dot"></span> 📻 Teenage Engineering OP-1 (Lo-Fi Synths & Tape-Loops)
                   </div>
                 </div>
               </div>
 
-              <div class="magazine-actions">
-                <button type="button" class="btn btn-primary btn-sm" onclick="bookSoundPackage('High-End Röhren- & Preamp-Kette')">
-                  Studio mit dieser Signalkette buchen ➔
+              <div class="category-block">
+                <div class="category-block-header">
+                  <h3 class="category-block-title">⚡ Drumcomputer & Electronic Percussion</h3>
+                  <span class="category-block-hint">Synthetische Percussion und analoge Beats</span>
+                </div>
+                <div class="architect-multi-grid">
+                  <div class="architect-multi-pill" data-architect-hybrid="nord_drum">
+                    <span class="pill-dot"></span> 🥁 Nord Drum 3P (Modellierte Drums, Tuned Bells & Noises)
+                  </div>
+                  <div class="architect-multi-pill" data-architect-hybrid="nord_drum">
+                    <span class="pill-dot"></span> 🌀 Behringer Syncussion SY-1 (Dual Pitch-Bending Drum-Synth)
+                  </div>
+                  <div class="architect-multi-pill" data-architect-hybrid="nord_drum">
+                    <span class="pill-dot"></span> 🎚️ Behringer RD-8 (Analoger 808-Drumcomputer für fette Subkicks)
+                  </div>
+                  <div class="architect-multi-pill" data-architect-hybrid="nord_drum">
+                    <span class="pill-dot"></span> 🔮 Korg Wavedrum (Dynamisch spielbare physical-modeling Texturen)
+                  </div>
+                  <div class="architect-multi-pill" data-architect-hybrid="nord_drum">
+                    <span class="pill-dot"></span> 🎛️ Akai MPC One & Akai Force (Sampler & Beat-Arrangements)
+                  </div>
+                </div>
+              </div>
+
+              <div class="category-block">
+                <div class="category-block-header">
+                  <h3 class="category-block-title">🌌 Studio-Effektpedale & Modulatoren</h3>
+                  <span class="category-block-hint">Atmosphärische Räume, Tape-Delays & Looper</span>
+                </div>
+                <div class="architect-multi-grid">
+                  <div class="architect-multi-pill" data-architect-hybrid="reverb">
+                    <span class="pill-dot"></span> ✨ Empress Reverb & Empress Echosystem (High-End Hall & Delay)
+                  </div>
+                  <div class="architect-multi-pill" data-architect-hybrid="reverb">
+                    <span class="pill-dot"></span> 🪐 Neon Egg Planetarium 3 (Pumpendes Tape-Reverb & Kompression)
+                  </div>
+                  <div class="architect-multi-pill" data-architect-hybrid="loupe">
+                    <span class="pill-dot"></span> 🌀 Glou-Glou Loupé (Granularer Looper & Pitch-Shifter)
+                  </div>
+                  <div class="architect-multi-pill" data-architect-hybrid="reverb">
+                    <span class="pill-dot"></span> 🎸 Fulltone Octafuzz & Dunlop Cry Baby (Filter & Fuzz-Texturen)
+                  </div>
+                </div>
+              </div>
+
+              <!-- Wizard Navigation -->
+              <div class="wizard-nav-footer">
+                <button type="button" class="wizard-nav-btn prev" data-prev-step="1">
+                  ← Zurück zur Akustik
                 </button>
-                <button type="button" class="magazine-accordion-btn" data-toggle-drawer="drawer-preamps">
-                  <span>Alle Mikrofone & Preamps einblenden</span> <span class="arrow">▾</span>
+                <button type="button" class="wizard-nav-btn next" data-next-step="3">
+                  Weiter zu Schritt 3: Drum Replacements ➔
                 </button>
               </div>
 
-              <!-- Collapsible Drawer -->
-              <div class="magazine-accordion-content" id="drawer-preamps">
-                <h4 style="color:#fff; margin-bottom: 0.5rem; font-size: 0.95rem;">Die analoge Regie-Ausstattung im Überblick:</h4>
-                <ul style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6; padding-left: 1.2rem;">
-                  <li><strong>Preamps:</strong> SPL GoldMike Mk2 (2-Kanal Röhre Class-A), Warm Audio WA-273 (2-Kanal Neve 1073 Stil mit EQ), Warm Audio WA-412 (4-Kanal API 312 Stil), Golden Age Pre-73 MKII, ART Tube MP.</li>
-                  <li><strong>Wandler & Schnittstellen:</strong> MOTU 828es (AVB Netzwerk, 32 Kanäle latenzfrei), MOTU Ultralite mk5, Behringer X32 Rack Mehrspur-Mischsystem.</li>
-                  <li><strong>Mikrofonie:</strong> Audix D6, i5, D2, D4, SCX25A (Lollipop Paare), ADX60 Grenzfläche, Shure SM57, Shure SM7B, Beyerdynamic M201, Microtech Gefell M930, DIY Focal Subkick.</li>
-                  <li><strong>Abhöre:</strong> Yamaha HS5 & KRK Rokit RP8 Monitore im akustisch optimierten Regieraum.</li>
-                </ul>
-              </div>
             </div>
-          </article>
+          </div>
 
-        </div><!-- /.magazine-stack -->
+          <!-- ================================================================
+               STEP 3: DRUM REPLACEMENTS & HYBRID TRIGGER (Sensory AI & Layering)
+               ================================================================ -->
+          <div class="wizard-pane" id="wizard-pane-3">
+            <div class="architect-controls-card">
+              
+              <div class="category-block-header">
+                <h3 class="category-block-title">🧠 Drum Replacements, Triggers & Sample-Layering</h3>
+                <span class="category-block-hint">Akustische Performance steuert multidimensionale digitale Welten</span>
+              </div>
 
-      </div><!-- /.magazine-container -->
+              <div class="trigger-feature-card">
+                <span class="trigger-badge">Flaggschiff Technologie</span>
+                <h4 style="color:#fff; font-size:1.2rem; margin-bottom:0.4rem;">Evans Sensory Percussion & Portal</h4>
+                <p style="color:var(--text-muted); font-size:0.92rem; line-height:1.5; margin-bottom:1rem;">
+                  Die weltweit fortschrittlichste Schnittstelle zwischen akustischem Trommelspiel und Software. 
+                  Spezielle Sensoren erfassen bis zu 10 Anschlagzonen pro Trommel (Mitte, Rand, Rimshot, Rimclick, Dämpfung). 
+                  Dein Spiel moduliert in Echtzeit komplexe Synthesizer, Granularwolken oder elektronische Layer.
+                </p>
+                <div class="architect-multi-pill selected" data-architect-hybrid="sensory">
+                  <span class="pill-dot"></span> Sensory Percussion Portal im Setup aktivieren
+                </div>
+              </div>
 
-      <!-- ==============================================================
-           DAS GESAMTE INVENTAR: THE DRUMHUB VAULT (SAUBER AM SEITENENDE)
-           ============================================================== -->
-      <div id="klangkatalog" style="margin-top: 5rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+              <div class="trigger-feature-card" style="border-color: rgba(245, 158, 11, 0.3);">
+                <span class="trigger-badge" style="background:rgba(245,158,11,0.15); color:var(--accent-light); border-color:rgba(245,158,11,0.35);">Live Hybrid</span>
+                <h4 style="color:#fff; font-size:1.2rem; margin-bottom:0.4rem;">Roland Kick- & Snare-Trigger</h4>
+                <p style="color:var(--text-muted); font-size:0.92rem; line-height:1.5; margin-bottom:1rem;">
+                  Direkte Transienten-Kopplung: Jeder Schlag auf die akustische Kick oder Snare löst simultan ein subfrequentes 
+                  808-Sample oder einen Clap aus. Perfekt für modernen Trap, Pop und tighte Funk-Produktionen.
+                </p>
+                <div class="architect-multi-pill" data-architect-hybrid="sensory">
+                  <span class="pill-dot"></span> Roland Dual-Triggering aktivieren
+                </div>
+              </div>
+
+              <div class="trigger-feature-card" style="border-color: rgba(16, 185, 129, 0.3);">
+                <span class="trigger-badge" style="background:rgba(16,185,129,0.15); color:#34d399; border-color:rgba(16,185,129,0.35);">Studio Postproduktion</span>
+                <h4 style="color:#fff; font-size:1.2rem; margin-bottom:0.4rem;">Sample-Layering & Total Sound-Replacement</h4>
+                <p style="color:var(--text-muted); font-size:0.92rem; line-height:1.5; margin-bottom:1rem;">
+                  Deine aufgenommenen Spuren können im Nachhinein durch Santinos eigene High-End Drum-Sample-Library 
+                  unterfüttert oder komplett ersetzt werden. FabFilter, iZotope Trash und Native Instruments Kontakt formen den finalen Album-Sound.
+                </p>
+                <div class="architect-multi-pill" data-architect-hybrid="sensory">
+                  <span class="pill-dot"></span> Sample-Replacement / Layering für Mix einplanen
+                </div>
+              </div>
+
+              <!-- Wizard Navigation -->
+              <div class="wizard-nav-footer">
+                <button type="button" class="wizard-nav-btn prev" data-prev-step="2">
+                  ← Zurück zur Elektronik
+                </button>
+                <button type="button" class="wizard-nav-btn next" data-next-step="4">
+                  Weiter zu Schritt 4: Preamps & Rezept ➔
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- ================================================================
+               STEP 4: PREAMPS, WANDLER & DEIN SOUND-REZEPT
+               ================================================================ -->
+          <div class="wizard-pane" id="wizard-pane-4">
+            <div class="architect-controls-card">
+              
+              <div class="category-block">
+                <div class="category-block-header">
+                  <h3 class="category-block-title">🎛️ Diskrete Preamps & Aufnahmekette</h3>
+                  <span class="category-block-hint">Wähle den analogen Charakter deiner 32 Spuren</span>
+                </div>
+                <div class="architect-chips-grid">
+                  <button type="button" class="architect-chip" data-architect-preamp="clean">
+                    <div class="architect-chip-title">Transparent Clean (MOTU)</div>
+                    <div class="architect-chip-desc">MOTU 828es glasklare Wandlung, 1:1 unverfälschte Dynamik und Detailtreue.</div>
+                  </button>
+                  <button type="button" class="architect-chip selected" data-architect-preamp="spl_tube">
+                    <div class="architect-chip-title">SPL Röhren-Wärme</div>
+                    <div class="architect-chip-desc">Diskreter Class-A Röhren-Preamp SPL GoldMike Mk2 mit Flair-Obertonglättung.</div>
+                  </button>
+                  <button type="button" class="architect-chip" data-architect-preamp="warm_audio">
+                    <div class="architect-chip-title">Warm Audio Neve/API</div>
+                    <div class="architect-chip-desc">Echte Carnhill-Übertrager für massiven Mitten-Punch und dicke Transienten.</div>
+                  </button>
+                  <button type="button" class="architect-chip" data-architect-preamp="subkick">
+                    <div class="architect-chip-title">Subkick & Röhren</div>
+                    <div class="architect-chip-desc">DIY Focal Subfrequenz-Mikrofon vor der Bassdrum für spürbare 30–60 Hz Bässe.</div>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Fertiges Rezept & Transfer -->
+              <div style="background: rgba(245, 158, 11, 0.1); border: 2px solid var(--accent); border-radius: var(--radius-lg); padding: 2rem; text-align: center; margin-top: 2rem;">
+                <div style="font-size: 2.2rem; margin-bottom: 0.6rem;">🎉 ✨</div>
+                <h3 style="color:#fff; font-size: 1.5rem; margin-bottom: 0.6rem;">Dein Sound-Setup ist fertig konfiguriert!</h3>
+                <p style="color:var(--text-main); font-size: 1rem; max-width: 650px; margin: 0 auto 1.5rem;">
+                  Du hast dein persönliches Setup aus Akustik, Elektronik, Drum Replacements und Röhren zusammengestellt. 
+                  Übernimm dein fertiges Rezept mit einem Klick in das Buchungsformular auf der Startseite:
+                </p>
+
+                <button type="button" class="btn btn-primary" id="architect-transfer-btn" style="padding: 1rem 2rem; font-size: 1.05rem;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  Setup in Buchungsanfrage übernehmen & absenden ➔
+                </button>
+              </div>
+
+              <!-- Wizard Navigation -->
+              <div class="wizard-nav-footer">
+                <button type="button" class="wizard-nav-btn prev" data-prev-step="3">
+                  ← Zurück zu Drum Replacements
+                </button>
+                <div></div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Einklappbare vollständige Klangbibliothek (The Vault) -->
+      <div id="klangkatalog">
         <button type="button" class="vault-accordion-toggle" id="vault-toggle-btn" aria-expanded="false">
-          <span>📖 Vollständiges Equipment-Verzeichnis durchsuchen (Alle 100+ Instrumente & Modellnummern)</span>
+          <span>📖 Vollständige Instrumenten-Bibliothek ansehen (Alle 100+ Klangerzeuger durchsuchen)</span>
           <span id="vault-toggle-arrow">▾</span>
         </button>
 
         <div class="vault-accordion-content" id="vault-content">
-          <p style="color: var(--text-muted); font-size: 0.92rem; margin-top: 1rem; margin-bottom: 1.5rem;">
-            Hier findest du die vollständige technische Auflistung aller Kessel, Snares, Meinl-Percussion-Artikel und Synth-Module mit Modellnummern und klanglichen Beschreibungen:
-          </p>
-
-          <div class="catalog-toolbar">
+          <div class="catalog-toolbar" style="margin-top: 1.5rem;">
             <div class="catalog-search-wrapper">
               <span class="catalog-search-icon">🔍</span>
-              <input type="text" id="catalog-search-input" class="catalog-search-input" placeholder="Suche nach Modellnummer, Marke oder Sound (z. B. Tama Starclassic, Byzance, Prophet-6, Handpan, Subkick)..." aria-label="Instrumente durchsuchen">
+              <input type="text" id="catalog-search-input" class="catalog-search-input" placeholder="Suche nach Instrumenten, Sounds oder Spielweisen (z. B. Snare, Handpan, Röhre, Funk, Jazz)..." aria-label="Instrumente durchsuchen">
             </div>
 
             <div class="catalog-filter-tabs">
-              <button type="button" class="catalog-tab active" data-catalog-filter="all">Alle 53 Hauptgeräte</button>
-              <button type="button" class="catalog-tab" data-catalog-filter="drumsets">🥁 Tama Drumsets</button>
-              <button type="button" class="catalog-tab" data-catalog-filter="snares">🎯 16 Tama Snares</button>
-              <button type="button" class="catalog-tab" data-catalog-filter="world">🪘 Meinl Percussion</button>
-              <button type="button" class="catalog-tab" data-catalog-filter="tuned">🎶 Handpan & Becken</button>
-              <button type="button" class="catalog-tab" data-catalog-filter="fx">🌊 Natur & Shaker</button>
+              <button type="button" class="catalog-tab active" data-catalog-filter="all">Alle Instrumente</button>
+              <button type="button" class="catalog-tab" data-catalog-filter="drumsets">🥁 Drumsets</button>
+              <button type="button" class="catalog-tab" data-catalog-filter="snares">🎯 16 Meister-Snares</button>
+              <button type="button" class="catalog-tab" data-catalog-filter="world">🪘 World Percussion</button>
+              <button type="button" class="catalog-tab" data-catalog-filter="tuned">🎶 Melodie & Handpan</button>
+              <button type="button" class="catalog-tab" data-catalog-filter="fx">🌊 Effekte & Natur</button>
               <button type="button" class="catalog-tab" data-catalog-filter="synths">⚡ Synths & Hybrid</button>
-              <button type="button" class="catalog-tab" data-catalog-filter="preamps">🎛️ Preamps & Wandler</button>
+              <button type="button" class="catalog-tab" data-catalog-filter="preamps">🎛️ Preamps & Effekte</button>
             </div>
 
             <div id="catalog-counter" class="catalog-counter-badge">
@@ -572,7 +613,7 @@
           </div>
 
           <div id="catalog-cards-grid" class="catalog-cards-grid">
-            <!-- Wird dynamisch über app.js initSoundCatalog() gerendert -->
+            <!-- Wird über JavaScript initSoundCatalog() gerendert -->
           </div>
         </div>
       </div>
@@ -603,7 +644,7 @@
             <ul class="footer-links">
               <li><a href="index.html">Startseite</a></li>
               <li><a href="index.html#lab-overview">Visual & Sound Lab</a></li>
-              <li><a href="sound-lab.html">Sound-Magazin (Tama, Meinl, Synths)</a></li>
+              <li><a href="sound-lab.html">Sound-Labor (Akustik, Elektronik, Replacements)</a></li>
               <li><a href="index.html#services">Leistungen & Preise</a></li>
               <li><a href="index.html#calculator">Preiskalkulator</a></li>
               <li><a href="index.html#equipment">Equipment-Liste</a></li>
